@@ -1,24 +1,14 @@
 source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/theme.vim
-
+source $HOME/.config/nvim/plugin/nerdtree.vim
 let g:airline_powerline_fonts = 1
 set encoding=utf8
-set guifont=DroidSansMono\ Nerd\ Font\ 11
-let g:airline_powerline_fonts = 1
-""
-"Nerd Tree 
-""
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 " open new split panes to right and below
 set splitright
 set splitbelow
+set relativenumber
+set rnu
+
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
@@ -35,6 +25,9 @@ let g:airline_powerline_fonts = 1
 ""
 nnoremap <c-n> :call OpenTerminal()<CR>
 nnoremap <C-p> :FZF<CR>
+nnoremap <C-d> <C-R>=strftime("%c")<CR>
+
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -44,7 +37,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 ""
 "coc 
 ""
-let g:coc_global_extensions = ['coc-eslint', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -77,5 +70,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-
+"
+"insert currend date"
+"
+iab <expr> dts strftime("%c")
