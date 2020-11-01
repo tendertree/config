@@ -19,7 +19,8 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 ""
 "

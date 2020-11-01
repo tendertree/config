@@ -2,7 +2,7 @@ source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/plugin/nerdtree.vim
 source $HOME/.config/nvim/plugin/coc.vim
-let g:airline_powerline_fonts = 1
+"source $HOME/.config/nvim/plugin/ultisnips.vim
 set encoding=utf8
 " open new split panes to right and below
 set splitright
@@ -17,7 +17,7 @@ au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " open terminal on ctrl+n
 function! OpenTerminal()
-  split term://zash
+  split term://zsh
   resize 10
 endfunction
 let g:airline_powerline_fonts = 1
@@ -25,7 +25,7 @@ let g:airline_powerline_fonts = 1
 "Short cut 
 ""
 nnoremap <c-n> :call OpenTerminal()<CR>
-nnoremap <C-p> :FZF<CR>
+"nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -50,3 +50,6 @@ nmap <silent> gr <Plug>(coc-references)
 "insert currend date"
 "
 iab <expr> dts strftime("%c")
+
+inoremap <c-j> <c-n>
+inoremap <c-k> <c-p>
