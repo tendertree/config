@@ -116,3 +116,8 @@ alias gl="git log --graph --full-history --all --color --date=short --pretty=tfo
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#alias
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
+
