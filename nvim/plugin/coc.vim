@@ -1,9 +1,9 @@
 ""
 "plugin Setting" 
 ""
-let g:coc_global_extensions = ['coc-tslint-plugin', 
-                               \'coc-emmet', 'coc-css', 'coc-html', 
-                               \'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 'coc-ultisnips']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-emmet', 'coc-css', 'coc-html', 
+                               \'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-snippets', 
+                               \'coc-ultisnips', 'coc-rls', 'coc-rust-analyzer']
 
 ""
 "Basic Setting 

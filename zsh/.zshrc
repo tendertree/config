@@ -121,3 +121,6 @@ alias gl="git log --graph --full-history --all --color --date=short --pretty=tfo
 #alias
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 
+#run gui on the wsl2 
+export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+export LIBGL_ALWAYS_INDIRECT=1

@@ -9,5 +9,6 @@
   ],
   "coc.preferences.diagnostic.virtualText": true,
   "tsserver.formatOnType": true,
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.extensionUpdateCheck": "daily"
 }

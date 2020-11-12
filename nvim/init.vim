@@ -2,6 +2,7 @@ source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/plugin/nerdtree.vim
 source $HOME/.config/nvim/plugin/coc.vim
+source $HOME/.config/nvim/plugin/vimspector.vim
 "source $HOME/.config/nvim/plugin/ultisnips.vim
 set encoding=utf8
 " open new split panes to right and below
@@ -17,10 +18,13 @@ au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " open terminal on ctrl+n
 function! OpenTerminal()
-  split term://zsh
+  split term://bash
   resize 10
 endfunction
 let g:airline_powerline_fonts = 1
+
+let g:vimspector_enable_mappings = 'HUMAN'
+
 ""
 "Short cut 
 ""
