@@ -11,6 +11,8 @@
 
 (eval-when-compile
   (require 'use-package))
+(setq use-package-always-ensure t)
+
 
 ;; 기타 설정 파일들을 불러옴 
 (defun load-directory (directory)
