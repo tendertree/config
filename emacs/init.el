@@ -1,34 +1,29 @@
-(defvar bootstrap-version)
-(let ((bootstrap-file
-	       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-            (bootstrap-version 5))
-    (unless (file-exists-p bootstrap-file)
-          (with-current-buffer
-	            (url-retrieve-synchronously
-		               "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-			                'silent 'inhibit-cookies)
-		          (goto-char (point-max))
-			        (eval-print-last-sexp)))
-      (load bootstrap-file nil 'nomessage))
+;; use-package 사용을 위한것 
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+(package-initialize)
 
-(straight-use-package 'use-package)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-;;load custom setting
-;;(setq custom-file "~/.config/emacs/config/theme.el")
-;;(load-file custom-file)
-;;load load
-;;(require 'theme)
+(eval-when-compile
+  (require 'use-package))
+
+;; 기타 설정 파일들을 불러옴 
 (defun load-directory (directory)
-    "Load recursively all `.el' files in DIRECTORY."
-      (dolist (element (directory-files-and-attributes directory nil nil nil))
-	    (let* ((path (car element))
-		              (fullpath (concat directory "/" path))
-			                 (isdir (car (cdr element)))
-					            (ignore-dir (or (string= path ".") (string= path ".."))))
-	            (cond
-		             ((and (eq isdir t) (not ignore-dir))
-			              (load-directory fullpath))
-			            ((and (eq isdir nil) (string= (substring path -3) ".el"))
-				             (load (file-name-sans-extension fullpath)))))))
-(load-directory "~/.config/emacs/config")
+  "Load recursively all `.el' files in DIRECTORY."
+  (dolist (element (directory-files-and-attributes directory nil nil nil))
+    (let* ((path (car element))
+           (fullpath (concat directory "/" path))
+           (isdir (car (cdr element)))
+           (ignore-dir (or (string= path ".") (string= path ".."))))
+      (cond
+       ((and (eq isdir t) (not ignore-dir))
+        (load-directory fullpath))
+       ((and (eq isdir nil) (string= (substring path -3) ".el"))
+        (load (file-name-sans-extension fullpath)))))))
 
+(load-directory "~/.config/emacs/config")
