@@ -21,6 +21,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'honza/vim-snippets'
 Plug 'puremourning/vimspector' 
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins'}
 call plug#end()
 ""
 "

@@ -1,9 +1,10 @@
 source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/theme.vim
-source $HOME/.config/nvim/plugin/nerdtree.vim
 source $HOME/.config/nvim/plugin/coc.vim
 source $HOME/.config/nvim/plugin/vimspector.vim
+source $HOME/.config/nvim/plugin/defx.vim
 "source $HOME/.config/nvim/plugin/ultisnips.vim
+"source $HOME/.config/nvim/plugin/nerdtree.vim
 set encoding=utf8
 " open new split panes to right and below
 set splitright
@@ -22,7 +23,6 @@ function! OpenTerminal()
   resize 10
 endfunction
 let g:airline_powerline_fonts = 1
-
 let g:vimspector_enable_mappings = 'HUMAN'
 
 ""
