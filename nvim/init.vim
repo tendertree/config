@@ -11,7 +11,7 @@ set splitright
 set splitbelow
 set relativenumber
 set rnu
-
+set showmatch 
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
@@ -57,3 +57,10 @@ iab <expr> dts strftime("%c")
 
 inoremap <c-j> <c-n>
 inoremap <c-k> <c-p>
+
+
+"
+"python run
+"
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
