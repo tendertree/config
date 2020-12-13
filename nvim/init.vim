@@ -3,7 +3,7 @@ source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/plugin/coc.vim
 source $HOME/.config/nvim/plugin/vimspector.vim
 source $HOME/.config/nvim/plugin/defx.vim
-"source $HOME/.config/nvim/plugin/ultisnips.vim
+source $HOME/.config/nvim/plugin/ultisnips.vim
 "source $HOME/.config/nvim/plugin/nerdtree.vim
 set encoding=utf8
 " open new split panes to right and below
@@ -24,11 +24,12 @@ function! OpenTerminal()
 endfunction
 let g:airline_powerline_fonts = 1
 let g:vimspector_enable_mappings = 'HUMAN'
-
-""
-"Short cut 
-""
 nnoremap <c-n> :call OpenTerminal()<CR>
+"""""""""""""""""""""""""""""""""""""""
+"auto formatter
+au BufWrite * :Autoformat
+
+
 "nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -60,7 +61,11 @@ inoremap <c-k> <c-p>
 
 
 "
-"python run
+"python Setting
 "
+let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+"nnoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
+"inoremap <buffer><silent> <c-q> <cmd>call Black()<cr>

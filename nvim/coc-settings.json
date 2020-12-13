@@ -1,31 +1,15 @@
+
+  //dignostic sttting 
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact",
-    "typescript.tsx"
-  ],
-  "coc.preferences.diagnostic.virtualText": true,
-  "tsserver.formatOnType": true,
-  "coc.preferences.formatOnType": true,
-  "coc.preferences.extensionUpdateCheck": "daily",
   "diagnostic.errorSign": "✖",
   "diagnostic.warningSign": "⚠",
   "diagnostic.infoSign": "ℹ",
   "diagnostic.hintSign": "➤",
-  "jedi.enable": true,
-  "jedi.startupMessage": true,
-  "jedi.markupKindPreferred": "plaintext",
-  "jedi.trace.server": true,
-  "jedi.jediSettings.autoImportModules": [],
-  "jedi.executable.command": "jedi-language-server",
-  "jedi.executable.args": [],
-  "jedi.completion.disableSnippets": false,
-  "jedi.diagnostics.enable": true,
-  "jedi.diagnostics.didOpen": true,
-  "jedi.diagnostics.didChange": true,
-  "jedi.diagnostics.didSave": true,
-  "jedi.workspace.extraPaths": []
+  "diagnostic-languageserver.formatFiletypes": {
+	    "python": ["black", "isort", "docformatter"]},
+  "diagnostic-languageserver.formatters": {
+	    "black": {"command": "black","args": ["black", "-q", "-"]},
+	    "isort": { "command": "isort","args": ["-q", "-"]},
+            "docformatter": {"command": "docformatter","args": ["-"]}
+  }
 }

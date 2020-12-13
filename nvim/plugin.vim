@@ -3,7 +3,7 @@
 ""
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'jooize/vim-colemak'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -22,6 +22,14 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'honza/vim-snippets'
 Plug 'puremourning/vimspector' 
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins'}
+Plug 'kristijanhusak/defx-icons' 
+Plug 'kristijanhusak/defx-git' 
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Chiel92/vim-autoformat'
+"Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
+
 call plug#end()
 ""
 "
