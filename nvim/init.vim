@@ -14,6 +14,7 @@ set splitbelow
 set relativenumber
 set rnu
 set showmatch
+set mouse=a
 "
 " Terminal
 "
@@ -62,7 +63,11 @@ iab <expr> dts strftime("%c")
 
 inoremap <c-j> <c-n>
 inoremap <c-k> <c-p>
-
+"
+"vim-Test
+"
+nmap <silent> <C-t> :TestNearest<CR>
+nmap <silent> <C-r> :TestFile<CR>
 "
 "python Setting
 "
