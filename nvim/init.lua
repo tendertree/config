@@ -11,16 +11,22 @@ o.autoindent = true
 o.smartindent = true 
 o.shiftwidth= 4
 o.paste = true -- when you paste remove stair
-o.termguicolors = true
-o.guifont = 'Blexmono Nerd Font'
+o.hidden = true 
+o.backup = false
+o.writebackup = false 
+o.cmdheight =2
+o.updatetime=300
+o.encoding = "utf-8"
+--o.mouse = "a"
+o.shortmess = o.shortmess .. "c"
 cmd([[filetype plugin indent on]])
 cmd([[syntax on]])
 
 --vim.wo.number = true
 --require('mylua')
 require('plugin')
+require('theme')
 --set the color theme 
-require("colorbuddy").colorscheme("gruvbox")
-require("nforcolemak")
-require("filetree")
+
+-- file type enable Test 
 
