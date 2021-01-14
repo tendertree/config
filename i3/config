@@ -248,3 +248,5 @@ exec --no-startup-id  ~/.config/i3/autostart.sh
 exec --no-startup-id blueman-tray
 ### nabi
 exec --no-startup-id nabi
+### toboist
+exec --no-statup-id todoist
