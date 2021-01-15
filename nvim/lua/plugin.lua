@@ -1,18 +1,26 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
--- Only required if you have packer in your `opt` pack
-vim.cmd [[packadd packer.nvim]]
-require('packer').startup(function()
-use {'npxbr/gruvbox.nvim',requires = {"tjdevries/colorbuddy.vim"}}
-use 'tendertree/nforcolemak'
-use 'mhinz/vim-startify'
-use 'kyazdani42/nvim-web-devicons'
-use 'hoob3rt/lualine.nvim'
-use 'kyazdani42/nvim-tree.lua'
-use 'neoclide/coc.nvim'
+require('packer').startup(function() 
+  --basic
+  use 'kyazdani42/nvim-tree.lua'
+  use 'tendertree/nforcolemak'
+    --snippet
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+    use 'rust-lang/vscode-rust'
+   --lsp 
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-lua/completion-nvim'
+    use 'RishabhRD/popfix'
+    use 'RishabhRD/nvim-lsputils'
+    use 'tjdevries/lsp_extensions.nvim' 
+--theme
+   use 'tjdevries/colorbuddy.vim'
+   use 'npxbr/gruvbox.nvim'
+   use 'mhinz/vim-startify'
+   use 'kyazdani42/nvim-web-devicons'
+   use 'hoob3rt/lualine.nvim'
+--etc    
 end)
 
---load colemak keye mode plugin
-require("nforcolemak")
---loap plugin settings 
+   --load colemak keye mode plugin
+
 require("plugin.filetree")
-require("plugin.coc")
