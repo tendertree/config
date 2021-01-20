@@ -17,7 +17,7 @@ vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.docum
 vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
 --load lspconfig 
 require'lspconfig'.rust_analyzer.setup{
-on_attach=custom_attach
+--on_attach=custom_attach
 }
 --Rust : add inlay 
 vim.api.nvim_command([[
