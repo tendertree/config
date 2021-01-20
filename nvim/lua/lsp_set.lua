@@ -3,7 +3,7 @@ lspconfig.util.default_config = vim.tbl_extend(
 "force",
 lspconfig.util.default_config,{on_attach=require'completion'.on_attach}
 )
---autocomplete
+--autocomplete popup menu 
 vim.o.completeopt="menu,noinsert,noselect"
 vim.g.completion_enable_snippet = 'vim-vsnip'
 --lsputil
@@ -25,4 +25,5 @@ autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
 \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment" }
 ]])
 
-
+--auto formatting 
+vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.formatting()")
