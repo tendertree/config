@@ -1,3 +1,4 @@
+vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function() 
   --basic
   use 'kyazdani42/nvim-tree.lua'
