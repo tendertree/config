@@ -1,10 +1,11 @@
 local o = vim.o
 local w = vim.wo
+local b = vim.bo
 local cmd = vim.cmd
 local fn = vim.fn 
 --basic settings 
-o.number = true
-o.relativenumber = true
+w.number = true
+w.relativenumber = true
 o.tabstop = 4
 o.autoindent = true
 o.smartindent = true 
