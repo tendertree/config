@@ -21,5 +21,7 @@ require('packer').startup(function()
    use 'hoob3rt/lualine.nvim'
 --etc    
 end)
---load plugin config 
+
+   --load colemak keye mode plugin
+
 require("plugin.filetree")
