@@ -29,8 +29,8 @@ F3으로 파이썬, rust 코드가 실행되게 함
 - vim coc플러그인 설치
 ### 0115
 - nvim-lsp를 사용하기로 함
-
+### 0130
+Packer clean을 하면 packer도 지우려고 시도하는 것을 수정 
 
 # 문제해결 
-## vim 설정파일들이 실행이 되지 않을때.. 
-packer를 ~/.confg/nvim/after 에 git clone해 놓아볼것 
+

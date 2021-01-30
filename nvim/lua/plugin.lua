@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function() 
-  --basic
+   use {'wbthomason/packer.nvim', opt = true}
+	--basic
   use 'kyazdani42/nvim-tree.lua'
   use 'tendertree/nforcolemak'
     --snippet
@@ -19,7 +20,10 @@ require('packer').startup(function()
    use 'mhinz/vim-startify'
    use 'kyazdani42/nvim-web-devicons'
    use 'hoob3rt/lualine.nvim'
+--rust
+   use 'rust-lang/rust.vim'
 --etc    
 end)
---load plugin config 
+
+   --load colemak keye mode plugin
 require("plugin.filetree")
