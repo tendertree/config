@@ -12,7 +12,7 @@ local saga = require 'lspsaga'
 saga.init_lsp_saga{
 max_hover_width = 100
 }
---
+
 require'lspconfig'.rust_analyzer.setup{
 }
 vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.formatting()")

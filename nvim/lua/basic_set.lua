@@ -22,6 +22,7 @@ o.incsearch = true
 o.ignorecase = true
 o.smartcase = true
 o.hlsearch = true
+o.clipboard ="unnamedplus"
 cmd([[filetype plugin indent on]])
 cmd([[syntax on]])
 
