@@ -13,9 +13,9 @@ my custom setting
 ====
 
 - 0107 - emacs 설정을 지움
-         neovim 설정을 lua로 해보는중 
-         pacman 업데이트 무시 패키지 추가 
-         i3 테마 교체
+ neovim 설정을 lua로 해보는중    
+         pacman 업데이트 무시 패키지 추가    
+         i3 테마 교체   
 - 0108 - vim 설정파일 lua로 교체 
 - 0109 - vim coc플러그인 설치
 - 0115 - nvim-lsp를 사용하기로 함
