@@ -19,5 +19,15 @@ vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.formatting()")
 vim.api.nvim_command('au InsertLeave *.rs lua require"lsp_extensions".inlay_hints {prefix=" ", highlight = "Comment", enabled = {"TypeHint","ChainingHint", "ParameterHint"}}') 
 
 --python
-require'lspconfig'.jedi_language_server.setup{}
+local nvim_lsp = require('nvim_lsp')
 
+require 'pylance'
+nvim_lsp.pylance.setup{
+	  settings = {
+	   python = {
+	    analysis = {
+	typeCheckingMode = "strict"
+      }
+    }
+   }
+}

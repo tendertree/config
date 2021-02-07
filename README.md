@@ -19,5 +19,6 @@ my custom setting
 - 0130 - Packer clean을 하면 packer도 지우려고 시도하는 것을 수정 
 - 0201 - rust 파일에서 inlay가 정상적으로 작동함 
 - 0202 - lsp-saga 키 설정 완료, 클립보드 연계가 됨 
+- 0207 - python 개발환경 설정 , 자동완성 단축키 설정 
 # 문제해결 
 

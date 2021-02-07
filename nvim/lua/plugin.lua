@@ -21,6 +21,7 @@ use 'hoob3rt/lualine.nvim'
 --rust
 use 'rust-lang/rust.vim'
 --etc    
+
 end)
 
    --load colemak keye mode plugin

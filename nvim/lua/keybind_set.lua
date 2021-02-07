@@ -13,10 +13,6 @@ s('n','y','"*yy',{noremap=true, silent=true})
 s('n','p','"*pp',{noremap=true, silent=true})
 
 --lspsaga key binding
---s('n','<leader>a',':LspSagaHoverDoc <CR>',{noremap=true, silent=true})
---s('n','<leader>a',':LspSagaHoverDoc <CR>',{noremap=true, silent=true})
---s('n','<leader>t',':lua require"lspsaga.provider".lsp_finder()<CR>',{noremap=true, silent=true})
-
 s('n','<leader>f',':lua require"lspsaga.provider".lsp_finder()<CR>',{noremap=true, silent=true})
 s('n','<leader>a',':lua require"lspsaga.codeaction".code_action()<CR>',{noremap=true, silent=true})
 s('v','<leader>a','<,> :lua require"lspsaga.codeaction".range_code_action()<CR>',{noremap=true, silent=true})
@@ -29,8 +25,10 @@ s('n',']e',':lua require"lspsaga.diagnostic".lsp_jump_diagnostic_next()<CR>',{no
 s('n','<C-t>',':lua require"lspsaga.floaterm".open_float_terminal()<CR>',{noremap=true, silent=true})
 s('t','<C-t>','<C-\\><C-n> :lua require"lspsaga.floaterm".close_float_terminal()<CR>',{noremap=true, silent=true})
 
-
---auto complete
+--autocomplete
+vim.api.nvim_set_keymap('i', '<C-j>', 'pumvisible() ? "<C-n>" : "<Tab>"', {expr = true})
+vim.api.nvim_set_keymap('i', '<C-k>', 'pumvisible() ? "<C-p>" : "<Tab>"', {expr = true})
+--snippet
 --vim.g.UltiSnipsExpandTrigger="<tab>"
 vim.g.UltiSnipsJumpForwardTrigger="<C-i>"
 vim.g.UltiSnipsJumpBackwardTrigger="<C-h>"
