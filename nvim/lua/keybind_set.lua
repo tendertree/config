@@ -7,6 +7,11 @@ require("nforcolemak")
 s('n', '<C-b>',':NvimTreeToggle<CR>',{noremap=true})
 --leaderkey 
 vim.g.mapleader = 'o'
+--file search 
+s('n', '<c-o>', ':Files<CR>',{noremap=true})
+s('n', '<leader>b', ':Buffers<CR>',{noremap=true})
+s('n', '\\', ':Rg<CR>',{noremap=true})
+
 --lsp key bind set   
 --copy & paste
 s('n','y','"*yy',{noremap=true, silent=true})

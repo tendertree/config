@@ -20,8 +20,10 @@ use 'kyazdani42/nvim-web-devicons'
 use 'hoob3rt/lualine.nvim'
 --rust
 use 'rust-lang/rust.vim'
---etc    
-
+--filesearch    
+use 'junegunn/fzf.vim'
+use 'preservim/tagbar'
+use 'ludovicchabant/vim-gutentags'
 end)
 
    --load colemak keye mode plugin
