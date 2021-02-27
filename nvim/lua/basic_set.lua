@@ -24,6 +24,7 @@ o.smartcase = true
 o.hlsearch = true
 o.clipboard ="unnamedplus"
 o.grepprg= 'rg \\ --vimgrep\\ --smart-case\\ --follow'
+
 cmd([[filetype plugin indent on]])
 cmd([[syntax on]])
 

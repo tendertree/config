@@ -18,6 +18,7 @@ use 'npxbr/gruvbox.nvim'
 use 'mhinz/vim-startify'
 use 'kyazdani42/nvim-web-devicons'
 use 'hoob3rt/lualine.nvim'
+use 'rktjmp/lush.nvim'
 --rust
 use 'rust-lang/rust.vim'
 --filesearch    

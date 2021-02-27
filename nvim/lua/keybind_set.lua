@@ -18,6 +18,7 @@ s('n','y','"*yy',{noremap=true, silent=true})
 s('n','p','"*pp',{noremap=true, silent=true})
 
 --lspsaga key binding
+--s('n','<leader>t',':lua require"lsp_extensions"`.inlay_hints()',{noremap=true, silent=true})
 s('n','<leader>f',':lua require"lspsaga.provider".lsp_finder()<CR>',{noremap=true, silent=true})
 s('n','<leader>a',':lua require"lspsaga.codeaction".code_action()<CR>',{noremap=true, silent=true})
 s('v','<leader>a','<,> :lua require"lspsaga.codeaction".range_code_action()<CR>',{noremap=true, silent=true})

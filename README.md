@@ -21,5 +21,6 @@ my custom setting
 - 0202 - lsp-saga 키 설정 완료, 클립보드 연계가 됨 
 - 0207 - python 개발환경 설정 , 자동완성 단축키 설정 
 - 0208 - uctag, fzf 설치 
+- 0227 - lush 설치(color scheme관련)
 # 문제해결 
 
