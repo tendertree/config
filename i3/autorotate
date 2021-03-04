@@ -11,7 +11,7 @@ PROP="Coordinate Transformation Matrix"
 transform () {
     for device in "SYNA327E:00 06CB:CD4F Touchpad" \
                       "ELAN2514:00 04F3:2812 Pen (0)" \
-                      "pointer:ELAN2514:00 04F3:2812"; do
+                      "pointer:ELAN2514:00 04F3:280E"; do
     xinput set-prop "$device" --type=float "$PROP" "$@"
     done
 }
@@ -21,7 +21,7 @@ do
 
 if [ "$line" = "Accelerometer orientation changed: left-up" ]; then
     xrandr -o left
-    transform 0 -1 1 1 0 0 0 0 1
+   transform 0 -1 1 1 0 0 0 0 1
 fi
 if [ "$line" = "Accelerometer orientation changed: right-up" ]; then
     xrandr -o right
