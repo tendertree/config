@@ -46,8 +46,6 @@ bar {
 exec_always --no-startup-id xrdb -load ~/.Xresources
 
 # run once
-exec --no-startup-id slimbookbattery
-exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xfsettingsd
 exec --no-startup-id redshift-gtk
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
@@ -86,7 +84,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
 # backlight
 bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-
+q
 ###########          Workspace Bindings          ###############
 set $1 "1. "
 set $2 "2. "
@@ -250,7 +248,3 @@ exec --no-startup-id  ~/.config/i3/autostart.sh
 exec --no-startup-id blueman-tray
 ### nabi
 exec --no-startup-id nabi
-### toboist
-### layout load
-## auto rotate 
-exec --no-startup-id ~/.config/i3/autorotate

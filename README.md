@@ -22,5 +22,6 @@ my custom setting
 - 0207 - python 개발환경 설정 , 자동완성 단축키 설정 
 - 0208 - uctag, fzf 설치 
 - 0227 - lush 설치(color scheme관련)
+- 0304 - 이제부터 i3에서 자동회전이 적용됨 
 # 문제해결 
 
