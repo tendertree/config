@@ -7,6 +7,8 @@ use 'tendertree/nforcolemak'
 --snippet
 use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
+use 'mlaursen/vim-react-snippets'
+
 --lsp 
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'

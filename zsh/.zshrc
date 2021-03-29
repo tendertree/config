@@ -118,3 +118,4 @@ if type rg &> /dev/null; then
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export PATH="$PATH:$(yarn global bin)"

@@ -20,4 +20,5 @@ vim.api.nvim_command('au InsertLeave *.rs lua require"lsp_extensions".inlay_hint
 
 --python
 require'lspconfig'.jedi_language_server.setup{}
-
+--typescript & javascript
+require'lspconfig'.tsserver.setup{}
