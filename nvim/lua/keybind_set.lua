@@ -39,4 +39,5 @@ vim.api.nvim_set_keymap('i', '<C-k>', 'pumvisible() ? "<C-p>" : "<Tab>"', {expr 
 vim.g.UltiSnipsJumpForwardTrigger="<C-i>"
 vim.g.UltiSnipsJumpBackwardTrigger="<C-h>"
 -- make tab smart 
-
+-- code runner for language 
+vim.api.nvim_command("autocmd BufWinEnter *.py nnoremap <M-;> :w !<CR>:exec '!python3' shellescape(@%, 1)<CR>")
