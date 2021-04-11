@@ -25,6 +25,6 @@ my custom setting
 - 0304 - 이제부터 i3에서 자동회전이 적용됨 
 - 0329 - `typescript`,`js` lsp 기능이 활성화, react 관련 snippet 설치, `yarn glbal` path 첨가 
 - 0401 - `Alt`+`P`를 누르면 python 코드가 실행되도록 설정 
-- 0411 - `treesitter`를 설치했다. 작동이 잘 되는가 .. ? 
+- 0411 - `treesitter`를 설치했다. 작동이 안된다.... ? 
 # 문제해결 
 

@@ -9,7 +9,7 @@ use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
 use 'mlaursen/vim-react-snippets'
 --trisitter
-use 'nvim-treesitter/nvim-treesitter'
+--use 'nvim-treesitter/nvim-treesitter'
 --lsp 
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'
@@ -32,5 +32,4 @@ end)
 
 require('lsp_extensions')
 require('plugin.filetree')
-require('plugin.treesitter')
 
