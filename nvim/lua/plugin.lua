@@ -8,7 +8,8 @@ use 'tendertree/nforcolemak'
 use 'SirVer/ultisnips'
 use 'honza/vim-snippets'
 use 'mlaursen/vim-react-snippets'
-
+--trisitter
+use 'nvim-treesitter/nvim-treesitter'
 --lsp 
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'
@@ -29,8 +30,7 @@ use 'preservim/tagbar'
 use 'ludovicchabant/vim-gutentags'
 end)
 
-   --load colemak keye mode plugin
 require('lsp_extensions')
 require('plugin.filetree')
---use 'RishabhRD/nvim-lsputils'
---use 'RishabhRD/nvim-lsputils'
+require('plugin.treesitter')
+
