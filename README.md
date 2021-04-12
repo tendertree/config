@@ -26,5 +26,6 @@ my custom setting
 - 0329 - `typescript`,`js` lsp 기능이 활성화, react 관련 snippet 설치, `yarn glbal` path 첨가 
 - 0401 - `Alt`+`P`를 누르면 python 코드가 실행되도록 설정 
 - 0411 - `treesitter`를 설치했다. 작동이 안된다.... ? 
+- 0412 - `emmet` 플러그인을 설치했다. 
 # 문제해결 
 

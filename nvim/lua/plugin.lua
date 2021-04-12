@@ -10,6 +10,7 @@ use 'honza/vim-snippets'
 use 'mlaursen/vim-react-snippets'
 --trisitter
 --use 'nvim-treesitter/nvim-treesitter'
+use 'mattn/emmet-vim'
 --lsp 
 use 'neovim/nvim-lspconfig'
 use 'nvim-lua/completion-nvim'
