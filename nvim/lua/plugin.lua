@@ -23,7 +23,11 @@ use 'mhinz/vim-startify'
 use 'kyazdani42/nvim-web-devicons'
 use 'hoob3rt/lualine.nvim'
 use 'rktjmp/lush.nvim'
---rust
+--language 
+use 'pangloss/vim-javascript'    
+use 'leafgarland/typescript-vim' 
+use 'maxmellon/vim-jsx-pretty'   
+use 'jparise/vim-graphql'   
 use 'rust-lang/rust.vim'
 --filesearch    
 use 'junegunn/fzf.vim'

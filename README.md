@@ -27,5 +27,6 @@ my custom setting
 - 0401 - `Alt`+`P`를 누르면 python 코드가 실행되도록 설정 
 - 0411 - `treesitter`를 설치했다. 작동이 안된다.... ? 
 - 0412 - `emmet` 플러그인을 설치했다. 
+- 0413 - `js`나`typescript`에 대한 `syntax` 관련 플러그인들을 설치했다 
 # 문제해결 
 
