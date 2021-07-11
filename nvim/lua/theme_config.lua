@@ -33,7 +33,7 @@ local lualine = require('lualine')
         lualine_z = {   }
       }
       lualine.extensions = {'fzf'}
-      lualine.status()
+	  lualine.setup(config)
 --- lsp setting 
 vim.fn.sign_define("LspDiagnosticsSignError",
     {text = "", texthl = "GruvboxRed"})

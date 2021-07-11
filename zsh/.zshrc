@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # alias
 alias nv="nvim"
+alias onow = "journalctl --user-unit=onedrive -f"
 # ripgrep
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
@@ -118,4 +119,7 @@ if type rg &> /dev/null; then
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export PATH="$PATH:$(yarn global bin)"
+export PATH="$PATH:$(yarn global bin)
+
+
+
