@@ -1,2 +1,60 @@
-# my Setting 
-my personal setting
+
+<h1 align="center">
+  <br>
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
+  <br>
+  Markdownify
+  <br>
+</h1>
+
+<h4 align="center">my personal config collection </h4>
+
+<p align="center">
+
+    `v  
+ 
+</p>
+
+<p align="center">
+  <a href="#list">list</a> •
+  <a href="#download">Download</a> •
+  <a href="#Todo">Todo</a> •
+  <a href="#Theme">Theme</a> •
+  <a href="#license">License</a>
+</p>
+
+![screenshot]("https://i.imgur.com/eBWJEvU.jpg")
+
+## list
+
+* neovim
+  - Instantly see what your Markdown documents look like in HTML as you create them.
+* zsh
+  - add some plugin, alias, etc..
+* starship 
+  - Shell Prompt
+* windowTerminal
+  - json setting files  
+* termite, xmodemap, 
+> **Note**
+It works fine in WSL(Arch), but I haven't checked elsewhere. The neovim keyboard layout is set based on colemak-dh. If your key placement is weird, remove the colemak-dh part from the plugin
+## Download
+just copy and pasted 
+## Todo
+
+add some script 
+
+## Theme
+
+- small variation of [melange](https://github.com/savq/melange-nvim) - 
+
+
+## License
+
+MIT
+
+---
+> GitHub [tendertree@gmail.com](mailto:tendertree@gmail.com) &nbsp;&middot;&nbsp;
+
+
+
