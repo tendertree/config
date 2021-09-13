@@ -1,3 +1,4 @@
+use std::env;
 use std::fs;
 static DATA_PATH: &str = "~/config/data";
 
@@ -7,8 +8,9 @@ fn copy_file(from: &str, dest: &str) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 fn main() {
-    println!("upload neovim config");
-    copy_file("~/hi.txt", DATA_PATH);
+    let current_dir = std::env::current_dir();
+    println!("upload neovim config {}", current_dir.display());
+    //copy_file("~/hi.txt", DATA_PATH);
 }
 
 #[test]
