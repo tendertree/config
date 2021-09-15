@@ -1,19 +1,13 @@
 
 <h1 align="center">
   <br>
-  <img src=""https://i.imgur.com/eBWJEvU.jpg" alt="Markdscreenshot" width="200">
+  <img src=""https://i.imgur.com/eBWJEvU.jpg" width="200" heigt="400">
   <br>
-  Markdownify
+  MyConfig
   <br>
 </h1>
 
 <h4 align="center">my personal config collection </h4>
-
-<p align="center">
-
-    `v  
- 
-</p>
 
 <p align="center">
   <a href="#list">list</a> •
