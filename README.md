@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <img src=""https://i.imgur.com/eBWJEvU.jpg" width="200" heigt="400">
+  <img src="https://i.imgur.com/eBWJEvU.jpg" width="200" heigt="400">
   <br>
   MyConfig
   <br>
