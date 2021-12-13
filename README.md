@@ -33,6 +33,6 @@ my custom setting
 =======
 - 0413 - `js`나`typescript`에 대한 `syntax` 관련 플러그인들을 설치했다 
 - 0711 - `neovim`이 `0,5`가 되어서 업데이트 하고 플러그인들을 점검했다 
->>>>>>> cdef568d1e825312b15b92ce1ff366cba68353af
+- 1213 - `termite` 설정 추가 
 # 문제해결 
 
