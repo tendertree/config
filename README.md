@@ -33,6 +33,8 @@ my custom setting
 =======
 - 0413 - `js`나`typescript`에 대한 `syntax` 관련 플러그인들을 설치했다 
 - 0711 - `neovim`이 `0,5`가 되어서 업데이트 하고 플러그인들을 점검했다 
+- 1201 - 사용한지 너무 오래되서 기존의 설정들을 리셋하고 다시 설치한다. 
 - 1213 - `termite` 설정 추가 
+- 1214 - `i3`: bluetooth, redshift 실행 되게 변경, autostart.sh 에 콜맥, 키변경 라인 추가 Xmodmap 파일 추가  
 # 문제해결 
 
