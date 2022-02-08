@@ -1,7 +1,7 @@
 # mysetting
 my custom setting
 
-2020
+#2020
 ====
 - 1112 - emacs 설정을 잡아봄 
 - 1113 - emacs 사용을 포기함
@@ -9,7 +9,7 @@ my custom setting
 - 1213 - vim-autofmg르 설치함 
 - 1216 - F3으로 파이썬, rust 코드가 실행되게 함 
 
-2021
+#2021
 ====
 
 - 0107 - neovim 설정을 lua로 교체, pacman 업데이트 무시 패키지 추가,i3 테마 교체   
@@ -27,17 +27,13 @@ my custom setting
 - 0401 - `Alt`+`P`를 누르면 python 코드가 실행되도록 설정 
 - 0411 - `treesitter`를 설치했다. 작동이 안된다.... ? 
 - 0412 - `emmet` 플러그인을 설치했다. 
-
 - 0413 - `js`나`typescript`에 대한 `syntax` 관련 플러그인들을 설치했다
 - 1201 - 사용한지 너무 오래되서 기존의 설정들을 리셋하고 다시 설치한다
-=======
-- 0413 - `js`나`typescript`에 대한 `syntax` 관련 플러그인들을 설치했다 
 - 0711 - `neovim`이 `0,5`가 되어서 업데이트 하고 플러그인들을 점검했다 
-- 1201 - 사용한지 너무 오래되서 기존의 설정들을 리셋하고 다시 설치한다. 
 - 1213 - `termite` 설정 추가 
 - 1214 - `i3`: bluetooth, redshift 실행 되게 변경, autostart.sh 에 콜맥, 키변경 라인 추가 Xmodmap 파일 추가  
 
-=======
-2022
+#2022
+====
 - 0209 - 새롭게 `neovim` 설정파일을 꾸며보는 중.. `git ui` 설정파일 추가 
 
