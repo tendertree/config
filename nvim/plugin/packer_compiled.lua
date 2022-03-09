@@ -89,10 +89,15 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/colorbuddy.vim",
     url = "https://github.com/tjdevries/colorbuddy.vim"
   },
-  ["gruvbox.nvim"] = {
+  everforest = {
     loaded = true,
-    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
@@ -113,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-hardline"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-hardline",
+    url = "https://github.com/ojroques/nvim-hardline"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -150,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/vim-startify",
@@ -167,5 +182,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

@@ -2,8 +2,22 @@
 local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
+--vim.o.colorscheme =everforest
+--vim.api.nvim_set_option('colorscheme', 'everforest')
+--vim.o.background=dark
+vim.cmd('colorscheme everforest')
+vim.g["everforest_background"] = 'hard'
+vim.o.background="dark"
 --loag coloar setting 
-require("colorbuddy").colorscheme("gruvbox")
+--require("colorbuddy").colorscheme("gruvbox")
+--color set theme
+
+require'lualine'.setup {
+          options = {
+            theme = 'everforest'
+          }
+        }
+
 --startify setting
 vim.g.startify_session_persistence = true
 vim.g.startify_custom_header = {

@@ -12,27 +12,30 @@ vim.cmd [[
   augroup end
 ]]
 
-local use = require('packer').use
-require('packer').startup(function()
-  use 'wbthomason/packer.nvim' -- Package manager
+
+require('packer').startup(function(use)
+	use 'wbthomason/packer.nvim'
 --Locked
 -- use 'tpope/vim-fugitive' -- Git commands in nvim
 -- use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
--- use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+--use {'numToStr/Comment.nvim',config = function() require('Comment').setup() end} -- "gc" to comment visual regions/lines
+
 -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 -- use 'lukas-reineke/indent-blankline.nvim'
 --use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 -- use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 -- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
--- UI
-  use 'tendertree/nforcolemak' 
+-- UI 
+  use 'terrortylor/nvim-comment'
+  use 'tendertree/nforcolemak'
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects' --additional text object
   use {"akinsho/toggleterm.nvim"}
   -- theme
   use {'ojroques/nvim-hardline'}
   use 'tjdevries/colorbuddy.vim' -- 색상 변경 
-  use  { "ellisonleao/gruvbox.nvim" } -- 컬러 테마 
+ -- use  { "ellisonleao/gruvbox.nvim" } -- 컬러 테마 
+  use {'sainnhe/everforest'}
   use 'mhinz/vim-startify' -- 시작 화면 
   use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }} 
 use {
@@ -59,3 +62,4 @@ require("plugin.lsp")
 require("plugin.saga")
 require("plugin.term")
 require("plugin.lualine")
+require('nvim_comment').setup()
