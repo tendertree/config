@@ -28,8 +28,9 @@ require('packer').startup(function(use)
 -- UI 
   use 'terrortylor/nvim-comment'
   use 'tendertree/nforcolemak'
-  use 'nvim-treesitter/nvim-treesitter'
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'nvim-treesitter/nvim-treesitter-textobjects' --additional text object
+  use 'romgrk/nvim-treesitter-context'
   use {"akinsho/toggleterm.nvim"}
   -- theme
   use {'ojroques/nvim-hardline'}
@@ -62,4 +63,5 @@ require("plugin.lsp")
 require("plugin.saga")
 require("plugin.term")
 require("plugin.lualine")
+require("plugin.treesitter")
 require('nvim_comment').setup()
