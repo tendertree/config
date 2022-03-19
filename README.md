@@ -38,3 +38,4 @@ my custom setting
 - 0209 - 새롭게 `neovim` 설정파일을 꾸며보는 중.. `git ui` 설정파일 추가 
 - 0309 - `lsp` 키 설정, `comment` 플러그인 설치
 - 0311 - `treesitter` 플러그인 설치 
+- 0319 - `impatient` 와 `barbar`vim 플러그인 설치 
