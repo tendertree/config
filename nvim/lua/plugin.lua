@@ -38,7 +38,7 @@ require('packer').startup(function(use)
  -- use  { "ellisonleao/gruvbox.nvim" } -- 컬러 테마 
   use {'sainnhe/everforest'}
   use 'mhinz/vim-startify' -- 시작 화면 
-  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }} 
+  use 'nvim-lualine/lualine.nvim'
 use {
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -46,6 +46,8 @@ use {
     },
     config = function() require'nvim-tree'.setup {} end
 }
+use 'lewis6991/impatient.nvim'
+use 'romgrk/barbar.nvim' -- tab line
   --LSP
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'williamboman/nvim-lsp-installer'
@@ -65,3 +67,4 @@ require("plugin.term")
 require("plugin.lualine")
 require("plugin.treesitter")
 require('nvim_comment').setup()
+require('impatient')

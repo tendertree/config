@@ -31,6 +31,6 @@ opt={'menuone', 'noinsert', 'noselect'}
 -- syntax on 
 cmd([[filetype plugin indent on]])
 cmd([[syntax on]])
-
+cmd([[set mouse=a]])
 -- no more use 
 --o.mouse = "a"
