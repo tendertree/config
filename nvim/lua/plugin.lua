@@ -19,8 +19,8 @@ require('packer').startup(function(use)
 -- use 'tpope/vim-fugitive' -- Git commands in nvim
 -- use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
 --use {'numToStr/Comment.nvim',config = function() require('Comment').setup() end} -- "gc" to comment visual regions/lines
-
--- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+ use 'preservim/tagbar'
+ use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 -- use 'lukas-reineke/indent-blankline.nvim'
 --use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 -- use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -31,6 +31,8 @@ require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'nvim-treesitter/nvim-treesitter-textobjects' --additional text object
   use 'romgrk/nvim-treesitter-context'
+  use 'RRethy/nvim-treesitter-textsubjects'
+
   use {"akinsho/toggleterm.nvim"}
   -- theme
   use {'ojroques/nvim-hardline'}
@@ -59,7 +61,7 @@ use 'romgrk/barbar.nvim' -- tab line
   use "rafamadriz/friendly-snippets"
 end)
 
-
+-- LSP config 
 
 require("plugin.lsp")
 require("plugin.saga")

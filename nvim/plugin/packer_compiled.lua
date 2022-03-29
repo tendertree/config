@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -98,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
@@ -150,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/romgrk/nvim-treesitter-context"
+  },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
@@ -165,10 +180,20 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  tagbar = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/tagbar",
+    url = "https://github.com/preservim/tagbar"
+  },
   ["toggleterm.nvim"] = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-gutentags"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/vim-gutentags",
+    url = "https://github.com/ludovicchabant/vim-gutentags"
   },
   ["vim-startify"] = {
     loaded = true,
