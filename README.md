@@ -40,3 +40,4 @@ my custom setting
 - 0311 - `treesitter` 플러그인 설치 
 - 0319 - `impatient` 와 `barbar`vim 플러그인 설치 
 - 0329 - `treesitter` 관련 플러그인 설치.. 작동이 되는건가? 
+- 0418 - 이제 wsl2에서 yank를 하면 제대로 클립보드 복사가 된다 

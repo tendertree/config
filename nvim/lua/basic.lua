@@ -34,3 +34,6 @@ cmd([[syntax on]])
 cmd([[set mouse=a]])
 -- no more use 
 --o.mouse = "a"
+--
+-- use system clipboard
+vim.o.clipboard = "unnamedplus"
