@@ -1,3 +1,4 @@
+
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
@@ -22,12 +23,13 @@ require('packer').startup(function(use)
  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 -- use 'lukas-reineke/indent-blankline.nvim'
 --use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
--- use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
--- use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'nvim-lua/plenary.nvim'
+  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 -- UI 
   use 'terrortylor/nvim-comment'
   use 'tendertree/nforcolemak'
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'} 
   use 'nvim-treesitter/nvim-treesitter-textobjects' --additional text object
   use 'romgrk/nvim-treesitter-context'
   use 'RRethy/nvim-treesitter-textsubjects'
@@ -36,7 +38,6 @@ require('packer').startup(function(use)
   -- theme
   use {'ojroques/nvim-hardline'}
   use 'tjdevries/colorbuddy.vim' -- 색상 변경 
- -- use  { "ellisonleao/gruvbox.nvim" } -- 컬러 테마 
   use {'sainnhe/everforest'}
   use 'mhinz/vim-startify' -- 시작 화면 
   use 'nvim-lualine/lualine.nvim'
@@ -49,7 +50,14 @@ use {
 }
 use 'lewis6991/impatient.nvim'
 use 'romgrk/barbar.nvim' -- tab line
-  --LSP
+use{ 'anuvyklack/pretty-fold.nvim', -- fold
+   config = function()
+      require('pretty-fold').setup()
+   end
+}
+
+
+--LSP
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'williamboman/nvim-lsp-installer'
   use { 'tami5/lspsaga.nvim' }
