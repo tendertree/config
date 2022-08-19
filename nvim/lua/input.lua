@@ -48,4 +48,4 @@ local on_attach = function(_, bufnr)
 end
 -- load other key settings
 require("input.nvim_tree")
-
+require("input.fuzy")

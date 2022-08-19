@@ -55,7 +55,8 @@ use{ 'anuvyklack/pretty-fold.nvim', -- fold
       require('pretty-fold').setup()
    end
 }
-
+use 'jose-elias-alvarez/null-ls.nvim'
+use 'MunifTanjim/prettier.nvim'
 
 --LSP
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
@@ -67,7 +68,7 @@ use{ 'anuvyklack/pretty-fold.nvim', -- fold
   use 'L3MON4D3/LuaSnip' -- snippetet
   use "rafamadriz/friendly-snippets"
 end)
-
+-- finder 
 -- LSP config 
 
 require("plugin.lsp")
@@ -77,3 +78,5 @@ require("plugin.lualine")
 require("plugin.treesitter")
 require('nvim_comment').setup()
 require('impatient')
+require('telescope').load_extension('fzf')
+require("plugin.nullls")
