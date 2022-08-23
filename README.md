@@ -1,7 +1,7 @@
 # mysetting
 my custom setting
 
-#2020
+# 2020
 ====
 - 1112 - emacs 설정을 잡아봄 
 - 1113 - emacs 사용을 포기함
@@ -9,7 +9,7 @@ my custom setting
 - 1213 - vim-autofmg르 설치함 
 - 1216 - F3으로 파이썬, rust 코드가 실행되게 함 
 
-#2021
+# 2021
 ====
 
 - 0107 - neovim 설정을 lua로 교체, pacman 업데이트 무시 패키지 추가,i3 테마 교체   
@@ -33,7 +33,7 @@ my custom setting
 - 1213 - `termite` 설정 추가 
 - 1214 - `i3`: bluetooth, redshift 실행 되게 변경, autostart.sh 에 콜맥, 키변경 라인 추가 Xmodmap 파일 추가  
 
-#2022
+# 2022
 ====
 - 0209 - 새롭게 `neovim` 설정파일을 꾸며보는 중.. `git ui` 설정파일 추가 
 - 0309 - `lsp` 키 설정, `comment` 플러그인 설치
@@ -43,3 +43,4 @@ my custom setting
 - 0418 - 이제 wsl2에서 yank를 하면 제대로 클립보드 복사가 된다 
 - 0804 - `treesitter`가 지원하는 언어관련 설정파일 수정, `anuvyklack/pretty-fold`설치 
 - 0819 - `formatter` 플러그인 설치 
+- 0823 - `telescope` 설정과 키맵, `lsp saga`를 원제작자 버전으로 변경 

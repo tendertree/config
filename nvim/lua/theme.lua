@@ -7,7 +7,7 @@ o.guifont = 'Blexmono Nerd Font'
 --vim.o.background=dark
 vim.cmd('colorscheme everforest')
 vim.g["everforest_background"] = 'hard'
-vim.o.background="dark"
+o.background="dark"
 --loag coloar setting 
 --require("colorbuddy").colorscheme("gruvbox")
 --color set theme
@@ -41,3 +41,9 @@ require('lualine').setup {
     theme = 'everforest'
   }
   }
+-- Color settings
+--local Group = colorbuddy.Color
+--
+-- Group.new('CursorLine', colors.none, colors.base03, styles.NONE, colors.base1)
+-- Group.new('CursorLineNr', colors.yellow, colors.black, styles.NONE, colors.base10)
+-- Group.new('Visual', colors.none, colors.base03, styles.reverse)

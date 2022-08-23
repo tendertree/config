@@ -104,15 +104,26 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+  },
   ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\nA\0\0\4\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0004\3\0\0B\1\2\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0" },
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/tami5/lspsaga.nvim"
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -123,6 +134,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nforcolemak",
     url = "https://github.com/tendertree/nforcolemak"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -139,11 +160,6 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-hardline",
     url = "https://github.com/ojroques/nvim-hardline"
   },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -154,6 +170,31 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/romgrk/nvim-treesitter-context"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-treesitter-textsubjects"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textsubjects",
+    url = "https://github.com/RRethy/nvim-treesitter-textsubjects"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -170,10 +211,26 @@ _G.packer_plugins = {
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
+  },
+  ["pretty-fold.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16pretty-fold\frequire\0" },
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
+    url = "https://github.com/anuvyklack/pretty-fold.nvim"
+  },
   tagbar = {
     loaded = true,
     path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/tendertree/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -203,6 +260,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: pretty-fold.nvim
+time([[Config for pretty-fold.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16pretty-fold\frequire\0", "config", "pretty-fold.nvim")
+time([[Config for pretty-fold.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\nA\0\0\4\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0004\3\0\0B\1\2\1K\0\1\0\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")

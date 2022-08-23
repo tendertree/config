@@ -32,6 +32,7 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
