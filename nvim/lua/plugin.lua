@@ -84,6 +84,10 @@ require('packer').startup(function(use)
 	use 'L3MON4D3/LuaSnip' -- snippetet
 	use "rafamadriz/friendly-snippets"
 	use "lukas-reineke/lsp-format.nvim"
+	--language setting
+	use 'simrat39/rust-tools.nvim'
+	-- Debugging
+	use 'mfussenegger/nvim-dap'
 end)
 -- finder
 -- LSP config
