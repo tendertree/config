@@ -41,3 +41,4 @@ my custom setting
 - 0819 - `formatter` 플러그인 설치 
 - 0823 - `telescope` 설정과 키맵, `lsp saga`를 원제작자 버전으로 변경 
 - 0825 - `rust anyalze` 와 기타 단축키를 설정했다.
+- 0905 - 몇몇 단축키를 변경했다 

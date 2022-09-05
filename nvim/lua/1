@@ -27,7 +27,7 @@ s('n', '<leader>w', '<C-w>w', { noremap = true })
 
 --lsp saga
 s('n', '<leader>hd', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })
-s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
+s('n', 'gh', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
 s('n', 'ca', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', '<leader>h', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
