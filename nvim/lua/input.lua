@@ -28,13 +28,13 @@ s('n', '<leader>w', '<C-w>w', { noremap = true })
 --lsp saga
 s('n', '<leader>hd', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })
 s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
-s('n', 'ca', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
-s('n', '<leader>h', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
+s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
+s('n', '<leader>pd', ':Lspsaga preview_definition<CR>', { noremap = true, silent = true })
+s("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
+s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
-s('n', '<leader>g', ':Lspsaga preview_definition<CR>', { noremap = true, silent = true })
 s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-s("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
 
 local action = require("lspsaga.action")
 -- scroll in hover doc or  definition preview window
@@ -61,7 +61,7 @@ local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl',
 		'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 	--vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so',
@@ -72,7 +72,7 @@ end
 -- nvim tree
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 --telescope
---vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope file_browser<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>td', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tb', ':Telescope buffers<CR>', { noremap = true, silent = true })
