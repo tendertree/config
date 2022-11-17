@@ -37,15 +37,15 @@ s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
 s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 
-local action = require("lspsaga.action")
+--local action = require("lspsaga.action")
 -- scroll in hover doc or  definition preview window
-vim.keymap.set("n", "<C-f>", function()
-	action.smart_scroll_with_saga(1)
-end, { silent = true })
--- scroll in hover doc or  definition preview window
-vim.keymap.set("n", "<C-b>", function()
-	action.smart_scroll_with_saga(-1)
-end, { silent = true })
+--vim.keymap.set("n", "<C-f>", function()
+--	action.smart_scroll_with_saga(1)
+--end, { silent = true })
+---- scroll in hover doc or  definition preview window
+--vim.keymap.set("n", "<C-b>", function()
+--	action.smart_scroll_with_saga(-1)
+--end, { silent = true })
 
 
 

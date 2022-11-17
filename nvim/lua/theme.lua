@@ -2,45 +2,39 @@
 local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
---vim.o.colorscheme =everforest
---vim.api.nvim_set_option('colorscheme', 'everforest')
---vim.o.background=dark
 vim.cmd('colorscheme everforest')
-vim.g["everforest_background"] = 'hard'
-o.background="dark"
---loag coloar setting 
---require("colorbuddy").colorscheme("gruvbox")
---color set theme
+vim.g["everforest_background"] = 'medium'
+o.background = "light"
 
-require'lualine'.setup {
-          options = {
-            theme = 'everforest'
-          }
-        }
+require 'lualine'.setup {
+	options = {
+		theme = 'everforest'
+	}
+}
 
 --startify setting
 vim.g.startify_session_persistence = true
 vim.g.startify_custom_header = {
-     '                  ',
-     '        <(- )___  ',
-     '         ( ._> /  ',
-     '          `---`   '
+	'                  ',
+	'        <(- )___  ',
+	'         ( ._> /  ',
+	'          `---`   '
 }
------ lsp setting 
+----- lsp setting
 vim.fn.sign_define("LspDiagnosticsSignError",
-    {text = "", texthl = "GruvboxRed"})
+	{ text = "", texthl = "GruvboxRed" })
 vim.fn.sign_define("LspDiagnosticsSignWarning",
-    {text = "", texthl = "GruvboxYellow"})
+	{ text = "", texthl = "GruvboxYellow" })
 vim.fn.sign_define("LspDiagnosticsSignInformation",
-    {text = "🛈", texthl = "GruvboxBlue"})
+	{ text = "🛈", texthl = "GruvboxBlue" })
 vim.fn.sign_define("LspDiagnosticsSignHint",
-    {text = "!", texthl = "GruvboxAqua"})
----lualine setting 
+	{ text = "!", texthl = "GruvboxAqua" })
+---lualine setting
 require('lualine').setup {
-  options = {
-    theme = 'everforest'
-  }
-  }
+	options = {
+		theme = 'everforest'
+	}
+}
 -- Color settings
 --local Group = colorbuddy.Color
 --
