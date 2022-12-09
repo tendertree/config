@@ -35,7 +35,7 @@ require('packer').startup(function(use)
 	use 'windwp/nvim-autopairs'
 	use 'windwp/nvim-ts-autotag'
 	use "akinsho/toggleterm.nvim"
-	use { "folke/todo-comments.nvim",config = function() require("todo-comments").setup {}  end}
+	use { "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end }
 	-- theme
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
@@ -52,7 +52,7 @@ require('packer').startup(function(use)
 	}
 	use 'lewis6991/impatient.nvim'
 	use 'romgrk/barbar.nvim' -- tab line
-	use { 'anuvyklack/pretty-fold.nvim', config = function()require('pretty-fold').setup{}	end	}
+	use { 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup {} end }
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'MunifTanjim/prettier.nvim'
 
@@ -85,8 +85,8 @@ require('packer').startup(function(use)
 	use 'mfussenegger/nvim-dap'
 end)
 -- finder
--- some plugin setting 
-
+-- some plugin setting
+require("todo-comments").setup {}
 -- LSP config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
