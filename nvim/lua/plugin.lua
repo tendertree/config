@@ -20,8 +20,6 @@ require('packer').startup(function(use)
 	-- use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
 	use 'preservim/tagbar'
 	use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-	-- use 'lukas-reineke/indent-blankline.nvim'
-	--use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 	use 'nvim-lua/plenary.nvim'
 	use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -36,7 +34,8 @@ require('packer').startup(function(use)
 	use 'RRethy/nvim-treesitter-textsubjects'
 	use 'windwp/nvim-autopairs'
 	use 'windwp/nvim-ts-autotag'
-	use { "akinsho/toggleterm.nvim" }
+	use "akinsho/toggleterm.nvim"
+	use { "folke/todo-comments.nvim",config = function() require("todo-comments").setup {}  end}
 	-- theme
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
@@ -53,11 +52,7 @@ require('packer').startup(function(use)
 	}
 	use 'lewis6991/impatient.nvim'
 	use 'romgrk/barbar.nvim' -- tab line
-	use { 'anuvyklack/pretty-fold.nvim', -- fold
-		config = function()
-			require('pretty-fold').setup()
-		end
-	}
+	use { 'anuvyklack/pretty-fold.nvim', config = function()require('pretty-fold').setup{}	end	}
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'MunifTanjim/prettier.nvim'
 
@@ -90,6 +85,8 @@ require('packer').startup(function(use)
 	use 'mfussenegger/nvim-dap'
 end)
 -- finder
+-- some plugin setting 
+
 -- LSP config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')

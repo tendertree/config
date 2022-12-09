@@ -44,3 +44,4 @@ my custom setting
 - 0905 - 몇몇 단축키를 변경했다 
 - 0909 - 몇몇 단축키를 변경 
 - 1116 - zsh suggestion과 syntax plugin 추가 
+- 1209 - TODO plugin 추가 
