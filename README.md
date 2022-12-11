@@ -45,3 +45,4 @@ my custom setting
 - 0909 - 몇몇 단축키를 변경 
 - 1116 - zsh suggestion과 syntax plugin 추가 
 - 1209 - TODO plugin 추가 
+- 1212 - Custom snippet 추가 

@@ -11,12 +11,10 @@ vim.cmd [[
     autocmd BufWritePost init.lua PackerCompile
   augroup end
 ]]
-
-
 require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'lewis6991/gitsigns.nvim'
-	-- use 'tpope/vim-fugitive' -- Git commands in nvim
+	use 'tpope/vim-fugitive' -- Git commands in nvim
 	-- use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
 	use 'preservim/tagbar'
 	use 'ludovicchabant/vim-gutentags' -- Automatic tags management
@@ -24,7 +22,7 @@ require('packer').startup(function(use)
 	use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use { 'nvim-telescope/telescope-file-browser.nvim' }
-	use { "ahmedkhalf/project.nvim", config = function() require("project_nvim").setup {} end }
+	use { "ahmedkhalf/project.nvim" }
 	-- UI
 	use 'terrortylor/nvim-comment'
 	use 'tendertree/nforcolemak'
@@ -35,7 +33,7 @@ require('packer').startup(function(use)
 	use 'windwp/nvim-autopairs'
 	use 'windwp/nvim-ts-autotag'
 	use "akinsho/toggleterm.nvim"
-	use { "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end }
+	use { "folke/todo-comments.nvim" }
 	-- theme
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
@@ -43,13 +41,7 @@ require('packer').startup(function(use)
 	--use 'akinsho/nvim-bufferline.lua'
 	use 'mhinz/vim-startify' -- 시작 화면
 	use 'nvim-lualine/lualine.nvim'
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-			'kyazdani42/nvim-web-devicons', -- optional, for file icon
-		},
-		config = function() require 'nvim-tree'.setup {} end
-	}
+	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
 	use 'lewis6991/impatient.nvim'
 	use 'romgrk/barbar.nvim' -- tab line
 	use { 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup {} end }
@@ -60,19 +52,7 @@ require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
 	use { "williamboman/mason.nvim" }
 	use { "williamboman/mason-lspconfig.nvim" }
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main",
-		config = function()
-			local saga = require("lspsaga")
-
-			saga.init_lsp_saga({
-				-- your configuration
-			})
-		end,
-	})
-
-
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	use 'hrsh7th/nvim-cmp' -- 자동완성
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'saadparwaiz1/cmp_luasnip'
@@ -84,7 +64,13 @@ require('packer').startup(function(use)
 	-- Debugging
 	use 'mfussenegger/nvim-dap'
 end)
--- finder
+-- lsp init config
+require("todo-comments").setup {}
+require 'nvim-tree'.setup {}
+require("project_nvim").setup {}
+local saga = require("lspsaga")
+saga.init_lsp_saga({})
+
 -- some plugin setting
 require("todo-comments").setup {}
 -- LSP config
@@ -102,3 +88,4 @@ require("plugin.autotag_c")
 require("plugin.gitsigns_c")
 require("plugin.mason_c")
 require("plugin.telescope_c")
+require("input.snippet")
