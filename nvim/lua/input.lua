@@ -1,6 +1,6 @@
 --input
 
-require("nforcolemak")
+require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
 --Remap space as leader key
 

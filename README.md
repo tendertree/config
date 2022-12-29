@@ -46,3 +46,4 @@ my custom setting
 - 1116 - zsh suggestion과 syntax plugin 추가 
 - 1209 - TODO plugin 추가 
 - 1212 - Custom snippet 추가 
+- 1229 - 단축키 colemak-dh로 전환 
