@@ -1,6 +1,6 @@
 --input
 
-require("nforcolemak")
+require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
 --Remap space as leader key
 
@@ -37,17 +37,23 @@ s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
 s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 
---local action = require("lspsaga.action")
--- scroll in hover doc or  definition preview window
---vim.keymap.set("n", "<C-f>", function()
---	action.smart_scroll_with_saga(1)
---end, { silent = true })
----- scroll in hover doc or  definition preview window
---vim.keymap.set("n", "<C-b>", function()
---	action.smart_scroll_with_saga(-1)
---end, { silent = true })
-
-
+--telescope
+local actions = require "telescope.actions"
+require('telescope').setup {
+	defaults = {
+		-- Default configuration for telescope goes here:
+		-- config_key = value,
+		mappings = {
+			i = {
+				-- map actions.which_key to <C-h> (default: <C-/>)
+				-- actions.which_key shows the mappings for your picker,
+				-- e.g. git_{create, delete, ...}_branch for the git_branches picker
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+			}
+		}
+	}
+}
 
 -- lspsaga
 local lspconfig = require 'lspconfig'

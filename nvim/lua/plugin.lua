@@ -25,7 +25,8 @@ require('packer').startup(function(use)
 	use { "ahmedkhalf/project.nvim" }
 	-- UI
 	use 'terrortylor/nvim-comment'
-	use 'tendertree/nforcolemak'
+	use { "tendertree/nforcolemak-dh" }
+	--use 'tendertree/nforcolemak'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use 'nvim-treesitter/nvim-treesitter-textobjects' --additional text object
 	use 'romgrk/nvim-treesitter-context'
