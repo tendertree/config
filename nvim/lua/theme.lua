@@ -2,18 +2,8 @@
 local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
-vim.cmd('colorscheme rose-pine')
---vim.cmd('colorscheme everforest')
---vim.g["everforest_background"] = 'medium'
+vim.cmd("colorscheme melange")
 o.background = "light"
-
-require 'lualine'.setup {
-	options = {
---		theme = 'everforest'
-		theme = 'rose-pine dawn'
-	}
-}
-
 --startify setting
 vim.g.startify_session_persistence = true
 vim.g.startify_custom_header = {
@@ -22,6 +12,7 @@ vim.g.startify_custom_header = {
 	'         ( ._> /  ',
 	'          `---`   '
 }
+
 ----- lsp setting
 vim.fn.sign_define("LspDiagnosticsSignError",
 	{ text = "", texthl = "GruvboxRed" })
@@ -34,12 +25,6 @@ vim.fn.sign_define("LspDiagnosticsSignHint",
 ---lualine setting
 require('lualine').setup {
 	options = {
-		theme = 'everforest'
+		theme = 'nord'
 	}
 }
--- Color settings
---local Group = colorbuddy.Color
---
--- Group.new('CursorLine', colors.none, colors.base03, styles.NONE, colors.base1)
--- Group.new('CursorLineNr', colors.yellow, colors.black, styles.NONE, colors.base10)
--- Group.new('Visual', colors.none, colors.base03, styles.reverse)

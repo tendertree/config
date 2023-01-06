@@ -47,4 +47,4 @@ my custom setting
 - 1209 - TODO plugin 추가 
 - 1212 - Custom snippet 추가 
 # 2023
-- 0106 - rose-pine으로 테마를 바꾸었다.
+- 0106 - melange로 테마를 바꾸었다 

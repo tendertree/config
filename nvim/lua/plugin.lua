@@ -37,8 +37,7 @@ require('packer').startup(function(use)
 	-- theme
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
-	use { 'sainnhe/everforest' }
-	use({ 'rose-pine/neovim', as = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine dawn') end })
+	use "savq/melange"
 	use 'mhinz/vim-startify' -- 시작 화면
 	use 'nvim-lualine/lualine.nvim'
 	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
