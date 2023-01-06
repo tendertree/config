@@ -2,13 +2,15 @@
 local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
-vim.cmd('colorscheme everforest')
-vim.g["everforest_background"] = 'medium'
+vim.cmd('colorscheme rose-pine')
+--vim.cmd('colorscheme everforest')
+--vim.g["everforest_background"] = 'medium'
 o.background = "light"
 
 require 'lualine'.setup {
 	options = {
-		theme = 'everforest'
+--		theme = 'everforest'
+		theme = 'rose-pine dawn'
 	}
 }
 

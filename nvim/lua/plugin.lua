@@ -26,7 +26,6 @@ require('packer').startup(function(use)
 	-- UI
 	use 'terrortylor/nvim-comment'
 	use { "tendertree/nforcolemak-dh" }
-	--use 'tendertree/nforcolemak'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use 'nvim-treesitter/nvim-treesitter-textobjects' --additional text object
 	use 'romgrk/nvim-treesitter-context'
@@ -39,7 +38,7 @@ require('packer').startup(function(use)
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
 	use { 'sainnhe/everforest' }
-	--use 'akinsho/nvim-bufferline.lua'
+	use({ 'rose-pine/neovim', as = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine dawn') end })
 	use 'mhinz/vim-startify' -- 시작 화면
 	use 'nvim-lualine/lualine.nvim'
 	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
