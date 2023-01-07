@@ -48,3 +48,4 @@ my custom setting
 - 1212 - Custom snippet 추가 
 # 2023
 - 0106 - melange로 테마를 바꾸었다 
+- 0107 - italic 글씨체가 안나오게 테마를 바꾸었다.

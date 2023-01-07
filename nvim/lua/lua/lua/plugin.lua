@@ -23,12 +23,6 @@ require('packer').startup(function(use)
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use { 'nvim-telescope/telescope-file-browser.nvim' }
 	use { "ahmedkhalf/project.nvim" }
-	use { 'phaazon/hop.nvim', branch = 'v2',
-		config = function() require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' } end }
-	use "lukas-reineke/indent-blankline.nvim"
-	use {
-		'rmagatti/session-lens', requires = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' },
-	}
 	-- UI
 	use 'terrortylor/nvim-comment'
 	use { "tendertree/nforcolemak-dh" }
@@ -40,14 +34,11 @@ require('packer').startup(function(use)
 	use 'windwp/nvim-ts-autotag'
 	use "akinsho/toggleterm.nvim"
 	use { "folke/todo-comments.nvim" }
-	use { 'michaelb/sniprun', run = 'bash ./install.sh' }
-	use { 'junegunn/fzf', run = ":call fzf#install()" }
-	use { 'junegunn/fzf.vim' }
 	-- theme
-	use 'rktjmp/lush.nvim'
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
-	use "savq/melange"
+	use { 'sainnhe/everforest' }
+	use({ 'rose-pine/neovim', as = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine dawn') end })
 	use 'mhinz/vim-startify' -- 시작 화면
 	use 'nvim-lualine/lualine.nvim'
 	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
@@ -56,7 +47,7 @@ require('packer').startup(function(use)
 	use { 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup {} end }
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'MunifTanjim/prettier.nvim'
-	use 'junegunn/seoul256.vim'
+
 	--LSP
 	use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
 	use { "williamboman/mason.nvim" }
@@ -72,14 +63,6 @@ require('packer').startup(function(use)
 	use 'simrat39/rust-tools.nvim'
 	-- Debugging
 	use 'mfussenegger/nvim-dap'
-	use { 'rmagatti/auto-session',
-		config = function()
-			require("auto-session").setup {
-				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-			}
-		end
-	}
 end)
 -- lsp init config
 require("todo-comments").setup {}
@@ -90,9 +73,6 @@ saga.init_lsp_saga({})
 
 -- some plugin setting
 require("todo-comments").setup {}
-require 'sniprun'.setup({ display = { "Terminal" }, })
-require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
-require('session-lens').setup({ --[[your custom config--]] })
 -- LSP config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')

@@ -11,12 +11,7 @@ vim.g.maplocalleader = ' '
 -- base movement
 s('n', '<C-1>', ':tabprevious<CR>', { noremap = true, silent = true })
 s('n', '<C-2>', ':tabnext<CR>', { noremap = true, silent = true })
---functoin
-s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
-s('n', '<F2>', ':bnext!<CR>', { noremap = true })
-s('n', '<F3>', '<Plug>SnipRun', { noremap = true })
-s('n', '<F5>', ':seachpair<CR>gd', { noremap = true })
-s('n', '<F6>', ':Telescope session-lens search_session<CR>', { noremap = true })
+
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
 s('n', '+', '<C-a>', { noremap = true, silent = true })
@@ -26,10 +21,12 @@ s('n', '<C-a>', 'gg<S-V>G', { noremap = true, silent = true })
 --window
 s('n', 'sb', ':split <Return><C-w>w', { silent = true })
 s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+--s('n', '<F2>', ':below terminal<CR>', { silent = true })
+s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
+s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
 s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
--- other function
 
 --lsp saga
 s('n', '<leader>hd', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })
@@ -77,4 +74,3 @@ vim.api.nvim_set_keymap('n', '<leader>tb', ':Telescope buffers<CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<leader>th', ':Telescope help_tags<CR>', { noremap = true, silent = true })
 -- snippet
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my-cool-snippets" } })
--- hop
