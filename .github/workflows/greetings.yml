@@ -17,7 +17,7 @@ jobs:
         pr-message: "Message that will be displayed on users' first pull request"
     
     - name: Build Changelog
-      uses: mikepenz/release-changelog-builder-action@v3
+    - uses: mikepenz/release-changelog-builder-action@v3
       with:
           configurationJson: |
             {
