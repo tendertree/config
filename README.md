@@ -1,2 +1,2 @@
 # my Setting 
-my personal setting..
+my personal setting..for nvim
