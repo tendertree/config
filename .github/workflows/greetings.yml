@@ -2,15 +2,14 @@ name: Greetings
 on:
   push:
     branches: [ main ]
-jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - run: ls -al
-      - uses: actions/checkout@v3
+jobs: 
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 100
       - name: Build Changelog
         uses: mikepenz/release-changelog-builder-action@v3
         with:
