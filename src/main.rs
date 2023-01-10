@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 //TODO: access 'data' folder
 //TODO: add copy and paste
-//TODO: implehent git push
+//TODO: implehent git push-
 
 fn sum() -> i32 {
     let result = 1 + 1;
