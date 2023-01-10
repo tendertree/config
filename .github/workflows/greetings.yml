@@ -13,8 +13,10 @@ jobs:
       - name: Build Changelog
         uses: mikepenz/release-changelog-builder-action@v3
         with:
+          toTag: "v3.1.1"
           configurationJson: |
             {
+                      
               "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
               "categories": [
                 {
