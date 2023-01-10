@@ -1,24 +1,13 @@
-name: Greetings
-
-on: [push]
-
+name : first try 
+on: push
 jobs:
-  greeting:
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
-    - name: First Interection
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
-    
-    - name: Build Changelog
-    - uses: mikepenz/release-changelog-builder-action@v3
-      with:
+      - name: Build Changelog
+        uses: mikepenz/release-changelog-builder-action@v3
+        with:
           configurationJson: |
             {
               "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
@@ -33,5 +22,5 @@ jobs:
                 }
               ]
             }
-      env:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
