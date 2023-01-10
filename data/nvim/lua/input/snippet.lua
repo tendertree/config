@@ -23,13 +23,34 @@ local conds = require("luasnip.extras.expand_conditions")
 local postfix = require("luasnip.extras.postfix").postfix
 local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
+--load vsc style snippet
+require("luasnip.loaders.from_vscode").load({ paths = { "./snippets/rust.json" } })
+--add custom snippet
+
 
 ls.add_snippets("all", {
 	s("ternary", {
 		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
 		i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
+	}),
+	s("td", {
+		t("TODO:"), i(1, "txt")
 	})
+
+
 })
+ls.add_snippets("rust", {
+	s(
+		"il",
+		fmt(
+			[[let mut input_line = String::new();
+              io::stdin().read_line(&mut input_line).expect("Failed to read line");
+              let x: i32 = input_line.trim().parse().expect("Input not an integer");]], {}
+		)
+	)
+
+})
+
 
 ls.add_snippets(nil, {
 	all = {
