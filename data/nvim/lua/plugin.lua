@@ -95,6 +95,7 @@ require 'nvim-tree'.setup {}
 require("project_nvim").setup {}
 local saga = require("lspsaga")
 saga.init_lsp_saga({})
+--auto pair
 
 -- some plugin setting
 require("todo-comments").setup {}
@@ -106,7 +107,6 @@ require("twilight").setup {}
 require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
-
 -- LSP config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
