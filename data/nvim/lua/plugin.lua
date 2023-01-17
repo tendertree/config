@@ -56,7 +56,7 @@ require('packer').startup(function(use)
 	use 'rktjmp/lush.nvim'
 	use { 'ojroques/nvim-hardline' }
 	use 'tjdevries/colorbuddy.vim' -- 색상 변경
-	use "savq/melange"
+	use "savq/melange-nvim"
 	use 'mhinz/vim-startify' -- 시작 화면
 	use 'nvim-lualine/lualine.nvim'
 	use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
@@ -69,7 +69,7 @@ require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
 	use { "williamboman/mason.nvim" }
 	use { "williamboman/mason-lspconfig.nvim" }
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({ "glepnir/lspsaga.nvim", event = 'BufRead', config = function() require('lspsaga').setup({}) end, })
 	use 'hrsh7th/nvim-cmp' -- 자동완성
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'saadparwaiz1/cmp_luasnip'
@@ -93,9 +93,8 @@ end)
 require("todo-comments").setup {}
 require 'nvim-tree'.setup {}
 require("project_nvim").setup {}
-local saga = require("lspsaga")
-saga.init_lsp_saga({})
---auto pair
+
+--auto pair`
 
 -- some plugin setting
 require("todo-comments").setup {}
@@ -107,7 +106,7 @@ require("twilight").setup {}
 require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
--- LSP config
+-- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()

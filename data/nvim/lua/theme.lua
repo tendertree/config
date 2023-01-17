@@ -24,27 +24,23 @@ vim.fn.sign_define("LspDiagnosticsSignHint",
 -- theme change italic disable
 -- lua line
 
-
+--load lush
+local lush = require('lush')
+local bg = vim.opt.background:get()
+local palette = require('melange/palettes/' .. bg)
+local a = palette.a
+local b = palette.b
 --theme change
 
-time = os.date("*t")
+local time = os.date("*t")
 if (time.hour % 24 <= 21)
 then
-	vim.cmd("colorscheme melange")
+	vim.cmd.colorscheme 'melange'
 	o.background = "light"
-	local lush = require('lush')
-	local harbour = require('melange.hl_groups')
-	local bg = vim.opt.background:get()
-	local palette = require('melange/palettes/' .. bg)
-	local a = palette.a
-	local b = palette.b
-	local spec = lush.extends({ harbour }).with(function()
-		return {
-			Comment { fg = a.com },
-			String { fg = b.blue },
-		}
-	end)
-	lush(spec)
+	vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })
+	vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
+    vim.api.nvim_set_hl(0,'DiagnosticHint',{fg='#acbfb0'})
+
 
 else
 	vim.cmd("colorscheme iceberg")

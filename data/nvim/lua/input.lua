@@ -1,3 +1,7 @@
+--temp
+local s = vim.api.nvim_set_keymap
+--s('n', '', 'y', { noremap = true })
+--s('v', 'yy', 'oo', { noremap = true })
 --input
 require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
