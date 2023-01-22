@@ -47,7 +47,7 @@ require('lazy').setup({
 	'windwp/nvim-autopairs',
 	'windwp/nvim-ts-autotag',
 	"akinsho/toggleterm.nvim",
-	"folke/todo-comments.nvim",
+	{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
 	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
 	{ 'junegunn/fzf', build = ":call fzf#install()" },
 	{ 'junegunn/fzf.vim' },
@@ -88,7 +88,7 @@ require('lazy').setup({
 			}
 		end
 	}
-})
+}, { defaults = { lazy = true } })
 -- lsp init config
 require("todo-comments").setup {}
 require 'nvim-tree'.setup {}
@@ -97,7 +97,6 @@ require("project_nvim").setup {}
 --auto pair`
 
 -- some plugin setting
-require("todo-comments").setup {}
 require 'sniprun'.setup({ display = { "Terminal" }, })
 require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
 require('session-lens').setup({ --[[your custom config--]] })
