@@ -1,5 +1,5 @@
 --TODO:정리하기
--- Install packer
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -35,7 +35,7 @@ require('lazy').setup({
 	{ 'rmagatti/session-lens', dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' } },
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
-	{'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim'},
+	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 	-- UI
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
@@ -56,9 +56,6 @@ require('lazy').setup({
 	"haringsrob/nvim_context_vt",
 	-- theme
 	'cocopon/iceberg.vim',
-	'rktjmp/lush.nvim',
-	'ojroques/nvim-hardline',
-	'tjdevries/colorbuddy.vim', -- 색상 변경
 	'savq/melange-nvim',
 	'mhinz/vim-startify', -- 시작 화면
 	'nvim-lualine/lualine.nvim',

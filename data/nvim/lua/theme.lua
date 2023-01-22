@@ -25,11 +25,7 @@ vim.fn.sign_define("LspDiagnosticsSignHint",
 -- lua line
 
 --load lush
-local lush = require('lush')
-local bg = vim.opt.background:get()
-local palette = require('melange/palettes/' .. bg)
-local a = palette.a
-local b = palette.b
+
 --theme change
 
 local time = os.date("*t")
@@ -39,7 +35,7 @@ then
 	o.background = "light"
 	vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })
 	vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
-    vim.api.nvim_set_hl(0,'DiagnosticHint',{fg='#acbfb0'})
+	vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = '#acbfb0' })
 
 
 else
