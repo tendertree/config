@@ -1,3 +1,5 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
 require("lsp-format").setup {}
 require "lspconfig".gopls.setup { on_attach = require "lsp-format".on_attach } --lsp config
 --local lsp_installer = require("nvim-lsp-installer")
@@ -5,6 +7,10 @@ require "lspconfig".gopls.setup { on_attach = require "lsp-format".on_attach } -
 --	local opts = {}
 --	server:setup(opts)
 --end)
+
+
+require("mason").setup()
+require("mason-lspconfig").setup{ensure_installed = { "sumneko_lua", "rust_analyzer","tsserver" }}
 
 -- formatting setting
 require("lsp-format").setup {}
@@ -15,10 +21,10 @@ nvim_lsp.denols.setup {
 	on_attach = on_attach,
 }
 
-nvim_lsp.tsserver.setup {
+ require("lspconfig").tsserver.setup {
 	-- Omitting some options
 	on_attach = on_attach,
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+	filetypes = { "javascript","javascriptreact","typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
 	root_dir = nvim_lsp.util.root_pattern("package.json")
 }

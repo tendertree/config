@@ -1,27 +1,17 @@
-require("lsp-format").setup {}
-require "lspconfig".gopls.setup { on_attach = require "lsp-format".on_attach } --lsp config
---local lsp_installer = require("nvim-lsp-installer")
---lsp_installer.on_server_ready(function(server)
---	local opts = {}
---	server:setup(opts)
---end)
+require("mason-lspconfig").setup {
+	ensure_installed = { "sumneko_lua", "rust_analyzer", "tsserver" },
+}
 
--- formatting setting
-require("lsp-format").setup {}
-require "lspconfig".gopls.setup { on_attach = require "lsp-format".on_attach }
---
+
+require 'lspconfig'.tsserver.setup {
+	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" }
+}
+
 local nvim_lsp = require("lspconfig")
 nvim_lsp.denols.setup {
 	on_attach = on_attach,
 }
 
-nvim_lsp.tsserver.setup {
-	-- Omitting some options
-	on_attach = on_attach,
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-	cmd = { "typescript-language-server", "--stdio" },
-	root_dir = nvim_lsp.util.root_pattern("package.json")
-}
 nvim_lsp.denols.setup {
 	-- Omitting some options
 	root_dir = nvim_lsp.util.root_pattern("deno.json"),
