@@ -69,6 +69,7 @@ require('lazy').setup({
 	'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
+	"jay-babu/mason-null-ls.nvim",
 	{ "glepnir/lspsaga.nvim", event = 'BufRead', config = function() require('lspsaga').setup({}) end, },
 	'hrsh7th/nvim-cmp', -- 자동완성
 	'hrsh7th/cmp-nvim-lsp',
@@ -107,13 +108,12 @@ require("twilight").setup {}
 require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
---require('aerial').setup({  })--layout = {default_direction = "float"},filter_kind = {    "Class","functtion"}})
+require("mason-null-ls").setup({   automatic_setup = true,})
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
 require("plugin.nullls_c")
---require("plugin.lsp_c")
 require("plugin.lualine_c")
 require("plugin.treesitter_c")
 require("plugin.nullls_c")
