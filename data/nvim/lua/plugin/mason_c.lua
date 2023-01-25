@@ -4,5 +4,6 @@ require("mason-lspconfig").setup {
 
 
 require 'lspconfig'.tsserver.setup {
+	    on_attach = on_attach,
 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" }
 }

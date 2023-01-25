@@ -28,7 +28,7 @@ s('n', '-', '<C-x>', { noremap = true, silent = true })
 s('n', 'dw', 'vb"_d', { noremap = true, silent = true })
 s('n', '<C-a>', 'gg<S-V>G', { noremap = true, silent = true })
 s('n', 'T', ':Twilight<CR>', { noremap = true, silent = true })
---s('n', 'H', ':lua require('tsht').nodes()<CR>', { noremap = true, silent = true })
+
 vim.cmd [[omap     <silent> H :<C-U>lua require('tsht').nodes()<CR>]]
 vim.cmd [[vnoremap <silent> H :lua require('tsht').nodes()<CR>]]
 
@@ -45,7 +45,7 @@ s('n', '<leader>hd', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true }
 s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
 s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
 s('n', '<leader>pf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })
-s("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
+s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
 s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
 s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })

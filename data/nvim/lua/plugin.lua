@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup({
-	'wbthomason/packer.nvim',
+
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
@@ -87,7 +87,8 @@ require('lazy').setup({
 				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 			}
 		end
-	}
+	},
+	'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 -- lsp init config
 require("todo-comments").setup {}
@@ -97,6 +98,7 @@ require("project_nvim").setup {}
 --auto pair`
 
 -- some plugin setting
+require("symbols-outline").setup()
 require 'sniprun'.setup({ display = { "Terminal" }, })
 require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
 require('session-lens').setup({ --[[your custom config--]] })
@@ -105,6 +107,7 @@ require("twilight").setup {}
 require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
+--require('aerial').setup({  })--layout = {default_direction = "float"},filter_kind = {    "Class","functtion"}})
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
