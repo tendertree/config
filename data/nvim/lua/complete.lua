@@ -95,5 +95,6 @@ cmp.setup {
 			return vim_item
 		end,
 	},
+
 }
 -- vim: ts=2 sts=2 sw=1
