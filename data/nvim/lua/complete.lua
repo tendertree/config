@@ -1,6 +1,9 @@
--- luasnip setup
+-- luasnip setupvalue
+
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
@@ -81,8 +84,8 @@ cmp.setup {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			--	vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
 				luasnip = "[Snippet]",
@@ -93,4 +96,4 @@ cmp.setup {
 		end,
 	},
 }
--- vim: ts=2 sts=2 sw=2
+-- vim: ts=2 sts=2 sw=1

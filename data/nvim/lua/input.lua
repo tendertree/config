@@ -89,7 +89,7 @@ vim.api.nvim_set_keymap('n', '<leader>td', ':Telescope live_grep<CR>', { noremap
 vim.api.nvim_set_keymap('n', '<leader>tb', ':Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>th', ':Telescope help_tags<CR>', { noremap = true, silent = true })
 -- snippet
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my-cool-snippets" } })
+--require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my-cool-snippets" } })
 -- treesitter settings
 require 'nvim-treesitter.configs'.setup {
 	textobjects = {

@@ -24,9 +24,6 @@ local postfix = require("luasnip.extras.postfix").postfix
 local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 --load vsc style snippet
-require("luasnip.loaders.from_vscode").load({ paths = { "./snippets/rust.json" } })
---add custom snippet
-
 
 ls.add_snippets("all", {
 	s("ternary", {
@@ -36,9 +33,9 @@ ls.add_snippets("all", {
 	s("td", {
 		t("TODO:"), i(1, "txt")
 	})
+}
 
-
-})
+)
 ls.add_snippets("rust", {
 	s(
 		"il",

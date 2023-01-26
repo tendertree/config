@@ -71,11 +71,20 @@ require('lazy').setup({
 	{ "williamboman/mason-lspconfig.nvim" },
 	"jay-babu/mason-null-ls.nvim",
 	{ "glepnir/lspsaga.nvim", event = 'BufRead', config = function() require('lspsaga').setup({}) end, },
-	'hrsh7th/nvim-cmp', -- 자동완성
+	{ 'hrsh7th/nvim-cmp', event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-path',
+	'hrsh7th/cmp-cmdline',
 	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-vsnip',
+	'hrsh7th/cmp-nvim-lsp-signature-help',
+	'hrsh7th/cmp-nvim-lua',
+	--'hrsh7th/vim-vsnip',
+	--'hrsh7th/vim-vsnip-integ',
+	--'kitagry/vs-snippets',
 	'saadparwaiz1/cmp_luasnip',
 	'L3MON4D3/LuaSnip', -- snippetet
-	"rafamadriz/friendly-snippets",
+	{ "rafamadriz/friendly-snippets", lazy = false },
 	"lukas-reineke/lsp-format.nvim",
 	--language setting
 	'simrat39/rust-tools.nvim',
@@ -89,7 +98,7 @@ require('lazy').setup({
 			}
 		end
 	},
-	'simrat39/symbols-outline.nvim',
+	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 -- lsp init config
 require("todo-comments").setup {}
@@ -99,7 +108,7 @@ require("project_nvim").setup {}
 --auto pair`
 
 -- some plugin setting
-require("symbols-outline").setup()
+--require("symbols-outline").setup()
 require 'sniprun'.setup({ display = { "Terminal" }, })
 require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
 require('session-lens').setup({ --[[your custom config--]] })
@@ -108,7 +117,7 @@ require("twilight").setup {}
 require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
-require("mason-null-ls").setup({   automatic_setup = true,})
+require("mason-null-ls").setup({ automatic_setup = true, })
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
@@ -122,4 +131,5 @@ require("plugin.autotag_c")
 require("plugin.gitsigns_c")
 require("plugin.mason_c")
 require("plugin.telescope_c")
+--require("plugin.v_snip_c")
 require("input.snippet")
