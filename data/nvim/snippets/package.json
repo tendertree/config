@@ -7,7 +7,13 @@
           "lua"
         ],
         "path": "./lua.json"
-      }
+      },
+	  {
+		"language":[
+			"all"
+		],
+		"path":"./all.json"
+	  }
     ]
   }
 }

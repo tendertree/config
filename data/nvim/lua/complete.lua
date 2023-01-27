@@ -2,7 +2,7 @@
 
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets/" } })
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
