@@ -32,13 +32,14 @@ require('lazy').setup({
 	'nvim-telescope/telescope-file-browser.nvim',
 	"ahmedkhalf/project.nvim",
 	"lukas-reineke/indent-blankline.nvim",
-	{ 'rmagatti/session-lens', dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' } },
+	--{ 'rmagatti/session-lens', dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' } },
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 	-- UI
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
+
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
@@ -47,7 +48,8 @@ require('lazy').setup({
 	'windwp/nvim-autopairs',
 	'windwp/nvim-ts-autotag',
 	"akinsho/toggleterm.nvim",
-	{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
+	"AmeerTaweel/todo.nvim",
+	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
 	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
 	{ 'junegunn/fzf', build = ":call fzf#install()" },
 	{ 'junegunn/fzf.vim' },
@@ -73,6 +75,7 @@ require('lazy').setup({
 	{ "glepnir/lspsaga.nvim", event = 'BufRead', config = function() require('lspsaga').setup({}) end, },
 	{ 'hrsh7th/nvim-cmp', event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
 	'hrsh7th/cmp-buffer',
+	
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
 	{ 'hrsh7th/cmp-nvim-lsp', event = 'BufRead' },
@@ -101,7 +104,6 @@ require('lazy').setup({
 	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 -- lsp init config
-require("todo-comments").setup {}
 require 'nvim-tree'.setup {}
 require("project_nvim").setup {}
 
@@ -111,12 +113,13 @@ require("project_nvim").setup {}
 --require("symbols-outline").setup()
 require 'sniprun'.setup({ display = { "Terminal" }, })
 require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
-require('session-lens').setup({ --[[your custom config--]] })
+--require('session-lens').setup({ --[[your custom config--]] })
 require("zen-mode").setup {}
 require("twilight").setup {}
 require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
+require("todo").setup{}
 require("mason-null-ls").setup({ automatic_setup = true, })
 -- lsp config
 require('impatient')

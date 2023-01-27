@@ -35,7 +35,8 @@ cmd([[syntax on]])
 cmd([[set mouse=a]])
 -- no more use
 --o.mouse = "a"
---
+
+
 -- use system clipboard
 vim.o.clipboard = "unnamedplus"
 
@@ -78,3 +79,4 @@ opt.winblend = 0
 opt.wildoptions = 'pum'
 opt.pumblend = 5
 opt.background = 'dark'
+-- highlight yank
