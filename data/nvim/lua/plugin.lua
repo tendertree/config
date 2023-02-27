@@ -43,6 +43,8 @@ require('lazy').setup({
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
+	'vim-pandoc/vim-pandoc-syntax',
+	'preservim/vim-markdown',
 	'RRethy/nvim-treesitter-textsubjects',
 	'mfussenegger/nvim-treehopper',
 	'windwp/nvim-autopairs',
@@ -75,18 +77,17 @@ require('lazy').setup({
 	{ "glepnir/lspsaga.nvim", event = 'BufRead', config = function() require('lspsaga').setup({}) end, },
 	{ 'hrsh7th/nvim-cmp', event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
 	'hrsh7th/cmp-buffer',
-
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
 	{ 'hrsh7th/cmp-nvim-lsp', event = 'InsertEnter' },
 	--{ 'hrsh7th/cmp-nvim-lsp', event = 'BufRead' },
-	'hrsh7th/cmp-vsnip',
+	--'hrsh7th/cmp-vsnip',
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'hrsh7th/cmp-nvim-lua',
 	{ 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
 	--{ 'saadparwaiz1/cmp_luasnip', event = 'BufRead' },
-	'L3MON4D3/LuaSnip', -- snippetet
-	{ "rafamadriz/friendly-snippets", event = 'InsertEnter' },
+	{ 'L3MON4D3/LuaSnip', defendencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
+	{ "rafamadriz/friendly-snippets", lazy = false, event = 'InsertEnter' },
 	--{ "rafamadriz/friendly-snippets", lazy = false },
 	"lukas-reineke/lsp-format.nvim",
 	--language setting
