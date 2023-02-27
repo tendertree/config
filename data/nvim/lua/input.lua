@@ -41,7 +41,8 @@ s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
 -- other function
 
 --lsp saga
-s('n', '<leader>hd', ':Lspsaga hover_doc<CR>', { noremap = true, silent = true })
+s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
+s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
 s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
 s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
 s('n', '<leader>pf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })

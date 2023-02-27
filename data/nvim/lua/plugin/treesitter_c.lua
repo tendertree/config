@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-	ensure_installed = { "rust", "go", "html", "javascript", "typescript", "python", "lua" },
+	ensure_installed = { "rust", "go", "html", "javascript", "typescript", "python", "tsx", "markdown" },
 	sync_install = false,
 	incremental_selection = { enable = true, },
 	highlight = { enable = true, additional_vim_regex_highlighting = false },

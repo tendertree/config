@@ -35,7 +35,12 @@ cmd([[syntax on]])
 cmd([[set mouse=a]])
 -- no more use
 --o.mouse = "a"
+--folding setting
 
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = -1
+vim.o.foldenable = true
 
 -- use system clipboard
 vim.o.clipboard = "unnamedplus"

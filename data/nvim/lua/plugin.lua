@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup({
-
+	--{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
@@ -40,7 +40,7 @@ require('lazy').setup({
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
 
-	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+	{ 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
 	'vim-pandoc/vim-pandoc-syntax',
@@ -50,6 +50,7 @@ require('lazy').setup({
 	'windwp/nvim-autopairs',
 	'windwp/nvim-ts-autotag',
 	"akinsho/toggleterm.nvim",
+
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
 	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
@@ -58,6 +59,7 @@ require('lazy').setup({
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
 	"haringsrob/nvim_context_vt",
+
 	-- theme
 	'cocopon/iceberg.vim',
 	'savq/melange-nvim',
@@ -65,7 +67,7 @@ require('lazy').setup({
 	'nvim-lualine/lualine.nvim',
 	{ 'kyazdani42/nvim-tree.lua', dependencies = { 'kyazdani42/nvim-web-devicons' } },
 	'romgrk/barbar.nvim', -- tab line
-	--{ 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup {} end },
+	{ 'anuvyklack/pretty-fold.nvim' },
 	'jose-elias-alvarez/null-ls.nvim',
 	'MunifTanjim/prettier.nvim',
 	'stevearc/dressing.nvim',
@@ -127,6 +129,8 @@ require("mason-null-ls").setup({ automatic_setup = true, })
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
+require('pretty-fold').setup()
+--require("plugin.ufo_c")
 require("plugin.nullls_c")
 require("plugin.lualine_c")
 require("plugin.treesitter_c")
