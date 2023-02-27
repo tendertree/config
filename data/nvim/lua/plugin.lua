@@ -65,7 +65,7 @@ require('lazy').setup({
 	'nvim-lualine/lualine.nvim',
 	{ 'kyazdani42/nvim-tree.lua', dependencies = { 'kyazdani42/nvim-web-devicons' } },
 	'romgrk/barbar.nvim', -- tab line
-	{ 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup {} end },
+	--{ 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup {} end },
 	'jose-elias-alvarez/null-ls.nvim',
 	'MunifTanjim/prettier.nvim',
 	'stevearc/dressing.nvim',
@@ -92,6 +92,7 @@ require('lazy').setup({
 	"lukas-reineke/lsp-format.nvim",
 	--language setting
 	'simrat39/rust-tools.nvim',
+	'prisma/vim-prisma',
 	-- Debugging
 	'mfussenegger/nvim-dap',
 	{ 'rmagatti/auto-session',
