@@ -12,6 +12,8 @@ vim.g.maplocalleader = ' '
 -- base movement
 s('n', '<C-1>', ':tabprevious<CR>', { noremap = true, silent = true })
 s('n', '<C-2>', ':tabnext<CR>', { noremap = true, silent = true })
+s('n', '<C-k>', ':m-2<CR>', { noremap = true, silent = true })
+s('n', '<C-j>', ':m+1<CR>', { noremap = true, silent = true })
 --function
 s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
