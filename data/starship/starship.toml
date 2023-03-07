@@ -4,6 +4,7 @@ add_newline = true
 success_symbol = '[➜](bold green)'
 [os]
 disabled = false # Disabled by default
+
 [username]
 show_always = true
 style = "fg:#9A348E"
@@ -92,7 +93,7 @@ symbol = " "
 Alpine = " "
 Amazon = " "
 Android = " "
-Arch = " "
+Arch = "  "
 CentOS = " "
 Debian = " "
 DragonFly = " "
