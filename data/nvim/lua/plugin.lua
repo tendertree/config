@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	--{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+	{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
@@ -27,19 +28,21 @@ require('lazy').setup({
 	'nvim-lua/plenary.nvim',
 	'sindrets/diffview.nvim',
 	{ 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
-	{ 'nvim-telescope/telescope-fzf-native.nvim',
-		build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+	{
+		'nvim-telescope/telescope-fzf-native.nvim',
+		build =
+		'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+	},
 	'nvim-telescope/telescope-file-browser.nvim',
 	"ahmedkhalf/project.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	--{ 'rmagatti/session-lens', dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' } },
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
-	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
 	-- UI
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
-
 	{ 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
@@ -53,8 +56,8 @@ require('lazy').setup({
 
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
-	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
-	{ 'junegunn/fzf', build = ":call fzf#install()" },
+	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
+	{ 'junegunn/fzf',                    build = ":call fzf#install()" },
 	{ 'junegunn/fzf.vim' },
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
@@ -65,7 +68,7 @@ require('lazy').setup({
 	'savq/melange-nvim',
 	'mhinz/vim-startify', -- 시작 화면
 	'nvim-lualine/lualine.nvim',
-	{ 'kyazdani42/nvim-tree.lua', dependencies = { 'kyazdani42/nvim-web-devicons' } },
+	{ 'kyazdani42/nvim-tree.lua',   dependencies = { 'kyazdani42/nvim-web-devicons' } },
 	'romgrk/barbar.nvim', -- tab line
 	{ 'anuvyklack/pretty-fold.nvim' },
 	'jose-elias-alvarez/null-ls.nvim',
@@ -76,20 +79,20 @@ require('lazy').setup({
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	"jay-babu/mason-null-ls.nvim",
-	{ "glepnir/lspsaga.nvim", event = 'BufRead', config = function() require('lspsaga').setup({}) end, },
-	{ 'hrsh7th/nvim-cmp', event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
+	{ "glepnir/lspsaga.nvim", event = 'BufRead',     config = function() require('lspsaga').setup({}) end, },
+	{ 'hrsh7th/nvim-cmp',     event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
-	{ 'hrsh7th/cmp-nvim-lsp', event = 'InsertEnter' },
+	{ 'hrsh7th/cmp-nvim-lsp',         event = 'InsertEnter' },
 	--{ 'hrsh7th/cmp-nvim-lsp', event = 'BufRead' },
 	--'hrsh7th/cmp-vsnip',
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'hrsh7th/cmp-nvim-lua',
-	{ 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
+	{ 'saadparwaiz1/cmp_luasnip',     event = 'InsertEnter' },
 	--{ 'saadparwaiz1/cmp_luasnip', event = 'BufRead' },
-	{ 'L3MON4D3/LuaSnip', defendencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
-	{ "rafamadriz/friendly-snippets", lazy = false, event = 'InsertEnter' },
+	{ 'L3MON4D3/LuaSnip',             defendencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
+	{ "rafamadriz/friendly-snippets", lazy = false,                                     event = 'InsertEnter' },
 	--{ "rafamadriz/friendly-snippets", lazy = false },
 	"lukas-reineke/lsp-format.nvim",
 	--language setting
@@ -97,7 +100,8 @@ require('lazy').setup({
 	'prisma/vim-prisma',
 	-- Debugging
 	'mfussenegger/nvim-dap',
-	{ 'rmagatti/auto-session',
+	{
+		'rmagatti/auto-session',
 		config = function()
 			require("auto-session").setup {
 				log_level = "error",
@@ -125,6 +129,7 @@ require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a"
 require('neogit').setup { integrations = { diffview = true } }
 require("todo").setup {}
 require("mason-null-ls").setup({ automatic_setup = true, })
+require("nx").setup {}
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
