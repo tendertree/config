@@ -5,6 +5,13 @@ local s = vim.api.nvim_set_keymap
 --input
 require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
+local tree = require('nvim-tree.api')
+local function opts(desc)
+	return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+end
+
+
+
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
@@ -40,7 +47,7 @@ s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
 s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
--- other function
+
 
 --lsp saga
 s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
@@ -53,6 +60,16 @@ s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
 s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+--nvim Tree
+vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-v>', tree.node.open.vertical, opts('Open: Vertical Split'))
+vim.keymap.set('n', '<S-h>', tree.node.open.horizontal, opts('Open: Vertical Split'))
+--vim.keymap.set('n', 'n', tree.node.navigate.sibling.next, opts('Open: Vertical Split'))
+--vim.keymap.set('n', 'r', tree.fs.rename_basename, opts('Open: Vertical Split'))
+
+
+
+
 --terminal
 require("toggleterm").setup {
 	open_mapping = [[<F4>]],
@@ -69,8 +86,8 @@ require('telescope').setup {
 				-- map actions.which_key to <C-h> (default: <C-/>)
 				-- actions.which_key shows the mappings for your picker,
 				-- e.g. git_{create, delete, ...}_branch for the git_branches picker
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
+					["<C-j>"] = actions.move_selection_next,
+					["<C-k>"] = actions.move_selection_previous,
 			}
 		}
 	}
@@ -84,7 +101,6 @@ local on_attach = function(_, bufnr)
 end
 
 -- nvim tree
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 --telescope
 vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope file_browser<CR>', { noremap = true, silent = true })
@@ -96,29 +112,28 @@ vim.api.nvim_set_keymap('n', '<leader>th', ':Telescope help_tags<CR>', { noremap
 -- treesitter settings
 require 'nvim-treesitter.configs'.setup {
 	textobjects = {
-
 		select = {
 			enable = true,
 			-- Automatically jump forward to textobj, similar to targets.vim
 			lookahead = true,
 			keymaps = {
 				-- You can use the capture groups defined in textobjects.scm
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner"
+					["af"] = "@function.outer",
+					["if"] = "@function.inner",
+					["ac"] = "@class.outer",
+					["ic"] = "@class.inner"
 			}
 		},
 		move = {
 			enable = true,
 			set_jumps = true,
 			goto_next_start = {
-				['N'] = '@function.outer',
-				[']]'] = '@class.outer'
+					['N'] = '@function.outer',
+					[']]'] = '@class.outer'
 			},
 			goto_previous_start = {
-				['E'] = '@function.outer',
-				['[['] = '@class.outer'
+					['E'] = '@function.outer',
+					['[['] = '@class.outer'
 			}
 		}
 	}

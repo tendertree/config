@@ -8,6 +8,7 @@ local opt = vim.opt
 --basic settings
 w.number = true
 w.relativenumber = false
+o.ma = true
 o.tabstop = 4
 o.autoindent = true
 o.smartindent = true
@@ -38,7 +39,7 @@ cmd([[set mouse=a]])
 --folding setting
 
 vim.o.foldcolumn = '1' -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = -1
 vim.o.foldenable = true
 
