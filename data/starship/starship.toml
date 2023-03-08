@@ -7,7 +7,6 @@ disabled = false # Disabled by default
 
 [username]
 show_always = true
-style = "fg:#9A348E"
 format = '[$user]($style)'
 disabled = false
 
