@@ -85,19 +85,18 @@ require('lazy').setup({
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
 	{ 'hrsh7th/cmp-nvim-lsp',         event = 'InsertEnter' },
-	--{ 'hrsh7th/cmp-nvim-lsp', event = 'BufRead' },
-	--'hrsh7th/cmp-vsnip',
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'hrsh7th/cmp-nvim-lua',
 	{ 'saadparwaiz1/cmp_luasnip',     event = 'InsertEnter' },
-	--{ 'saadparwaiz1/cmp_luasnip', event = 'BufRead' },
 	{ 'L3MON4D3/LuaSnip',             defendencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
 	{ "rafamadriz/friendly-snippets", lazy = false,                                     event = 'InsertEnter' },
-	--{ "rafamadriz/friendly-snippets", lazy = false },
 	"lukas-reineke/lsp-format.nvim",
 	--language setting
 	'simrat39/rust-tools.nvim',
 	'prisma/vim-prisma',
+
+
+
 	-- Debugging
 	'mfussenegger/nvim-dap',
 	{
@@ -147,3 +146,5 @@ require("plugin.mason_c")
 require("plugin.telescope_c")
 --require("plugin.v_snip_c")
 require("input.snippet")
+
+

@@ -60,11 +60,13 @@
   "todo.nvim": { "branch": "master", "commit": "6bd31dfd64b2730b33aad89423a1055c22fe276a" },
   "toggleterm.nvim": { "branch": "main", "commit": "31d38d11390bcd35a568fcc65a79b7d6ec89de62" },
   "twilight.nvim": { "branch": "main", "commit": "9410252bed96887ca5a86bf16435a3a51a0e6ce5" },
+  "vim-astro": { "branch": "main", "commit": "34732be5e9a5c28c2409f4490edf92d46d8b55a9" },
   "vim-fugitive": { "branch": "master", "commit": "62f42f013d866139fa23068ac2651b3f7e05a56f" },
   "vim-gutentags": { "branch": "master", "commit": "1337b1891b9d98d6f4881982f27aa22b02c80084" },
   "vim-markdown": { "branch": "master", "commit": "5d3d1b6cbdc4be0b4c6105c1ab1f769d76d3c68f" },
   "vim-pandoc-syntax": { "branch": "master", "commit": "4268535e1d33117a680a91160d845cd3833dfe28" },
   "vim-prisma": { "branch": "main", "commit": "95c5b25066efb34c75bce78698baa371fe0ee7c2" },
   "vim-startify": { "branch": "master", "commit": "81e36c352a8deea54df5ec1e2f4348685569bed2" },
+  "vim-stylus": { "branch": "master", "commit": "99031823d216c4433fb5c2661a33a43fbebaff61" },
   "zen-mode.nvim": { "branch": "main", "commit": "3c92f503823088862ca2a7809d1c7edc90fb92fa" }
 }

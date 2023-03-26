@@ -9,7 +9,10 @@ fn sum() -> i32 {
     let result = 1 + 1;
     result
 }
-
+fn update(){
+    let mut input = String::new();
+    
+}
 fn main() {
     println!("Hello, world!");
 }
