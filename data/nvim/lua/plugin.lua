@@ -15,14 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup({
-	--{ 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
-	{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
-	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
-	--  'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
 	'preservim/tagbar',
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',
@@ -36,10 +33,8 @@ require('lazy').setup({
 	'nvim-telescope/telescope-file-browser.nvim',
 	"ahmedkhalf/project.nvim",
 	"lukas-reineke/indent-blankline.nvim",
-	--{ 'rmagatti/session-lens', dependencies = { 'rmagatti/auto-session', 'nvim-telescope/telescope.nvim' } },
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
-	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
 	-- UI
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
@@ -88,14 +83,14 @@ require('lazy').setup({
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'hrsh7th/cmp-nvim-lua',
 	{ 'saadparwaiz1/cmp_luasnip',     event = 'InsertEnter' },
-	{ 'L3MON4D3/LuaSnip',             defendencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
+	{ 'L3MON4D3/LuaSnip',             dependencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
 	{ "rafamadriz/friendly-snippets", lazy = false,                                     event = 'InsertEnter' },
 	"lukas-reineke/lsp-format.nvim",
 	--language setting
 	'simrat39/rust-tools.nvim',
 	'prisma/vim-prisma',
-
-
+	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 
 	-- Debugging
 	'mfussenegger/nvim-dap',
@@ -113,8 +108,8 @@ require('lazy').setup({
 -- lsp init config
 require 'nvim-tree'.setup {}
 require("project_nvim").setup {}
-
 --auto pair`
+
 
 -- some plugin setting
 --require("symbols-outline").setup()
@@ -134,7 +129,7 @@ require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
 require('pretty-fold').setup()
---require("plugin.ufo_c")
+require('plugin.navic_c')
 require("plugin.nullls_c")
 require("plugin.lualine_c")
 require("plugin.treesitter_c")
@@ -144,7 +139,5 @@ require("plugin.autotag_c")
 require("plugin.gitsigns_c")
 require("plugin.mason_c")
 require("plugin.telescope_c")
---require("plugin.v_snip_c")
+
 require("input.snippet")
-
-
