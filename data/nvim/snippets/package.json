@@ -13,6 +13,9 @@
 			"all"
 		],
 		"path":"./all.json"
+	  },
+	  {
+		  "language":["typescript"],"path":"./typescript.json"
 	  }
     ]
   }

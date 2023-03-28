@@ -134,6 +134,7 @@ require("nx").setup {}
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
+require('plugin.cmp_c')
 require('pretty-fold').setup()
 require("plugin.neotree_c")
 require('plugin.navic_c')
@@ -146,6 +147,4 @@ require("plugin.autotag_c")
 require("plugin.gitsigns_c")
 require("plugin.mason_c")
 require("plugin.telescope_c")
-
--- input
-require("input.snippet")
+require("plugin.lua_snip_c")
