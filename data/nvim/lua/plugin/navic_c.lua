@@ -10,10 +10,7 @@ require("lspconfig").clangd.setup {
 
 
 
-local navbuddy = require("nvim-navbuddy")
 
-require("lspconfig").clangd.setup {
-	on_attach = function(client, bufnr)
-		navbuddy.attach(client, bufnr)
-	end
-}
+local navbuddy = require("nvim-navbuddy")
+navbuddy.setup { lsp = { auto_attach = true, } }
+

@@ -1,6 +1,6 @@
 --TODO:정리하기
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -15,6 +15,10 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup({
+	{
+		'nvim-neo-tree/neo-tree.nvim',
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
+	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
 	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
@@ -48,7 +52,6 @@ require('lazy').setup({
 	'windwp/nvim-autopairs',
 	'windwp/nvim-ts-autotag',
 	"akinsho/toggleterm.nvim",
-
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
 	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
@@ -57,13 +60,11 @@ require('lazy').setup({
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
 	"haringsrob/nvim_context_vt",
-
 	-- theme
 	'cocopon/iceberg.vim',
 	'savq/melange-nvim',
 	'mhinz/vim-startify', -- 시작 화면
 	'nvim-lualine/lualine.nvim',
-	{ 'kyazdani42/nvim-tree.lua',   dependencies = { 'kyazdani42/nvim-web-devicons' } },
 	'romgrk/barbar.nvim', -- tab line
 	{ 'anuvyklack/pretty-fold.nvim' },
 	'jose-elias-alvarez/null-ls.nvim',
@@ -86,12 +87,16 @@ require('lazy').setup({
 	{ 'L3MON4D3/LuaSnip',             dependencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
 	{ "rafamadriz/friendly-snippets", lazy = false,                                     event = 'InsertEnter' },
 	"lukas-reineke/lsp-format.nvim",
+	{
+		"SmiteshP/nvim-navbuddy",
+		event = 'BufRead',
+		dependencies = { "neovim/nvim-lspconfig", "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" }
+	},
 	--language setting
 	'simrat39/rust-tools.nvim',
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 	{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
-
 	-- Debugging
 	'mfussenegger/nvim-dap',
 	{
@@ -106,7 +111,7 @@ require('lazy').setup({
 	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 -- lsp init config
-require 'nvim-tree'.setup {}
+
 require("project_nvim").setup {}
 --auto pair`
 
@@ -115,7 +120,8 @@ require("project_nvim").setup {}
 --require("symbols-outline").setup()
 require 'sniprun'.setup({ display = { "Terminal" }, })
 require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
---require('session-lens').setup({ --[[your custom config--]] })
+
+
 require("zen-mode").setup {}
 require("twilight").setup {}
 require('numb').setup()
@@ -129,6 +135,7 @@ require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
 require('pretty-fold').setup()
+require("plugin.neotree_c")
 require('plugin.navic_c')
 require("plugin.nullls_c")
 require("plugin.lualine_c")
@@ -140,4 +147,5 @@ require("plugin.gitsigns_c")
 require("plugin.mason_c")
 require("plugin.telescope_c")
 
+-- input
 require("input.snippet")

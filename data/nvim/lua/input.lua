@@ -1,15 +1,10 @@
---temp
 local s = vim.api.nvim_set_keymap
 --s('n', '', 'y', { noremap = true })
+--temp
 --s('v', 'yy', 'oo', { noremap = true })
 --input
 require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
-local tree = require('nvim-tree.api')
-local function opts(desc)
-	return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-end
-
 
 
 --Remap space as leader key
@@ -41,12 +36,18 @@ s('n', 'T', ':Twilight<CR>', { noremap = true, silent = true })
 vim.cmd [[omap     <silent> H :<C-U>lua require('tsht').nodes()<CR>]]
 vim.cmd [[vnoremap <silent> H :lua require('tsht').nodes()<CR>]]
 
+
 --window
 s('n', 'sb', ':split <Return><C-w>w', { silent = true })
 s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
 s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
+--commend lien commend
+require('nvim_comment').setup({ line_mapping = "//", operator_mapping = "#" })
+
+
+
 
 
 --lsp saga
@@ -55,20 +56,12 @@ s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent =
 s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
 s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
 s('n', '<leader>pf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })
-s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
+--s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
+s("n", "<leader>o", ':lua require("nvim-navbuddy").open()<CR>', { silent = true })
 s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
 s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
---nvim Tree
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<S-v>', tree.node.open.vertical, opts('Open: Vertical Split'))
-vim.keymap.set('n', '<S-h>', tree.node.open.horizontal, opts('Open: Vertical Split'))
---vim.keymap.set('n', 'n', tree.node.navigate.sibling.next, opts('Open: Vertical Split'))
---vim.keymap.set('n', 'r', tree.fs.rename_basename, opts('Open: Vertical Split'))
-
-
-
 
 --terminal
 require("toggleterm").setup {
