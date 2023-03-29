@@ -60,8 +60,10 @@ s('n', '<leader>pf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = 
 s("n", "<leader>o", ':lua require("nvim-navbuddy").open()<CR>', { silent = true })
 s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
-s("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
-s("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+s("n", "[;", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+s("n", "];", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+
+
 
 --terminal
 require("toggleterm").setup {

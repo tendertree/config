@@ -1,26 +1,25 @@
-use std::path::PathBuf;
+use std::fs;
+static DATA_PATH: &str = "~/config/data";
 
-//TODO: access 'data' folder
-//TODO: add copy and paste
-//TODO: implehent git push-
-//TODO: add something
+fn copy_file(from: &str, dest: &str) -> Result<(), Box<dyn std::error::Error>> {
+    fs::copy(from, dest).unwrap();
+    Ok(())
+}
 
-fn sum() -> i32 {
-    let result = 1 + 1;
-    result
-}
-fn update(){
-    let mut input = String::new();
-    
-}
 fn main() {
-    println!("Hello, world!");
+    println!("upload neovim config");
+    copy_file("~/hi.txt", DATA_PATH);
 }
 
 #[test]
 fn test_sum() {
-    let p = PathBuf::from("/spirited/away.rs");
-    let mut current = dirs::config_dir().expect("not a valid path");
-    current.push("nvim");
-    assert_eq!(p, current);
+    let from = "~/hi.txt";
+    let to = DATA_PATH;
+    let result = copy_file(from, to);
+
+    assert!(
+        result.is_ok(),
+        "FileCopy failed with error: {:?}",
+        result.err()
+    );
 }
