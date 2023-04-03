@@ -3,6 +3,7 @@ require("neo-tree").setup({
 		mappings = {
 				["s"] = "open_vsplit",
 				["e"] = "",
+				["q"] = "close_window"
 		}
 	}
 })
