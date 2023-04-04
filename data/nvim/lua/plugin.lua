@@ -15,9 +15,20 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup({
+	{ 'nvim-neo-tree/neo-tree.nvim', dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" } },
+	'vim-test/vim-test',
+	{ 'nvim-neotest/neotest',        event = 'BufRead',
+		                                                                                                           dependencies = {
+			"antoinemadec/FixCursorHold.nvim", 'rouge8/neotest-rust', "nvim-neotest/neotest-python",
+			"nvim-neotest/neotest-plenary", "nvim-neotest/neotest-go", "nvim-neotest/neotest-vim-test",
+			'vim-test/vim-test', 'marilari88/neotest-vitest' } },
 	{
-		'nvim-neo-tree/neo-tree.nvim',
-		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" }
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({})
+		end,
 	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
@@ -148,3 +159,5 @@ require("plugin.gitsigns_c")
 require("plugin.mason_c")
 require("plugin.telescope_c")
 require("plugin.lua_snip_c")
+require("plugin.neo_test_c")
+require("plugin.which_c")

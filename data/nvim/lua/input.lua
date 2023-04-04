@@ -1,4 +1,4 @@
-local s = vim.api.nvim_set_keymap
+-- local s = vim.api.nvim_set_keymap
 --s('n', '', 'y', { noremap = true })
 --temp
 --s('v', 'yy', 'oo', { noremap = true })
@@ -6,11 +6,23 @@ local s = vim.api.nvim_set_keymap
 require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
 
+--set some functions
 
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+local function run() require('neotest').run.run() end
+-- mode change
+s('i', 'jl', '<ESC>', { noremap = true, silent = true })
+s('t', 'jl', '<C-\\><C-n>', { noremap = true, silent = true })
+-- center seach result
+s("n", "k", "nzz", { noremap = true, silent = true })
+s("n", "K", "Nzz", { noremap = true, silent = true })
+--visual line waps
+s("v", "<", "<gv", { noremap = true })
+s("v", ">", ">gv", { noremap = true })
+s("v", "p", "_dp", { noremap = true, silent = true })
 -- base movement
 s('n', '<C-1>', ':tabprevious<CR>', { noremap = true, silent = true })
 s('n', '<C-2>', ':tabnext<CR>', { noremap = true, silent = true })
@@ -20,10 +32,14 @@ s('n', '<C-j>', ':m+1<CR>', { noremap = true, silent = true })
 s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('n', '<F3>', '<Plug>SnipRun', { noremap = true })
---s('n', '<F5>', ':Telescope session-lens search_session<CR>', { noremap = true })
+--s('n', '<F5>', 'lua require("neotest").run.run(vim.fn.expand("%"))', { noremap = true })
+s('n', '<F5>', ':TestFile<CR>', { noremap = true })
+
 s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 s('n', '<f7>', ':DiffviewOpen<cr>', { noremap = true })
 s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
+--s('n', '<f9>', ':! cargo test<cr>', { noremap = true })
+--neotest
 
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
@@ -43,13 +59,13 @@ s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
 s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
+s("n", "<Left>", ":vertical resize +1<CR>", { noremap = true })
+s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
+s("n", "<Up>", ":resize -1<CR>", { noremap = true })
+s("n", "<Down>", ":resize +1<CR>", { noremap = true })
+
 --commend lien commend
 require('nvim_comment').setup({ line_mapping = "//", operator_mapping = "#" })
-
-
-
-
-
 --lsp saga
 s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
 s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
