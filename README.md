@@ -31,7 +31,7 @@
   - json setting files  
 * termite, xmodemap, 
 > **Note**
-It works fine in WSL(Arch), but I haven't checked elsewhere. The neovim keyboard layout is set based on colemak-dh. If your key placement is weird, remove the colemak-dh part from the plugin
+It works fine in WSL(Arch), but I haven't checked elsewhere. The neovim shorcut keyboard layout is set based on colemak-dh.
 ## Download
 just copy and pasted 
 ## Todo
