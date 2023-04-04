@@ -22,7 +22,7 @@
 ## list
 
 * neovim
-  - Instantly see what your Markdown documents look like in HTML as you create them.
+  - lsp, cmp, treesitter, etc.. 
 * zsh
   - add some plugin, alias, etc..
 * starship 
