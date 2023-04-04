@@ -48,7 +48,7 @@ add some script
 MIT
 
 ---
-> GitHub [tendertree@gmail.com](mailto:tendertree@gmail.com) &nbsp;&middot;&nbsp;
+> email [tendertree@gmail.com](mailto:tendertree@gmail.com) &nbsp;&middot;&nbsp;
 
 
 
