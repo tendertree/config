@@ -17,11 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	{ 'nvim-neo-tree/neo-tree.nvim', dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" } },
 	'vim-test/vim-test',
-	{ 'nvim-neotest/neotest',        event = 'BufRead',
-		                                                                                                           dependencies = {
+	{
+		'nvim-neotest/neotest',
+		event = 'BufRead',
+		dependencies = {
 			"antoinemadec/FixCursorHold.nvim", 'rouge8/neotest-rust', "nvim-neotest/neotest-python",
 			"nvim-neotest/neotest-plenary", "nvim-neotest/neotest-go", "nvim-neotest/neotest-vim-test",
-			'vim-test/vim-test', 'marilari88/neotest-vitest' } },
+			'vim-test/vim-test', 'marilari88/neotest-vitest' }
+	},
 	{
 		"folke/which-key.nvim",
 		config = function()
@@ -32,14 +35,14 @@ require('lazy').setup({
 	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
-	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
 	'preservim/tagbar',
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',
 	'sindrets/diffview.nvim',
-	{ 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'nvim-telescope/telescope.nvim',   dependencies = 'nvim-lua/plenary.nvim' },
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build =
@@ -65,8 +68,8 @@ require('lazy').setup({
 	"akinsho/toggleterm.nvim",
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
-	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
-	{ 'junegunn/fzf',                    build = ":call fzf#install()" },
+	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
+	{ 'junegunn/fzf',     build = ":call fzf#install()" },
 	{ 'junegunn/fzf.vim' },
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
@@ -107,7 +110,7 @@ require('lazy').setup({
 	'simrat39/rust-tools.nvim',
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
-	{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
+	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	-- Debugging
 	'mfussenegger/nvim-dap',
 	{
@@ -140,7 +143,7 @@ require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a"
 require('neogit').setup { integrations = { diffview = true } }
 require("todo").setup {}
 require("mason-null-ls").setup({ automatic_setup = true, })
-require("nx").setup {}
+--require("nx").setup {}
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
