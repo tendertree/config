@@ -133,6 +133,29 @@ ls.add_snippets("all", {
 }
 
 )
+ls.add_snippets("all", {
+	s("ef", {
+		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
+		t("export default function "), i(1, " name"), t("(){ return( <div>"), i(2, "return"), t("</div>)}")
+	}),
+	s("td", {
+		t("TODO:"), i(1, "txt")
+	})
+}
+
+)
+ls.add_snippets("all", {
+	s("ucl", {
+		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
+		t("'use client'; const"), i(1, "id"), t("=()=>{return()}")
+	}),
+	s("td", {
+		t("TODO:"), i(1, "txt")
+	})
+}
+
+)
+---
 ls.add_snippets("rust", {
 	s(
 		"il",

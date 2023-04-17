@@ -7,7 +7,6 @@ require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
 
 --set some functions
-
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
@@ -16,6 +15,10 @@ local function run() require('neotest').run.run() end
 -- mode change
 s('i', 'jl', '<ESC>', { noremap = true, silent = true })
 s('t', 'jl', '<C-\\><C-n>', { noremap = true, silent = true })
+--paste key problem
+s('n', ':', 'p', { noremap = true, silent = true })
+s('n', ';', ':', { noremap = true, silent = true })
+
 -- center seach result
 s("n", "k", "nzz", { noremap = true, silent = true })
 s("n", "K", "Nzz", { noremap = true, silent = true })
@@ -31,16 +34,17 @@ s('n', '<C-j>', ':m+1<CR>', { noremap = true, silent = true })
 --function
 s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
-s('n', '<F3>', '<Plug>SnipRun', { noremap = true })
---s('n', '<F5>', 'lua require("neotest").run.run(vim.fn.expand("%"))', { noremap = true })
+--s('n', '<F3>', '<Plug>SnipRun', { noremap = true })
+--f4 is binding to terminal open
+--s('n', '<F4>', 'lua require("neotest").run.run(vim.fn.expand("%"))', { noremap = true })
 s('n', '<F5>', ':TestFile<CR>', { noremap = true })
 
 s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 s('n', '<f7>', ':DiffviewOpen<cr>', { noremap = true })
-s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
+s('n', '<F8>', 'Prettier<CR>', { noremap = true })
+--s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
 --s('n', '<f9>', ':! cargo test<cr>', { noremap = true })
 --neotest
-
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
 s('n', '+', '<C-a>', { noremap = true, silent = true })
@@ -61,7 +65,7 @@ s('n', '<leader>w', '<C-w>w', { noremap = true })
 s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
 s("n", "<Left>", ":vertical resize +1<CR>", { noremap = true })
 s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
-s("n", "<Up>", ":resize -1<CR>", { noremap = true })
+--s("n", "<Up>", ":resize -1<CR>", { noremap = true })
 s("n", "<Down>", ":resize +1<CR>", { noremap = true })
 
 --commend lien commend

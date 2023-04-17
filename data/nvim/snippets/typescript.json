@@ -5,5 +5,11 @@
             "@@ ^^ require(\"${1:module}\")"
         ],
         "description": "Require module in lua"
-    }
+    },
+	"basic next component":{
+		"prefix":"nxc",
+		"body":[ "const ${TM_FILENAME_BASE} = () => ()<div> ${TM_FILENAME_BASE}</div>);export default Navbar"
+		],
+		"description":"require for next module"
+	},
 }
