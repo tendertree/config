@@ -94,12 +94,19 @@ require('lazy').setup({
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
-	{ 'hrsh7th/cmp-nvim-lsp',         event = 'InsertEnter' },
+	{ 'hrsh7th/cmp-nvim-lsp',     event = 'InsertEnter' },
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'hrsh7th/cmp-nvim-lua',
-	{ 'saadparwaiz1/cmp_luasnip',     event = 'InsertEnter' },
-	{ 'L3MON4D3/LuaSnip',             dependencies = { "rafamadriz/friendly-snippets" } }, -- snippetet
-	{ "rafamadriz/friendly-snippets", lazy = false,                                     event = 'InsertEnter' },
+	{ 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
+	{
+		'L3MON4D3/LuaSnip',
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			require("luasnip/loaders/from_vscode").load()
+			require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
+		end,
+	}, -- snippetet
+	{ "rafamadriz/friendly-snippets", lazy = false,                          event = 'InsertEnter' },
 	"lukas-reineke/lsp-format.nvim",
 	{
 		"SmiteshP/nvim-navbuddy",
@@ -109,7 +116,7 @@ require('lazy').setup({
 	--language setting
 	'simrat39/rust-tools.nvim',
 	'prisma/vim-prisma',
-	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',       dependencies = 'nvim-lua/plenary.nvim' },
 	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	-- Debugging
 	'mfussenegger/nvim-dap',

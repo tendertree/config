@@ -67,7 +67,6 @@ s("n", "<Left>", ":vertical resize +1<CR>", { noremap = true })
 s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
 --s("n", "<Up>", ":resize -1<CR>", { noremap = true })
 s("n", "<Down>", ":resize +1<CR>", { noremap = true })
-
 --commend lien commend
 require('nvim_comment').setup({ line_mapping = "//", operator_mapping = "#" })
 --lsp saga
@@ -77,12 +76,11 @@ s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true }
 s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
 s('n', '<leader>pf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })
 --s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
-s("n", "<leader>o", ':lua require("nvim-navbuddy").open()<CR>', { silent = true })
+s("n", "<leader>o", ':Navbuddy<CR>', { noremap = true, silent = true })
 s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
 s("n", "[;", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "];", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-
 
 
 --terminal
