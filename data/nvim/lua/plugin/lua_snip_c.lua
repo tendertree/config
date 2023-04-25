@@ -50,7 +50,7 @@ ls.add_snippets("all", {
 ls.add_snippets("all", {
 	s("ef", {
 		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
-		t("export default function "), i(1, " name"), t("(){ <div>return( <div>"), i(2, "something"), t("</div>)}")
+		t("export default function "), i(1, " name"), t("(){ return( <div>"), i(2, "something"), t("</div>)}")
 	}),
 	s("td", {
 		t("TODO:"), i(1, "txt")
