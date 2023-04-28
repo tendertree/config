@@ -79,7 +79,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#cfccb6"
 source $ZSH/oh-my-zsh.sh
 
@@ -110,11 +110,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gsho="git show <commit> --stat"
 alias glo="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all"
+alias px="pnpm dlx"
+alias hg="HYGEN_TMPLS=~/.hygen/_templates hygen generator"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
  eval "$(starship init zsh)"
 
+# path 
+export PATH=/home/tree/project/git_date_Change/src/:$PATH
 # pnpm
 export PNPM_HOME="/home/tree/.local/share/pnpm"
 case ":$PATH:" in
