@@ -34,7 +34,7 @@ s('n', '<C-j>', ':m+1<CR>', { noremap = true, silent = true })
 --function
 s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
---s('n', '<F3>', '<Plug>SnipRun', { noremap = true })
+s('n', '<F3>', ':Prettier<CR>', { noremap = true })
 --f4 is binding to terminal open
 --s('n', '<F4>', 'lua require("neotest").run.run(vim.fn.expand("%"))', { noremap = true })
 s('n', '<F5>', ':TestFile<CR>', { noremap = true })

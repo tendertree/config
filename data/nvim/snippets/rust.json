@@ -1,21 +1,10 @@
 { 
-"Create for loop":{
-    "prefix": "mkfor",
-    "body":[
-      "for(int i = 0; i < 3; i++)",
-      "{",
-      "   //code goes here",
-      "}"
-    ],
-   "description": "Creates a for loop"
-  },
-  {
-	"allow": {
-		"prefix": "allow",
-		"body": [
-			"#![allow(${1})]"
-		],
-		"description": "#![allow(…)]"
-	},
+  "myre": {
+        "prefix": "myreq",
+        "body": [
+            "@@ ^^ require(\"${1:module}\")"
+        ],
+        "description": "Require module in lua"
+    }
 }
 

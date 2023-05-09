@@ -15,8 +15,27 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup({
-	{ 'nvim-neo-tree/neo-tree.nvim', dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" } },
+	{
+		'nvim-neo-tree/neo-tree.nvim',
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
+		opts = {
+			filesystem = {
+				filtered_items = {
+					visible = true,
+					show_hidden_count = true,
+					hide_dotfiles = false,
+					hide_gitignored = true,
+					hide_by_name = {
+						-- '.git',
+						-- '.DS_Store',
+						-- 'thumbs.db',
+					},
+				}
+			},
+		}
+	},
 	'vim-test/vim-test',
+	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
 		event = 'BufRead',
@@ -35,7 +54,7 @@ require('lazy').setup({
 	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
-	{ 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
 	'mattn/emmet-vim',
@@ -43,7 +62,7 @@ require('lazy').setup({
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',
 	'sindrets/diffview.nvim',
-	{ 'nvim-telescope/telescope.nvim',   dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build =
@@ -69,8 +88,8 @@ require('lazy').setup({
 	"akinsho/toggleterm.nvim",
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
-	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
-	{ 'junegunn/fzf',     build = ":call fzf#install()" },
+	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
+	{ 'junegunn/fzf',                    build = ":call fzf#install()" },
 	{ 'junegunn/fzf.vim' },
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
@@ -173,3 +192,4 @@ require("plugin.lua_snip_c")
 require("plugin.neo_test_c")
 require("plugin.which_c")
 require("plugin.prettier_c")
+require("plugin.comment_c")

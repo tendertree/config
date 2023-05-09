@@ -8,16 +8,18 @@
         ],
         "path": "./lua.json"
       },
-	  {
-		"language":[
-			"all"
-		],
-		"path":"./all.json"
-	  },
-	  {
-		  "language":["typescript.json"],"path":"./typescript.json"
-	  }
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./all.json"
+      },
+      {
+        "language": [
+          "typescript","tsx","typescriptreact", "typescript.tsx"
+        ],
+        "path": "./typescript.json"
+      }
     ]
   }
-
 }
