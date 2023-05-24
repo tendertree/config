@@ -35,6 +35,7 @@ require('lazy').setup({
 		}
 	},
 	'vim-test/vim-test',
+	{ 'elel-dev/vim-astro-syntax', ft = "astro" },
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
@@ -54,7 +55,7 @@ require('lazy').setup({
 	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
-	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',    dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
 	'mattn/emmet-vim',
@@ -62,7 +63,7 @@ require('lazy').setup({
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',
 	'sindrets/diffview.nvim',
-	{ 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'nvim-telescope/telescope.nvim',   dependencies = 'nvim-lua/plenary.nvim' },
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build =
@@ -88,8 +89,8 @@ require('lazy').setup({
 	"akinsho/toggleterm.nvim",
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
-	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
-	{ 'junegunn/fzf',                    build = ":call fzf#install()" },
+	{ 'michaelb/sniprun', build = 'bash ./install.sh' },
+	{ 'junegunn/fzf',     build = ":call fzf#install()" },
 	{ 'junegunn/fzf.vim' },
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
@@ -151,8 +152,10 @@ require('lazy').setup({
 	},
 	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
--- lsp init config
 
+
+
+-- lsp init config
 require("project_nvim").setup {}
 --auto pair`
 
@@ -161,8 +164,6 @@ require("project_nvim").setup {}
 --require("symbols-outline").setup()
 require 'sniprun'.setup({ display = { "Terminal" }, })
 require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
-
-
 require("zen-mode").setup {}
 require("twilight").setup {}
 require('numb').setup()

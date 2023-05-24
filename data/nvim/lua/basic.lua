@@ -84,3 +84,6 @@ opt.pumblend = 5
 opt.background = 'dark'
 -- vim-test setting
 o.ultest_use_pty = 1
+--astro
+vim.g.astro_typescript = 'enable'
+vim.g.astro_stylus = 'enable'
