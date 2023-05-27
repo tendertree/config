@@ -111,8 +111,10 @@ source $ZSH/oh-my-zsh.sh
 alias gsho="git show <commit> --stat"
 alias glo="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all"
 alias px="pnpm dlx"
-alias hg="HYGEN_TMPLS=~/.hygen/_templates hygen generator"
-
+alias hg="HYGEN_TMPLS=~/.hygen/_templates hygen"
+alias pmn="cp -r ~/barebone/next_barebone ."
+alias pm="cp -r ~/barebone/origin-barebone ."
+alias prd="pnpm run dev"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
