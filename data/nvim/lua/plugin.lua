@@ -95,6 +95,7 @@ require('lazy').setup({
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
 	"haringsrob/nvim_context_vt",
+	'MunifTanjim/prettier.nvim',
 	-- theme
 	'cocopon/iceberg.vim',
 	'savq/melange-nvim',
@@ -171,19 +172,17 @@ require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a"
 require('neogit').setup { integrations = { diffview = true } }
 require("todo").setup {}
 require("mason-null-ls").setup({ automatic_setup = true, })
---require("nx").setup {}
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
-require('plugin.cmp_c')
 require('pretty-fold').setup()
+require('plugin.cmp_c')
 require("plugin.neotree_c")
 require('plugin.navic_c')
 require("plugin.nullls_c")
 require("plugin.lualine_c")
 require("plugin.treesitter_c")
-require("plugin.nullls_c")
 require("plugin.autopairs_c")
 require("plugin.autotag_c")
 require("plugin.gitsigns_c")

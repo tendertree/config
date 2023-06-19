@@ -87,3 +87,5 @@ o.ultest_use_pty = 1
 --astro
 vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
+--format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
