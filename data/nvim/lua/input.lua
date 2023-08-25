@@ -41,7 +41,7 @@ s('n', '<F5>', ':TestFile<CR>', { noremap = true })
 
 s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 s('n', '<f7>', ':DiffviewOpen<cr>', { noremap = true })
-s('n', '<F8>', 'Prettier<CR>', { noremap = true })
+--s('n', '<F8>', 'Prettier<CR>', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
 --s('n', '<f9>', ':! cargo test<cr>', { noremap = true })
 --neotest
@@ -58,7 +58,7 @@ vim.cmd [[vnoremap <silent> H :lua require('tsht').nodes()<CR>]]
 
 
 --window
-s('n', 'sb', ':split <Return><C-w>w', { silent = true })
+s('n', 'wk', ':split <Return><C-w>w', { silent = true })
 s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
@@ -99,8 +99,8 @@ require('telescope').setup {
 				-- map actions.which_key to <C-h> (default: <C-/>)
 				-- actions.which_key shows the mappings for your picker,
 				-- e.g. git_{create, delete, ...}_branch for the git_branches picker
-					["<C-j>"] = actions.move_selection_next,
-					["<C-k>"] = actions.move_selection_previous,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
 			}
 		}
 	}
@@ -131,23 +131,40 @@ require 'nvim-treesitter.configs'.setup {
 			lookahead = true,
 			keymaps = {
 				-- You can use the capture groups defined in textobjects.scm
-					["af"] = "@function.outer",
-					["if"] = "@function.inner",
-					["ac"] = "@class.outer",
-					["ic"] = "@class.inner"
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner"
 			}
 		},
 		move = {
 			enable = true,
 			set_jumps = true,
 			goto_next_start = {
-					['N'] = '@function.outer',
-					[']]'] = '@class.outer'
+				['N'] = '@function.outer',
+				[']]'] = '@class.outer'
 			},
 			goto_previous_start = {
-					['E'] = '@function.outer',
-					['[['] = '@class.outer'
+				['E'] = '@function.outer',
+				['[['] = '@class.outer'
 			}
 		}
+	}
+}
+
+
+local navbuddy = require("nvim-navbuddy")
+local actions = require("nvim-navbuddy.actions")
+
+navbuddy.setup {
+	mappings = {
+		["o"] = actions.parent(),
+		["m"] = actions.children(),
+	},
+	source_buffer = {
+		follow_node = true, -- Keep the current node in focus on the source buffer
+		highlight = true, -- Highlight the currently focused node
+		reorient = "smart", -- "smart", "top", "mid" or "none"
+		scrolloff = nil -- scrolloff value when navbuddy is open
 	}
 }

@@ -107,7 +107,11 @@ require('lazy').setup({
 	'MunifTanjim/prettier.nvim',
 	'stevearc/dressing.nvim',
 	--LSP
-	'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
+	{
+		'neovim/nvim-lspconfig'
+
+
+	}, -- Collection of configurations for built-in LSP client
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	"jay-babu/mason-null-ls.nvim",
