@@ -3,7 +3,7 @@ my custom setting
 
 # 2020
 - 1112 - emacs 설정을 잡아봄 
-- 1113 - emacs 사용을 포기함
+- 1113 - emacs에서는 세벌식3-2015가 안되므로 포기함
 - 1128 - 탐색기 프로그램으로 'defx'를 설치함 
 - 1213 - vim-autofmg르 설치함 
 - 1216 - F3으로 파이썬, rust 코드가 실행되게 함 
@@ -46,8 +46,10 @@ my custom setting
 - 1116 - zsh suggestion과 syntax plugin 추가 
 - 1209 - TODO plugin 추가 
 - 1212 - Custom snippet 추가 
+
 # 2023
 - 0106 - melange로 테마를 바꾸었다 
 - 0107 - italic 글씨체가 안나오게 테마를 바꾸었다..!
 - 0108 - rust로 파일 이동 처리하는 스크립트를 시도중 
 - 0116 - neovim 업데이트로 플러그인 몇개 설정 수정, 테마 수정
+- 0905 - navbuddy 키 작동 제대로 되게 수정, 단축키 몇가지
