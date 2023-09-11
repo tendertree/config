@@ -108,6 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias bn="bun"
+alias bx="bunx"
 alias c="cd"
 alias dr="dir"
 alias nv="nvim"

@@ -1,5 +1,14 @@
-{
-  "myre": {
+{  "basic vite unit test": {
+    "prefix": "tt",
+    "body": [
+	  "import { expect, test } from 'bun:test';",
+      "test('${1:name}',()=>{",
+      "expect(${2:data}).tobe(${3:result})",
+	  "})"
+    ],
+    "description": "Simple vite test "
+  },
+  "export default function": {
     "prefix": "ed",
     "body": [
       "export default function ${1:name}(){",
@@ -9,7 +18,7 @@
     ],
     "description": "Require module in lua"
   },
-  "myre2": {
+  "prisma client": {
     "prefix": "pc",
     "body": [
       "import { PrismaClient } from '@prisma/client';",
