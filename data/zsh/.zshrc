@@ -108,8 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias bn="bun"
-alias bx="bunx"
+alias r="sudo rm -r"
 alias c="cd"
 alias dr="dir"
 alias nv="nvim"
@@ -138,3 +137,7 @@ esac
 export DENO_INSTALL="/home/tree/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

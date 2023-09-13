@@ -109,8 +109,6 @@ require('lazy').setup({
 	--LSP
 	{
 		'neovim/nvim-lspconfig'
-
-
 	}, -- Collection of configurations for built-in LSP client
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
@@ -197,3 +195,5 @@ require("plugin.neo_test_c")
 require("plugin.which_c")
 require("plugin.prettier_c")
 require("plugin.comment_c")
+require("plugin.fzf_c")
+require("plugin.lsp_saga_c")

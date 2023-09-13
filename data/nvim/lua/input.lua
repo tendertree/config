@@ -36,15 +36,12 @@ s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('n', '<F3>', ':Prettier<CR>', { noremap = true })
 --f4 is binding to terminal open
---s('n', '<F4>', 'lua require("neotest").run.run(vim.fn.expand("%"))', { noremap = true })
 s('n', '<F5>', ':TestFile<CR>', { noremap = true })
-
 s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
-s('n', '<f7>', ':DiffviewOpen<cr>', { noremap = true })
---s('n', '<F8>', 'Prettier<CR>', { noremap = true })
+s('n', '<f7>', ':split<Return>', { noremap = true })
+s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
 --s('n', '<f9>', ':! cargo test<cr>', { noremap = true })
---neotest
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
 s('n', '+', '<C-a>', { noremap = true, silent = true })
@@ -58,23 +55,23 @@ vim.cmd [[vnoremap <silent> H :lua require('tsht').nodes()<CR>]]
 
 
 --window
-s('n', 'wk', ':split <Return><C-w>w', { silent = true })
-s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+--s('n', 'wk', ':split <Return><C-w>w', { silent = true })
+--s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
-s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
+--s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
 s("n", "<Left>", ":vertical resize +1<CR>", { noremap = true })
 s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
 --s("n", "<Up>", ":resize -1<CR>", { noremap = true })
-s("n", "<Down>", ":resize +1<CR>", { noremap = true })
+--s("n", "<Down>", ":resize +1<CR>", { noremap = true })
 --commend lien commendrs
 require('nvim_comment').setup({ line_mapping = "//", operator_mapping = "#" })
 --lsp saga
 s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
-s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
-s('n', '<leader>f', ':Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
+--s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
+s('n', '<leader>f', ':Lspsaga finder<CR>', { noremap = true, silent = true })
 s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
-s('n', '<leader>pf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })
+--s('n', '<leader>zf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })
 --s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
 s("n", "<leader>o", ':Navbuddy<CR>', { noremap = true, silent = true })
 s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
@@ -116,8 +113,8 @@ end
 -- nvim tree
 --telescope
 vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope file_browser<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>td', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope file_browser<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>q', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>tb', ':Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>th', ':Telescope help_tags<CR>', { noremap = true, silent = true })
 -- snippet
