@@ -16,6 +16,7 @@
   "filetype.nvim": { "branch": "main", "commit": "b522628a45a17d58fc0073ffd64f9dc9530a8027" },
   "friendly-snippets": { "branch": "main", "commit": "ebf6d6e83494cdd88a54a429340256f4dbb6a052" },
   "fzf": { "branch": "master", "commit": "eb4bbf32948303e326a2791c6a875f32d7b5c97f" },
+  "fzf-ripgrep.vim": { "branch": "master", "commit": "360d01ad2cde06267567f84c00abec6960a11f24" },
   "fzf.vim": { "branch": "master", "commit": "587f55bf5051ff40600837778ea01ead6283f399" },
   "git-messenger.vim": { "branch": "master", "commit": "8a61bdfa351d4df9a9118ee1d3f45edbed617072" },
   "gitsigns.nvim": { "branch": "main", "commit": "907ae8636016aab2f283576fc60d46ca3427e579" },
