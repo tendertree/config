@@ -54,3 +54,4 @@ my custom setting
 - 0116 - neovim 업데이트로 플러그인 몇개 설정 수정, 테마 수정
 - 0905 - navbuddy 키 작동 제대로 되게 수정, 단축키 몇가지
 - 0913 - live grep, lsp saga finder 키 수정, lightbulb 해제 
+- 0915 - eza를 설치하고 ls를 대체 

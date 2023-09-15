@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="eza -l --icons"
 alias r="sudo rm -r"
 alias c="cd"
 alias dr="dir"
@@ -125,7 +126,7 @@ alias pd="cd /mnt/d/project"
  eval "$(starship init zsh)"
 
 # path 
-export PATH=/home/tree/project/git_date_Change/src/:$PATH
+export PATH=$HOME/.local/share/cargo/bin/eza:/home/tree/project/git_date_Change/src/:$PATH
 # pnpm
 export PNPM_HOME="/home/tree/.local/share/pnpm"
 case ":$PATH:" in
