@@ -55,3 +55,4 @@ my custom setting
 - 0905 - navbuddy 키 작동 제대로 되게 수정, 단축키 몇가지
 - 0913 - live grep, lsp saga finder 키 수정, lightbulb 해제 
 - 0915 - eza를 설치하고 ls를 대체 
+- 0917 - local/share/friendly snippet 에서 TimeHMS 삭제 
