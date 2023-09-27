@@ -98,11 +98,25 @@ require('lazy').setup({
 	"haringsrob/nvim_context_vt",
 	'MunifTanjim/prettier.nvim',
 	-- theme
+	{
+		'laytan/tailwind-sorter.nvim',
+		dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+		build = 'cd formatter && npm i && npm run build',
+		config = true,
+	},
 	'cocopon/iceberg.vim',
 	'savq/melange-nvim',
 	'mhinz/vim-startify', -- 시작 화면
 	'nvim-lualine/lualine.nvim',
 	'romgrk/barbar.nvim', -- tab line
+	{
+		"cuducos/yaml.nvim",
+		ft = { "yaml" }, -- optional
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+	},
 	{ 'anuvyklack/pretty-fold.nvim' },
 	'jose-elias-alvarez/null-ls.nvim',
 	'MunifTanjim/prettier.nvim',
@@ -198,3 +212,4 @@ require("plugin.prettier_c")
 require("plugin.comment_c")
 require("plugin.fzf_c")
 require("plugin.lsp_saga_c")
+require("plugin.tailwind_sorter_c")
