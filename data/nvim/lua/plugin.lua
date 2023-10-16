@@ -168,6 +168,10 @@ require('lazy').setup({
 			}
 		end
 	},
+	{
+		'Exafunction/codeium.vim',
+		event = 'BufEnter'
+	},
 	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 
