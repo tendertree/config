@@ -120,6 +120,7 @@ alias px="pnpm dlx"
 alias hg="HYGEN_TMPLS=~/.hygen/_templates hygen"
 alias prd="pnpm run dev"
 alias pd="cd /mnt/d/project"
+alias bx="bunx"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
