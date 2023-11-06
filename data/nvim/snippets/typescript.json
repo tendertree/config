@@ -26,5 +26,22 @@
       "export default prisma;"
     ],
     "description": "prismaClient"
-  }
+  },
+  "animejsObject":{
+	  "prefix":"ani",
+	  "body":[
+		 " const ${1:name} = anime({",
+			"targets: '.moving-box',",
+			"keyframes: [",
+			"{ translateY: -40 }",
+			"		],",
+			"delay: anime.stagger(100),",
+			"loop: true,",
+			"direction: 'alternate',",
+			"autoplay: false,",
+			"duration: 3000,"
+	  ],
+		 "description":"animejs object "
+		 }
+
 }
