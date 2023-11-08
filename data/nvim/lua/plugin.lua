@@ -35,7 +35,7 @@ require('lazy').setup({
 		}
 	},
 	'vim-test/vim-test',
-	{ 'elel-dev/vim-astro-syntax', ft = "astro" },
+	-- { 'elel-dev/vim-aststro-syntax', ft = "astro" },
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
@@ -55,7 +55,7 @@ require('lazy').setup({
 	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
-	{ 'TimUntersberger/neogit',    dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
 	'mattn/emmet-vim',
@@ -63,7 +63,7 @@ require('lazy').setup({
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',
 	'sindrets/diffview.nvim',
-	{ 'nvim-telescope/telescope.nvim',   dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build =
@@ -71,13 +71,13 @@ require('lazy').setup({
 	},
 	'nvim-telescope/telescope-file-browser.nvim',
 	"ahmedkhalf/project.nvim",
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl",                                                  opts = {} },
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
 	-- UI
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
-	{ 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
+	{ 'nvim-treesitter/nvim-treesitter',     build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
 	'vim-pandoc/vim-pandoc-syntax',
@@ -90,7 +90,12 @@ require('lazy').setup({
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
 	{ 'michaelb/sniprun',         build = 'bash ./install.sh' },
-	{ 'junegunn/fzf',             event = 'BufRead',          build = ":call fzf#install()" },
+	{
+		'junegunn/fzf',
+		event = 'BufRead',
+		build =
+		":call fzf#install()"
+	},
 	{ 'junegunn/fzf.vim',         event = 'BufRead' },
 	{ 'wookayin/fzf-ripgrep.vim', event = 'BufRead' },
 	"folke/zen-mode.nvim",
@@ -189,7 +194,6 @@ require("project_nvim").setup {}
 -- some plugin setting
 --require("symbols-outline").setup()
 require 'sniprun'.setup({ display = { "Terminal" }, })
-require("indent_blankline").setup { show_current_context = true, show_current_context_start = true, }
 require("zen-mode").setup {}
 require("twilight").setup {}
 require('numb').setup()

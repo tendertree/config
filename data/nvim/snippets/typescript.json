@@ -27,7 +27,7 @@
     ],
     "description": "prismaClient"
   },
-  "animejsObject":{
+"animejsObject":{
 	  "prefix":"ani",
 	  "body":[
 		 " const ${1:name} = anime({",
@@ -43,5 +43,6 @@
 	  ],
 		 "description":"animejs object "
 		 }
+
 
 }
