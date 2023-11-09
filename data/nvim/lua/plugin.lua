@@ -71,13 +71,21 @@ require('lazy').setup({
 	},
 	'nvim-telescope/telescope-file-browser.nvim',
 	"ahmedkhalf/project.nvim",
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl",                                                  opts = {} },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		event = 'BufRead',
+		opts = {},
+		config = function()
+			require('ibl').setup({})
+		end,
+	},
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
 	-- UI
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
-	{ 'nvim-treesitter/nvim-treesitter',     build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
+	{ 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
 	'vim-pandoc/vim-pandoc-syntax',
@@ -89,7 +97,7 @@ require('lazy').setup({
 	"akinsho/toggleterm.nvim",
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
-	{ 'michaelb/sniprun',         build = 'bash ./install.sh' },
+	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
 	{
 		'junegunn/fzf',
 		event = 'BufRead',
@@ -201,6 +209,7 @@ require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a"
 require('neogit').setup { integrations = { diffview = true } }
 require("todo").setup {}
 require("mason-null-ls").setup({ automatic_setup = true, })
+
 -- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
