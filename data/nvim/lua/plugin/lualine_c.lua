@@ -6,14 +6,14 @@ require('lualine').setup {
 			'diff',
 			{
 				'diagnostics',
-				symbols = { error = '😡 ', warn = '🧐 ', info = '🤓 ', hint = '🤖 ' }
+				symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
 			}, },
 		lualine_c = { 'filename' },
 		lualine_x = { 'encoding', 'fileformat', 'filetype' },
 		lualine_y = { 'progress', 'getWords' },
 		lualine_z = { 'location', {
 			'datetime',
-			style = '⏰ %H:%M'
+			style = ' %H:%M'
 		}
 		}
 	},
