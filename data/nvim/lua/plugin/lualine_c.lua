@@ -13,7 +13,7 @@ require('lualine').setup {
 		lualine_y = { 'progress', 'getWords' },
 		lualine_z = { 'location', {
 			'datetime',
-			style = '%H:%M'
+			style = '⏰ %H:%M'
 		}
 		}
 	},
