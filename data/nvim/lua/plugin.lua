@@ -76,9 +76,6 @@ require('lazy').setup({
 		main = "ibl",
 		event = 'BufRead',
 		opts = {},
-		config = function()
-			require('ibl').setup({})
-		end,
 	},
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
@@ -234,3 +231,4 @@ require("plugin.comment_c")
 require("plugin.fzf_c")
 require("plugin.lsp_saga_c")
 require("plugin.tailwind_sorter_c")
+require("plugin.indent_blackline_c")
