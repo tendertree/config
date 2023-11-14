@@ -75,7 +75,7 @@ s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = t
 --s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
 s("n", "<leader>o", ':Navbuddy<CR>', { noremap = true, silent = true })
 s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
-s('n', 'gr', ':Lspsaga rename<CR>', { noremap = true, silent = true })
+s('n', 'gr', ':Lspsaga rename<CR> ', { noremap = true, silent = true })
 s("n", "[;", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "];", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 
