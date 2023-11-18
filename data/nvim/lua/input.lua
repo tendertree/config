@@ -36,7 +36,7 @@ s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('n', '<F3>', ':Prettier<CR>', { noremap = true })
 --f4 is binding to terminal open
-s('n', '<F5>', ':TestFile<CR>', { noremap = true })
+s('n', '<F5>', ':undo<CR>', { noremap = true })
 s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 s('n', '<f7>', ':split<Return>', { noremap = true })
 s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
