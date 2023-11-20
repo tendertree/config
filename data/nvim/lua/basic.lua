@@ -9,6 +9,7 @@ local opt = vim.opt
 w.number = true
 w.relativenumber = false
 o.ma = true
+o.swapfile = false
 o.tabstop = 4
 o.autoindent = true
 o.smartindent = true

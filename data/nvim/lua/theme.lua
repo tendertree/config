@@ -28,18 +28,18 @@ vim.fn.sign_define("LspDiagnosticsSignHint",
 
 --theme change
 
-local time = os.date("*t")
-if (time.hour % 24 <= 21 and time.hour % 24 >= 8)
-then
-	vim.cmd.colorscheme 'melange'
-	o.background = "light"
-	vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })
-	vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
-	vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = '#acbfb0' })
-else
-	vim.cmd("colorscheme iceberg")
-	o.background = "dark"
-end
+-- local time = os.date("*t")
+-- if (time.hour % 24 <= 21 and time.hour % 24 >= 8)
+-- then
+-- vim.cmd.colorscheme 'melange'
+-- o.background = "light"
+-- vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })
+-- vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
+-- vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = '#acbfb0' })
+-- else
+-- vim.cmd("colorscheme iceberg")
+-- o.background = "dark"
+-- end
 
 require('lualine').setup {
 	options = {
