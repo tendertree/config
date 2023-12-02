@@ -42,7 +42,6 @@ vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to de
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 -- use system clipboard
-vim.o.clipboard = "unnamedplus"
 
 -- use devaslife setting
 vim.scriptencoding = 'utf-8'
@@ -90,3 +89,21 @@ vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
 --format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+
+--clipbiioard
+
+vim.opt.clipboard = "unnamedplus"
+if vim.fn.has('wsl') == 1 then
+vim.api.nvim_create_autocmd('TextYankPost', {
+group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+callback = function()
+vim.fn.system('clip.exe', vim.fn.getreg('"'))
+end,
+})
+
+end
+
+
+
+
