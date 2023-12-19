@@ -78,7 +78,6 @@ require('lazy').setup({
 	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
-	'mattn/emmet-vim',
 	'preservim/tagbar',
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',

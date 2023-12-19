@@ -41,7 +41,7 @@ s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 s('n', '<f7>', ':split<Return>', { noremap = true })
 s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
---s('n', '<f9>', ':! cargo test<cr>', { noremap = true })
+s('n', '<f9>', ':SnipRun<cr>', { noremap = true })
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
 s('n', '+', '<C-a>', { noremap = true, silent = true })
