@@ -1,4 +1,4 @@
---TODO:정리하기
+--TODO:정리하기plugin
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -34,6 +34,15 @@ require('lazy').setup({
 			},
 		}
 	},
+
+	{
+		'Exafunction/codeium.vim',
+		event = 'BufEnter',
+		config = function()
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set('i', '<Right>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+		end
+	},
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -53,7 +62,8 @@ require('lazy').setup({
 			}
 		end,
 	},
-
+	{ 'rcarriga/nvim-notify',   event = 'BufEnter' },
+	'MunifTanjim/nui.nvim',
 	'vim-test/vim-test',
 	-- { 'elel-dev/vim-aststro-syntax', ft = "astro" },
 	'prisma/vim-prisma',
@@ -75,14 +85,14 @@ require('lazy').setup({
 	},
 	'lewis6991/gitsigns.nvim',
 	'tpope/vim-fugitive', -- Git commands in nvim
-	{ 'TimUntersberger/neogit',        dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 	"nathom/filetype.nvim",
 	'lewis6991/impatient.nvim',
 	'preservim/tagbar',
 	'ludovicchabant/vim-gutentags', -- Automatic tags management
 	'nvim-lua/plenary.nvim',
 	'sindrets/diffview.nvim',
-	{ 'nvim-telescope/telescope.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'nvim-telescope/telescope.nvim',   dependencies = 'nvim-lua/plenary.nvim' },
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
 		build =
@@ -113,7 +123,7 @@ require('lazy').setup({
 	"akinsho/toggleterm.nvim",
 	"AmeerTaweel/todo.nvim",
 	--{ "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end },
-	{ 'michaelb/sniprun',                build = 'bash ./install.sh' },
+	{ 'michaelb/sniprun',         build = 'bash ./install.sh' },
 	{
 		'junegunn/fzf',
 		event = 'BufRead',
@@ -154,7 +164,12 @@ require('lazy').setup({
 	{
 		'neovim/nvim-lspconfig'
 	}, -- Collection of configurations for built-in LSP client
-	{ "williamboman/mason.nvim" },
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = { "clang", "lua-language-server", "tsserver" }
+		}
+	},
 	{ "williamboman/mason-lspconfig.nvim" },
 	"jay-babu/mason-null-ls.nvim",
 	{ "glepnir/lspsaga.nvim", event = 'BufRead',     config = function() require('lspsaga').setup({}) end, },
@@ -197,14 +212,7 @@ require('lazy').setup({
 			}
 		end
 	},
-	{
-		'Exafunction/codeium.vim',
-		event = 'BufEnter',
-		config = function()
-			-- Change '<C-g>' here to any keycode you like.
-			vim.keymap.set('i', '<Right>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-		end
-	},
+
 	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 
@@ -225,8 +233,6 @@ require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a"
 require('neogit').setup { integrations = { diffview = true } }
 require("todo").setup {}
 require("mason-null-ls").setup({ automatic_setup = true, })
-
--- lsp config
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()

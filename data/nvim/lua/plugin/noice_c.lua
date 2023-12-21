@@ -17,12 +17,12 @@ require("noice").setup({
 	},
 
 	notify = {
-		enabled = true,
+		enabled = false,
 		view = "notify",
 		max_width = 15,
 	},
 	popupmenu = {
-		enabled = true,
+		enabled = false,
 		backend = "nui",
 		kind_icons = {},
 		max_width = 15, -- Set your desired max-width value
