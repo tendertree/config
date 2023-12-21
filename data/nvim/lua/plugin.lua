@@ -44,6 +44,9 @@ require('lazy').setup({
 		end
 	},
 	{
+		'mfussenegger/nvim-dap'
+	},
+	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
@@ -167,11 +170,47 @@ require('lazy').setup({
 	{
 		"williamboman/mason.nvim",
 		opts = {
-			ensure_installed = { "clang", "lua-language-server", "tsserver" }
+			ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
 		}
 	},
 	{ "williamboman/mason-lspconfig.nvim" },
+	{
+		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
+		config = function()
+			local dap = require("dap")
+			local dapui = require("dapui")
+			dapui.setup()
+			dap.listeners.after.event_initialized["dapui_config"] = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated["dapui_config"] = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited["dapui_config"] = function()
+				dapui.close()
+			end
+		end
+	},
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"williamboman/mason.nvim",
+		},
+		opts = {
+			handlers = {},
+			ensure_installed = {
+				"codelldb",
+			}
+		}
+	},
 	"jay-babu/mason-null-ls.nvim",
+
 	{ "glepnir/lspsaga.nvim", event = 'BufRead',     config = function() require('lspsaga').setup({}) end, },
 	{ 'hrsh7th/nvim-cmp',     event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
 	'hrsh7th/cmp-buffer',
@@ -201,8 +240,6 @@ require('lazy').setup({
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit',       dependencies = 'nvim-lua/plenary.nvim' },
 	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
-	-- Debugging
-	'mfussenegger/nvim-dap',
 	{
 		'rmagatti/auto-session',
 		config = function()
