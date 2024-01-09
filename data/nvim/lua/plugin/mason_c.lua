@@ -3,9 +3,16 @@ require("mason-lspconfig").setup {}
 local navbuddy = require("nvim-navbuddy")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").tsserver.setup { capabilities = capabilities, on_attach = function(client, bufnr)
-	navbuddy.attach(client, bufnr)
-end
+require("lspconfig").tsserver.setup {
+	settings = {
+		completions = {
+			completeFunctionCalls = true
+		}
+	},
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		navbuddy.attach(client, bufnr)
+	end
 }
 require 'lspconfig'.clangd.setup {
 	on_attach = function(client, bufnr)

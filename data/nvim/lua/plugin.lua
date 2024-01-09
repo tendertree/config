@@ -34,18 +34,6 @@ require('lazy').setup({
 			},
 		}
 	},
-
-	{
-		'Exafunction/codeium.vim',
-		event = 'BufEnter',
-		config = function()
-			-- Change '<C-g>' here to any keycode you like.
-			vim.keymap.set('i', '<Right>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-		end
-	},
-	{
-		'mfussenegger/nvim-dap'
-	},
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -65,6 +53,18 @@ require('lazy').setup({
 			}
 		end,
 	},
+	{
+		'Exafunction/codeium.vim',
+		event = 'BufEnter',
+		config = function()
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set('i', '<Right>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+		end
+	},
+	{
+		'mfussenegger/nvim-dap'
+	},
+
 	{ 'rcarriga/nvim-notify',   event = 'BufEnter' },
 	'MunifTanjim/nui.nvim',
 	'vim-test/vim-test',
