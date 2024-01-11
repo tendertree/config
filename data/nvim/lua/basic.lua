@@ -48,7 +48,7 @@ vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.wo.number = true
-opt.title = ture
+opt.title = true
 opt.backup = false
 opt.showcmd = true
 opt.cmdheight = 1
@@ -71,7 +71,6 @@ vim.opt.path:append { '**' }
 vim.opt.formatoptions:append { 'r' }
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.api.nvim_create_autocmd('insertLeave', { pattern = '*', command = 'set nopaste' })
-
 vim.cmd([[let &t_Cs ="\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
@@ -95,15 +94,10 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 vim.opt.clipboard = "unnamedplus"
 if vim.fn.has('wsl') == 1 then
-vim.api.nvim_create_autocmd('TextYankPost', {
-group = vim.api.nvim_create_augroup('Yank', { clear = true }),
-callback = function()
-vim.fn.system('clip.exe', vim.fn.getreg('"'))
-end,
-})
-
+	vim.api.nvim_create_autocmd('TextYankPost', {
+		group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+		callback = function()
+			vim.fn.system('clip.exe', vim.fn.getreg('"'))
+		end,
+	})
 end
-
-
-
-

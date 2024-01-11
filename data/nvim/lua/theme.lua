@@ -3,7 +3,6 @@ local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
 --startify setting
-vim.g.startify_session_persistence = true
 vim.g.startify_custom_header = {
 	'                  ',
 	'        <(- )___  ',

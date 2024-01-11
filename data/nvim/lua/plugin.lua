@@ -112,6 +112,7 @@ require('lazy').setup({
 	'nacro90/numb.nvim',
 	'rhysd/git-messenger.vim',
 	-- UI
+	'Shatur/neovim-session-manager',
 	'terrortylor/nvim-comment',
 	"tendertree/nforcolemak-dh",
 	{ 'nvim-treesitter/nvim-treesitter', build = { ':TSUpdate', ':TSInstall markdown markdown_inline' } },
@@ -146,9 +147,15 @@ require('lazy').setup({
 		build = 'cd formatter && npm i && npm run build',
 		config = true,
 	},
+	{
+		'goolord/alpha-nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require 'alpha'.setup(require 'alpha.themes.startify'.config)
+		end
+	},
 	'cocopon/iceberg.vim',
 	'savq/melange-nvim',
-	'mhinz/vim-startify', -- 시작 화면
 	'nvim-lualine/lualine.nvim',
 	'romgrk/barbar.nvim', -- tab line
 	{
@@ -250,6 +257,8 @@ require('lazy').setup({
 		end
 	},
 
+
+
 	--'simrat39/symbols-outline.nvim',
 }, { defaults = { lazy = true } })
 
@@ -296,3 +305,4 @@ require("plugin.tailwind_sorter_c")
 require("plugin.indent_blackline_c")
 require("plugin.noice_c")
 require("plugin.toggle_term_c")
+require("plugin.alpha_c")
