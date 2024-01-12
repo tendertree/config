@@ -2,7 +2,7 @@
     "myre": {
         "prefix": "myreq",
         "body": [
-            "@@ ^^ require(\"${1:module}\")"
+            "@@ ^^? require(\"${1:module}\")"
         ],
         "description": "Require module in lua"
     }
