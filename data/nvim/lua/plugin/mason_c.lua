@@ -6,7 +6,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require("lspconfig").tsserver.setup {
 	settings = {
 		completions = {
-			--	completeFunctionCalls = true
+			completeFunctionCalls = true
 		}
 	},
 	capabilities = capabilities,
