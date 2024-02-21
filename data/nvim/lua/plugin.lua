@@ -53,6 +53,7 @@ require('lazy').setup({
 			}
 		end,
 	},
+	"sindrets/diffview.nvim",
 	{
 		'Exafunction/codeium.vim',
 		event = 'BufEnter',
@@ -306,3 +307,4 @@ require("plugin.indent_blackline_c")
 require("plugin.noice_c")
 require("plugin.toggle_term_c")
 require("plugin.alpha_c")
+require("plugin.navbuddy_c")
