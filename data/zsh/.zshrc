@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias j="joshuto"
 alias ls="eza -l --icons"
 alias r="sudo rm -r"
 alias c="cd"

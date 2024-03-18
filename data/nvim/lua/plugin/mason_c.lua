@@ -22,7 +22,9 @@ require 'lspconfig'.clangd.setup {
 	capabilities = capabilities,
 }
 require("lspconfig").lua_ls.setup { capabilities = capabilities }
-require("lspconfig").rust_analyzer.setup { capabilities = capabilities }
+require("lspconfig").rust_analyzer.setup { capabilities = capabilities,  checkOnSave = {
+                    command = "clippy"
+                }, }
 require('lspconfig').tailwindcss.setup { capabilities = capabilities }
 local capabilitiesHtml = vim.lsp.protocol.make_client_capabilities()
 capabilitiesHtml.textDocument.completion.completionItem.snippetSupport = true

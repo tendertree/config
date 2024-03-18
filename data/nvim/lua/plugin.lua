@@ -1,4 +1,4 @@
---TODO:정리하기plugin
+--TODO:정리하기plugi
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
@@ -140,7 +140,6 @@ require('lazy').setup({
 	"folke/zen-mode.nvim",
 	"folke/twilight.nvim",
 	"haringsrob/nvim_context_vt",
-	'MunifTanjim/prettier.nvim',
 	-- theme
 	{
 		'laytan/tailwind-sorter.nvim',
@@ -168,8 +167,7 @@ require('lazy').setup({
 		},
 	},
 	{ 'anuvyklack/pretty-fold.nvim' },
-	'jose-elias-alvarez/null-ls.nvim',
-	'MunifTanjim/prettier.nvim',
+	
 	'stevearc/dressing.nvim',
 	--LSP
 	{
@@ -217,7 +215,7 @@ require('lazy').setup({
 			}
 		}
 	},
-	"jay-babu/mason-null-ls.nvim",
+	
 
 	{ "glepnir/lspsaga.nvim", event = 'BufRead',     config = function() require('lspsaga').setup({}) end, },
 	{ 'hrsh7th/nvim-cmp',     event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
@@ -257,6 +255,12 @@ require('lazy').setup({
 			}
 		end
 	},
+	{
+		'rust-lang/rust.vim',
+		config=function()
+			vim.g.rustfmt_autosave = 1	
+		end
+	}
 
 
 
@@ -279,7 +283,6 @@ require('numb').setup()
 require("tsht").config.hint_keys = { "h", "j", "f", "d", "n", "v", "s", "l", "a" }
 require('neogit').setup { integrations = { diffview = true } }
 require("todo").setup {}
-require("mason-null-ls").setup({ automatic_setup = true, })
 require('impatient')
 require('telescope').load_extension('fzf', 'file_browser')
 require('nvim_comment').setup()
@@ -287,7 +290,7 @@ require('pretty-fold').setup()
 require('plugin.cmp_c')
 require("plugin.neotree_c")
 require('plugin.navic_c')
-require("plugin.nullls_c")
+
 require("plugin.lualine_c")
 require("plugin.treesitter_c")
 require("plugin.autopairs_c")
@@ -298,11 +301,10 @@ require("plugin.telescope_c")
 require("plugin.lua_snip_c")
 require("plugin.neo_test_c")
 require("plugin.which_c")
-require("plugin.prettier_c")
 require("plugin.comment_c")
 require("plugin.fzf_c")
 require("plugin.lsp_saga_c")
-require("plugin.tailwind_sorter_c")
+--require("plugin.tailwind_sorter_c")
 require("plugin.indent_blackline_c")
 require("plugin.noice_c")
 require("plugin.toggle_term_c")
