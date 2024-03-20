@@ -1,0 +1,143 @@
+require("mason").setup()
+require("mason-lspconfig").setup {}
+local navbuddy = require("nvim-navbuddy")
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'tsserver',
+		'eslint',
+		'html',
+		'cssls',
+		'rust_analyzer'
+	},
+	handlers = {
+
+		['tsserver'] = function()
+			require 'lspconfig'.tsserver.setup({
+				capabilities = lsp_capabilities,
+				settings = {
+					completions = {
+						completeFunctionCalls = true
+					}
+				},
+				on_attach = function(client, bufnr)
+					navbuddy.attach(client, bufnr)
+				end
+
+			})
+		end,
+		['rust_analyzer'] = function()
+			require 'lspconfig'.rust_analyzer.setup {
+				settings = {
+					['rust-analyzer'] = {
+						inlayHint = {
+							dynamicRegistration = true,
+							resolveSupport = {
+								properties = { "textEdits", "tooltip", "location", "command" }
+							}
+						},
+					}
+				}
+			}
+		end,
+		['clang'] = function()
+			require 'lspconfig'.clang.setup {
+				on_attach = function(client, bufnr)
+					client.server_capabilities.signatureHelpProvider = false
+				end,
+				capabilities = capabilities,
+			}
+		end,
+		[lua_ls] = function()
+			require("lspconfig").lua_ls.setup { capabilities = capabilities }
+		end,
+
+	}
+})
+
+
+
+require("lspconfig").lua_ls.setup { capabilities = capabilities }
+
+
+require('lspconfig').tailwindcss.setup { capabilities = capabilities }
+local capabilitiesHtml = vim.lsp.protocol.make_client_capabilities()
+capabilitiesHtml.textDocument.completion.completionItem.snippetSupport = true
+
+require 'lspconfig'.html.setup {
+	capabilities = capabilitiesHtml,
+}
+
+require 'lspconfig'.json_ls.setup {
+	capabilities = capabilitiesHtml,
+	on_attach = on_attach,
+	settings = {
+		json = {
+			schemas = {
+				{
+					fileMatch = { 'package.json' },
+					url = 'https://json.schemastore.org/package.json',
+				},
+			},
+		},
+	},
+}
+
+local lspconfig = require('lspconfig')
+lspconfig.emmet_ls.setup({
+	-- on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug",
+		"typescriptreact", "vue" },
+	init_options = {
+		html = {
+			options = {
+				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+				["bem.enabled"] = true,
+			},
+		},
+	}
+})
+--python config
+lspconfig = require("lspconfig")
+lspconfig.pylsp.setup {
+	on_attach = custom_attach,
+	settings = {
+		pylsp = {
+			plugins = {
+				-- formatter options
+				black = { enabled = true },
+				autopep8 = { enabled = false },
+				yapf = { enabled = false },
+				-- linter options
+				pylint = { enabled = true, executable = "pylint" },
+				pyflakes = { enabled = false },
+				pycodestyle = { enabled = false },
+				-- type checker
+				pylsp_mypy = { enabled = true },
+				-- auto-completion options
+				jedi_completion = { fuzzy = true },
+				-- import sorting
+				pyls_isort = { enabled = true },
+			},
+		},
+	},
+	flags = {
+		debounce_text_changes = 200,
+	},
+	capabilities = capabilities,
+}
+
+
+require 'lspconfig'.rust_analyzer.setup {
+	settings = {
+		['rust-analyzer'] = {
+			inlayHint = {
+				dynamicRegistration = true,
+				resolveSupport = {
+					properties = { "textEdits", "tooltip", "location", "command" }
+				}
+			},
+		}
+	}
+}

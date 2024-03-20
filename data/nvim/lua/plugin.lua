@@ -167,7 +167,7 @@ require('lazy').setup({
 		},
 	},
 	{ 'anuvyklack/pretty-fold.nvim' },
-	
+
 	'stevearc/dressing.nvim',
 	--LSP
 	{
@@ -215,7 +215,7 @@ require('lazy').setup({
 			}
 		}
 	},
-	
+
 
 	{ "glepnir/lspsaga.nvim", event = 'BufRead',     config = function() require('lspsaga').setup({}) end, },
 	{ 'hrsh7th/nvim-cmp',     event = "InsertEnter", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" } },
@@ -257,10 +257,13 @@ require('lazy').setup({
 	},
 	{
 		'rust-lang/rust.vim',
-		config=function()
-			vim.g.rustfmt_autosave = 1	
+		config = function()
+			vim.g.rustfmt_autosave = 1
 		end
-	}
+	},
+	{
+		'lvimuser/lsp-inlayhints.nvim'
+	},
 
 
 

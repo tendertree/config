@@ -2,77 +2,43 @@ require("mason").setup()
 require("mason-lspconfig").setup {}
 local navbuddy = require("nvim-navbuddy")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require("lspconfig").tsserver.setup {
-	settings = {
-		completions = {
-			--	completeFunctionCalls = true
-		}
+local on_attach = function(client, bufnr) end
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'tsserver',
+		'eslint',
+		'html',
+		'cssls',
+		'rust_analyzer',
+		'jsonls'
 	},
-	capabilities = capabilities,
-	on_attach = function(client, bufnr)
-		navbuddy.attach(client, bufnr)
-	end
-}
-require 'lspconfig'.clangd.setup {
-	on_attach = function(client, bufnr)
-		client.server_capabilities.signatureHelpProvider = false
-		on_attach(client, bufnr)
-	end,
-	capabilities = capabilities,
-}
-require("lspconfig").lua_ls.setup { capabilities = capabilities }
-require("lspconfig").rust_analyzer.setup { capabilities = capabilities,  checkOnSave = {
-                    command = "clippy"
-                }, }
-require('lspconfig').tailwindcss.setup { capabilities = capabilities }
-local capabilitiesHtml = vim.lsp.protocol.make_client_capabilities()
-capabilitiesHtml.textDocument.completion.completionItem.snippetSupport = true
 
-require 'lspconfig'.html.setup {
-	capabilities = capabilitiesHtml,
-}
-local lspconfig = require('lspconfig')
-lspconfig.emmet_ls.setup({
-	-- on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug",
-		"typescriptreact", "vue" },
-	init_options = {
-		html = {
-			options = {
-				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-				["bem.enabled"] = true,
-			},
-		},
+	handlers = {
+		-- The first entry (without a key) will be the default handler
+		-- and will be called for each installed server that doesn't have a dedicated handler.
+		function(server_name)
+			-- I use lsp-status which adds itself to the capabilities table
+			require("lspconfig")[server_name].setup({ on_attach = on_attach, capabilities = capabilities })
+		end,
+		["lua_ls"] = function()
+			require("lspconfig").lua_ls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+					Lua = {
+						diagnostics = {
+							-- Get the language server to recognize the `vim` global
+							globals = { "vim" },
+						},
+					},
+				},
+			})
+		end,
+
+		["rust_analyzer"] = function()
+			require("rust-tools").setup({
+				capabilities = capabilities,
+			})
+		end
 	}
 })
---python config
-lspconfig = require("lspconfig")
-lspconfig.pylsp.setup {
-	on_attach = custom_attach,
-	settings = {
-		pylsp = {
-			plugins = {
-				-- formatter options
-				black = { enabled = true },
-				autopep8 = { enabled = false },
-				yapf = { enabled = false },
-				-- linter options
-				pylint = { enabled = true, executable = "pylint" },
-				pyflakes = { enabled = false },
-				pycodestyle = { enabled = false },
-				-- type checker
-				pylsp_mypy = { enabled = true },
-				-- auto-completion options
-				jedi_completion = { fuzzy = true },
-				-- import sorting
-				pyls_isort = { enabled = true },
-			},
-		},
-	},
-	flags = {
-		debounce_text_changes = 200,
-	},
-	capabilities = capabilities,
-}
