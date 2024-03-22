@@ -10,7 +10,9 @@ require('mason-lspconfig').setup({
 		'html',
 		'cssls',
 		'rust_analyzer',
-		'jsonls'
+		'jsonls',
+		'pylsp'
+
 	},
 
 	handlers = {
@@ -39,6 +41,42 @@ require('mason-lspconfig').setup({
 			require("rust-tools").setup({
 				capabilities = capabilities,
 			})
+		end,
+
+		["pylsp"] = function()
+			require("lspconfig").pylsp.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+					pylsp = {
+						plugins = {
+							-- formatter options
+							black = { enabled = true },
+							autopep8 = { enabled = false },
+							yapf = { enabled = false },
+							-- linter options
+							pylint = { enabled = true, executable = "pylint" },
+							pyflakes = { enabled = false },
+							pycodestyle = { enabled = false },
+							-- type checker
+							pylsp_mypy = { enabled = true },
+							-- auto-completion options
+							jedi_completion = { fuzzy = true },
+							-- import sorting
+							pyls_isort = { enabled = true },
+						},
+					},
+				},
+			})
 		end
 	}
+
+})
+
+--format on save
+vim.api.nvim_create_autocmd('BufWritePre', {
+	callback = function()
+		vim.lsp.buf.format {
+		}
+	end,
 })
