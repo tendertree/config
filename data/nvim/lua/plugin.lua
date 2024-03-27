@@ -23,6 +23,7 @@ require('lazy').setup({
 		end,
 		lazy = false
 	},
+	"nvim-neotest/nvim-nio",
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -250,7 +251,7 @@ require('lazy').setup({
 	--LSP
 	{
 		'neovim/nvim-lspconfig'
-	}, -- Collection of configurations for built-in LSP client
+	},
 	{
 		"williamboman/mason.nvim",
 		opts = {

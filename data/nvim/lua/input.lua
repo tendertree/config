@@ -41,7 +41,7 @@ s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 s('n', '<f7>', ':split<Return>', { noremap = true })
 s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
-s('n', '<f9>', ':SnipRun<cr>', { noremap = true })
+s('v', '<f9>', ":'<,'>SnipRun<cr>", { noremap = true })
 
 s('n', '<C-n>', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true })
 --personal setting
