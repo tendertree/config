@@ -42,6 +42,8 @@ s('n', '<f7>', ':split<Return>', { noremap = true })
 s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
 s('n', '<f9>', ':SnipRun<cr>', { noremap = true })
+
+s('n', '<C-n>', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true })
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
 s('n', '+', '<C-a>', { noremap = true, silent = true })
@@ -65,7 +67,6 @@ s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
 --s("n", "<Up>", ":resize -1<CR>", { noremap = true })
 --s("n", "<Down>", ":resize +1<CR>", { noremap = true })
 --commend lien commendrs
-require('nvim_comment').setup({ line_mapping = "//", operator_mapping = "#" })
 --lsp saga
 s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
 --s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })

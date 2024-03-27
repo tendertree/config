@@ -70,19 +70,20 @@ cmp.setup {
 		end,
 	},
 	sources = cmp.config.sources({
-
 		{ name = 'luasnip' },
 		{ name = "buffer" },
 		{ name = 'nvim_lsp' },
 		{ name = "path" },
 	}),
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
+		--fields = { "kind", "abbr", "menu" },
+		fileds = { "kind" },
 		format = function(entry, vim_item)
-			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+			--	vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+			vim_item.kind = string.format('%s ', kind_icons[vim_item.kind])
 			vim_item.menu = ({
-				nvim_lsp = "",
-				luasnip = "",
+				nvim_lsp = "✎",
+				luasnip = "🗲",
 				buffer = "",
 				path = "",
 			})[entry.source.name]
