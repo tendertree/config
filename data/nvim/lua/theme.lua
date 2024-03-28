@@ -3,22 +3,20 @@ local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
 --startify setting
-vim.g.startify_custom_header = {
-	'                  ',
-	'        <(- )___  ',
-	'         ( ._> /  ',
-	'          `---`   '
+
+--Diagnostic
+local signs = {
+	Warn = "",
+	Hint = "",
+	Error = "",
+	Info = ""
 }
---- font setting
------ lsp setting
-vim.fn.sign_define("LspDiagnosticsSignError",
-	{ text = "", texthl = "GruvboxRed" })
-vim.fn.sign_define("LspDiagnosticsSignWarning",
-	{ text = "", texthl = "GruvboxYellow" })
-vim.fn.sign_define("LspDiagnosticsSignInformation",
-	{ text = "🛈", texthl = "GruvboxBlue" })
-vim.fn.sign_define("LspDiagnosticsSignHint",
-	{ text = "!", texthl = "GruvboxAqua" })
+
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
 
 -- theme change italic disable
 -- lua line
@@ -37,3 +35,18 @@ require('lualine').setup {
 		theme = 'nord'
 	}
 }
+
+
+
+--Dap icon settings
+vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#993939', bg = '#31353f' })
+vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f' })
+vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '#31353f' })
+
+vim.fn.sign_define('DapBreakpoint', {
+	text = '',
+	texthl = 'DapBreakpoint',
+	linehl = 'DapBreakpoint',
+	numhl =
+	'DapBreakpoint'
+})

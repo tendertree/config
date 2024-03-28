@@ -47,7 +47,10 @@ require('lazy').setup({
 		end
 	},
 	{
-		'mfussenegger/nvim-dap'
+		'mfussenegger/nvim-dap',
+		config = function()
+			--	require("configs.dap")
+		end
 	},
 
 	{ 'rcarriga/nvim-notify', event = 'BufEnter' },
@@ -264,7 +267,8 @@ require('lazy').setup({
 		config = function()
 			require("configs.mason-lspconfig")
 		end,
-		lazy = false
+		lazy = false,
+		enabled = true
 
 	},
 	{
@@ -273,20 +277,6 @@ require('lazy').setup({
 		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
-		config = function()
-			local dap = require("dap")
-			local dapui = require("dapui")
-			dapui.setup()
-			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
-			end
-			dap.listeners.before.event_terminated["dapui_config"] = function()
-				dapui.close()
-			end
-			dap.listeners.before.event_exited["dapui_config"] = function()
-				dapui.close()
-			end
-		end
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
@@ -295,18 +285,17 @@ require('lazy').setup({
 			"mfussenegger/nvim-dap",
 			"williamboman/mason.nvim",
 		},
-		opts = {
-			handlers = {},
-			ensure_installed = {
-				"codelldb",
-			}
-		}
+
+		config = function()
+			require("configs.dap")
+		end,
+		enabled = true
 	},
 	{
 		"glepnir/lspsaga.nvim",
 		event = 'BufRead',
 		config = function()
-			--require("configs.lsp_saga")
+			require("configs.lsp_saga")
 		end,
 	},
 	{
@@ -320,10 +309,16 @@ require('lazy').setup({
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-cmdline',
-	{ 'hrsh7th/cmp-nvim-lsp',     event = 'InsertEnter' },
+	{
+		'hrsh7th/cmp-nvim-lsp',
+		event = 'InsertEnter'
+	},
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'hrsh7th/cmp-nvim-lua',
-	{ 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
+	{
+		'saadparwaiz1/cmp_luasnip',
+		event = 'InsertEnter'
+	},
 	{
 		'L3MON4D3/LuaSnip',
 		dependencies = { "rafamadriz/friendly-snippets" },
@@ -331,7 +326,11 @@ require('lazy').setup({
 			require("configs.lua_snip")
 		end
 	}, -- snippetet
-	{ "rafamadriz/friendly-snippets", lazy = false,                          event = 'InsertEnter' },
+	{
+		"rafamadriz/friendly-snippets",
+		lazy = false,
+		event = 'InsertEnter'
+	},
 	"lukas-reineke/lsp-format.nvim",
 	{
 		"SmiteshP/nvim-navbuddy",
@@ -349,9 +348,14 @@ require('lazy').setup({
 		end
 	},
 	--language setting
-	'simrat39/rust-tools.nvim',
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^4', -- Recommended
+		ft = { 'rust' },
+		enabled = true,
+	},
 	'prisma/vim-prisma',
-	{ 'TimUntersberger/neogit',       dependencies = 'nvim-lua/plenary.nvim' },
+	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	{
 		'rmagatti/auto-session',

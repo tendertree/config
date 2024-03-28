@@ -38,12 +38,18 @@ s('n', '<F3>', ':Prettier<CR>', { noremap = true })
 --f4 is binding to terminal open
 s('n', '<F5>', ':undo<CR>', { noremap = true })
 s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
-s('n', '<f7>', ':split<Return>', { noremap = true })
-s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
+--debugger options
+s('n', '<f7>', ":lua require'dap'.continue() <cr>", { noremap = true })
+s('n', '<f8>', ":lua require'dap'.toggle_breakpoint() <cr>", { noremap = true })
+s('n', '<f9>', ":lua require'dap'.step_over() <cr>", { noremap = true })
+--s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
-s('v', '<f9>', ":'<,'>SnipRun<cr>", { noremap = true })
-
+--s('v', '<f9>', ":'<,'>SnipRun<cr>", { noremap = true })
 s('n', '<C-n>', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true })
+
+--screen
+s('n', 'sh', ':split<Return>', { noremap = true })
+s('n', 'sv', ':vsplit<Return><C-w>w', { noremap = true })
 --personal setting
 s('n', 'x', '"_x', { noremap = true, silent = true })
 s('n', '+', '<C-a>', { noremap = true, silent = true })

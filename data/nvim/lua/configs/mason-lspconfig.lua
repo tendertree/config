@@ -4,16 +4,18 @@ require("mason").setup()
 local navbuddy = require("nvim-navbuddy")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(client, bufnr) end
+
+
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		'tsserver',
 		'eslint',
 		'html',
 		'cssls',
-		'rust_analyzer',
 		'jsonls',
 		'pylsp',
 		'lua_ls',
+		'rust_analyzer'
 
 	},
 
@@ -40,11 +42,7 @@ require('mason-lspconfig').setup({
 				on_attach = on_attach
 			})
 		end,
-		["rust_analyzer"] = function()
-			require("rust-tools").setup({
-				capabilities = capabilities,
-			})
-		end,
+		["rust_analyzer"] = function() end,
 
 		["pylsp"] = function()
 			require("lspconfig").pylsp.setup({
@@ -75,6 +73,8 @@ require('mason-lspconfig').setup({
 	}
 
 })
+--dap config
+
 
 --format on save
 vim.api.nvim_create_autocmd('BufWritePre', {
