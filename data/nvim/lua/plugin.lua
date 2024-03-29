@@ -49,13 +49,33 @@ require('lazy').setup({
 	{
 		'mfussenegger/nvim-dap',
 		config = function()
-			--	require("configs.dap")
-		end
-	},
+			require("configs.dap")
+		end,
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"mxsdev/nvim-dap-vscode-js",
+			-- lazy spec to build "microsoft/vscode-js-debug" from source
+			{
+				"microsoft/vscode-js-debug",
+				version = "1.x",
+				build = "npm i && npm run compile vsDebugServerBundle && mv dist out"
+			}
+		},
 
+		lazy = true,
+	},
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		opts = function(_, opts)
+			opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+				"codelldb",
+				"cpptools",
+			})
+		end,
+		enabled = false
+	},
 	{ 'rcarriga/nvim-notify', event = 'BufEnter' },
 	'MunifTanjim/nui.nvim',
-	'vim-test/vim-test',
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
@@ -183,6 +203,13 @@ require('lazy').setup({
 		end
 	},
 	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		keys = {
+			{ "<f6>", ":TODOTelescope<cr>", desc = "todoTelescope" },
+		}
+	},
+	{
 		"AmeerTaweel/todo.nvim",
 		config = function()
 			require("todo").setup {}
@@ -205,8 +232,6 @@ require('lazy').setup({
 		config = function()
 			require("zen-mode").setup {}
 		end
-
-
 	},
 	{
 		"folke/twilight.nvim",
@@ -271,26 +296,7 @@ require('lazy').setup({
 		enabled = true
 
 	},
-	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-		},
-	},
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"williamboman/mason.nvim",
-		},
 
-		config = function()
-			require("configs.dap")
-		end,
-		enabled = true
-	},
 	{
 		"glepnir/lspsaga.nvim",
 		event = 'BufRead',

@@ -2,7 +2,6 @@
 local o = vim.o
 o.termguicolors = true
 o.guifont = 'Blexmono Nerd Font'
---startify setting
 
 --Diagnostic
 local signs = {
@@ -18,13 +17,8 @@ for type, icon in pairs(signs) do
 end
 
 
--- theme change italic disable
--- lua line
 
---load lush
-
---theme change
-
+--theme color scheme
 vim.cmd.colorscheme 'melange'
 o.background = "light"
 vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })

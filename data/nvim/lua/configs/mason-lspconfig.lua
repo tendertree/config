@@ -3,7 +3,9 @@ require("mason").setup()
 
 local navbuddy = require("nvim-navbuddy")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local on_attach = function(client, bufnr) end
+local on_attach = function(client, bufnr)
+	navbuddy.attach(client, bufnr)
+end
 
 
 require('mason-lspconfig').setup({
