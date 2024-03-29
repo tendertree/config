@@ -37,7 +37,7 @@ s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('n', '<F3>', ':Prettier<CR>', { noremap = true })
 --f4 is binding to terminal open
 s('n', '<F5>', ':undo<CR>', { noremap = true })
-s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
+--s('n', '<f6>', ':TODOTelescope<cr>', { noremap = true })
 --debugger options
 --s('n', '<f7>', ":lua require'dap'.continue() <cr>", { noremap = true })
 s('n', '<f8>', ":lua require'dap'.step_over() <cr>", { noremap = true })

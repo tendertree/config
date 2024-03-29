@@ -12,17 +12,19 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---ul--
+
 require('lazy').setup({
 	{
 		'nvim-neo-tree/neo-tree.nvim',
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
+
 		config = function()
 			require("configs.neotree")
 		end,
-		lazy = true,
 		keys = {
-			{ ",h", ":Neotree filesystem reveal left<CR>", desc = "neotree", silent = true },
+			{
+				",h", ":Neotree<CR>", silent = true
+			}
 		}
 	},
 	"nvim-neotest/nvim-nio",
@@ -32,11 +34,25 @@ require('lazy').setup({
 		opts = {
 		},
 		dependencies = {
+			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 		},
 		config = function()
 			require("configs.noice")
 		end,
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+		},
+		event = 'BufRead',
+		keys = {
+			{
+				"<F6>", ":TodoTelescope<CR>", silent = true
+			}
+		}
 	},
 	"sindrets/diffview.nvim",
 	{
@@ -76,6 +92,7 @@ require('lazy').setup({
 		enabled = false
 	},
 	{ 'rcarriga/nvim-notify', event = 'BufEnter' },
+	'MunifTanjim/nui.nvim',
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
@@ -109,7 +126,9 @@ require('lazy').setup({
 		'lewis6991/impatient.nvim',
 		config = function()
 			require('impatient')
-		end
+		end,
+		event = 'BufRead',
+		lazy = false
 
 	},
 	'preservim/tagbar',
@@ -121,9 +140,7 @@ require('lazy').setup({
 		dependencies = 'nvim-lua/plenary.nvim',
 		config = function()
 			require("configs.telescope")
-		end,
-		lazy = true,
-
+		end
 
 
 	},
@@ -163,7 +180,7 @@ require('lazy').setup({
 		config = function()
 			require("configs.comment")
 		end,
-		lazy = true
+		lazy = false,
 	},
 	"tendertree/nforcolemak-dh",
 	{
@@ -204,19 +221,7 @@ require('lazy').setup({
 			require("configs.toggle_term")
 		end
 	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		keys = {
-			{ "<f6>", ":TODOTelescope<cr>", desc = "todoTelescope" },
-		}
-	},
-	{
-		"AmeerTaweel/todo.nvim",
-		config = function()
-			require("todo").setup {}
-		end
-	},
+
 	{ 'michaelb/sniprun',     build = 'bash ./install.sh' },
 	{
 		'junegunn/fzf',
@@ -280,87 +285,75 @@ require('lazy').setup({
 	'stevearc/dressing.nvim',
 	--LSP
 	{
-		'neovim/nvim-lspconfig',
-		event = { 'BufReadPre', 'BufNewFile' },
-		dependencies = {
-
-			{
-				"williamboman/mason.nvim",
-				opts = {
-					ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
-				},
-
-			},
-			{
-				"williamboman/mason-lspconfig.nvim",
-				config = function()
-					require("configs.mason-lspconfig")
-				end,
-				lazy = false,
-				enabled = true
-
-			},
-
-
-
+		'neovim/nvim-lspconfig'
+	},
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
 		},
 
-
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("configs.mason-lspconfig")
+		end,
+		lazy = false,
+		enabled = true
 
 	},
 
-
 	{
 		"glepnir/lspsaga.nvim",
+		event = 'BufRead',
 		config = function()
 			require("configs.lsp_saga")
 		end,
-		dependencies = {
-			{
-				"SmiteshP/nvim-navbuddy",
-				event = 'BufRead',
-				dependencies = { "neovim/nvim-lspconfig", "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
-				config = function()
-					require("configs.navbuddy")
-				end
-
-			},
-		}
 	},
 	{
 		'hrsh7th/nvim-cmp',
 		event = "InsertEnter",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-cmdline',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-nvim-lsp-signature-help',
-			'hrsh7th/cmp-nvim-lua',
-
-		},
+		dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" },
 		config = function()
 			require("configs.cmp")
 		end
 	},
-	{ 'saadparwaiz1/cmp_luasnip',
-		{
-			'L3MON4D3/LuaSnip',
-			dependencies = {
-				"rafamadriz/friendly-snippets"
-			},
-			config = function()
-				require("configs.lua_snip")
-			end,
-
-		},
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-path',
+	'hrsh7th/cmp-cmdline',
+	{
+		'hrsh7th/cmp-nvim-lsp',
+		event = 'InsertEnter'
+	},
+	'hrsh7th/cmp-nvim-lsp-signature-help',
+	'hrsh7th/cmp-nvim-lua',
+	{
+		'saadparwaiz1/cmp_luasnip',
+		event = 'InsertEnter'
 	},
 	{
+		'L3MON4D3/LuaSnip',
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			require("configs.lua_snip")
+		end
+	}, -- snippetet
+	{
 		"rafamadriz/friendly-snippets",
+		lazy = false,
+		event = 'InsertEnter'
 	},
 	"lukas-reineke/lsp-format.nvim",
+	{
+		"SmiteshP/nvim-navbuddy",
+		event = 'BufRead',
+		dependencies = { "neovim/nvim-lspconfig", "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
+		config = function()
+			require("configs.navbuddy")
+		end
 
+	},
 	{
 		"SmiteshP/nvim-navic",
 		config = function()
@@ -376,6 +369,7 @@ require('lazy').setup({
 	},
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
+	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	{
 		'rmagatti/auto-session',
 		config = function()
