@@ -234,17 +234,27 @@ require('lazy').setup({
 	},
 	{ 'junegunn/fzf.vim',         event = 'BufRead' },
 	{ 'wookayin/fzf-ripgrep.vim', event = 'BufRead' },
-	{
-		"folke/zen-mode.nvim",
-		config = function()
-			require("zen-mode").setup {}
-		end
-	},
+
 	{
 		"folke/twilight.nvim",
 		config = function()
 			require("twilight").setup {}
-		end
+		end,
+		dependencies = {
+			{
+				{
+					"folke/zen-mode.nvim",
+					config = function()
+						require("zen-mode").setup {}
+					end
+				},
+			}
+		},
+		keys = {
+			{ 'T', ":Twilight<CR>", noremap = true, silent = true, }
+		}
+
+
 	},
 	"haringsrob/nvim_context_vt",
 	-- theme
@@ -290,23 +300,52 @@ require('lazy').setup({
 	'stevearc/dressing.nvim',
 	--LSP
 	{
-		'neovim/nvim-lspconfig'
+		'neovim/nvim-lspconfig',
+		event = "VeryLazy",
+		dependencies = {
+			{
+				'mrcjkb/rustaceanvim',
+				version = '^4', -- Recommended
+				ft = { 'rust' },
+				enabled = true,
+			},
+			{
+				"williamboman/mason-lspconfig.nvim",
+				config = function()
+					require("configs.mason-lspconfig")
+				end,
+				lazy = false,
+				enabled = true,
+				dependencies = {
+					{
+						"williamboman/mason.nvim",
+						opts = {
+							ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
+						},
+
+
+					},
+				}
+			},
+		}
 	},
+
 	{
-		"williamboman/mason.nvim",
+		'pmizio/typescript-tools.nvim',
+		ft = { 'typescript' },
 		opts = {
-			ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
+			settings = {
+				tsserver_file_preferences = {
+					includeInlayParameterNameHints = 'all',
+					includeCompletionsForModuleExports = true,
+					quotePreference = 'auto',
+				},
+				tsserver_format_options = {
+					allowIncompleteCompletions = false,
+					allowRenameOfImportPath = false,
+				},
+			},
 		},
-
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("configs.mason-lspconfig")
-		end,
-		lazy = false,
-		enabled = true
-
 	},
 
 	{
@@ -346,7 +385,6 @@ require('lazy').setup({
 	}, -- snippetet
 	{
 		"rafamadriz/friendly-snippets",
-		lazy = false,
 		event = 'InsertEnter'
 	},
 	"lukas-reineke/lsp-format.nvim",
@@ -366,12 +404,6 @@ require('lazy').setup({
 		end
 	},
 	--language setting
-	{
-		'mrcjkb/rustaceanvim',
-		version = '^4', -- Recommended
-		ft = { 'rust' },
-		enabled = true,
-	},
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
