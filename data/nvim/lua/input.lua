@@ -47,7 +47,7 @@ s('n', '<F9>', ":lua require'dap'.step_over() <cr>", { noremap = true })
 --s('n', '<F8>', ':vsplit<Return><C-w>w', { noremap = true })
 --s('n', '<f8>', ':NvimContextVtToggle<cr>', { noremap = true })
 --s('v', '<f9>', ":'<,'>SnipRun<cr>", { noremap = true })
-s('n', '<C-n>', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true })
+--s('n', '<C-n>', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true })
 
 --screen
 s('n', 'sh', ':split<Return>', { noremap = true })
@@ -83,7 +83,8 @@ s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = t
 --s('n', '<leader>zf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })
 --s("n", "<leader>o", ":Lspsaga outline<CR>", { silent = true })
 s("n", "<leader>o", ':Navbuddy<CR>', { noremap = true, silent = true })
-s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
+--s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
+s('n', 'da', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR> ', { noremap = true, silent = true })
 s("n", "[;", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "];", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })

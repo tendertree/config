@@ -12,16 +12,18 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
+--ul--
 require('lazy').setup({
 	{
 		'nvim-neo-tree/neo-tree.nvim',
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
-
 		config = function()
 			require("configs.neotree")
 		end,
-		lazy = false
+		lazy = true,
+		keys = {
+			{ ",h", ":Neotree filesystem reveal left<CR>", desc = "neotree", silent = true },
+		}
 	},
 	"nvim-neotest/nvim-nio",
 	{
@@ -30,7 +32,6 @@ require('lazy').setup({
 		opts = {
 		},
 		dependencies = {
-			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 		},
 		config = function()
@@ -75,7 +76,6 @@ require('lazy').setup({
 		enabled = false
 	},
 	{ 'rcarriga/nvim-notify', event = 'BufEnter' },
-	'MunifTanjim/nui.nvim',
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
@@ -121,7 +121,9 @@ require('lazy').setup({
 		dependencies = 'nvim-lua/plenary.nvim',
 		config = function()
 			require("configs.telescope")
-		end
+		end,
+		lazy = true,
+
 
 
 	},
@@ -161,7 +163,7 @@ require('lazy').setup({
 		config = function()
 			require("configs.comment")
 		end,
-		lazy = false,
+		lazy = true
 	},
 	"tendertree/nforcolemak-dh",
 	{
@@ -278,75 +280,87 @@ require('lazy').setup({
 	'stevearc/dressing.nvim',
 	--LSP
 	{
-		'neovim/nvim-lspconfig'
-	},
-	{
-		"williamboman/mason.nvim",
-		opts = {
-			ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
+		'neovim/nvim-lspconfig',
+		event = { 'BufReadPre', 'BufNewFile' },
+		dependencies = {
+
+			{
+				"williamboman/mason.nvim",
+				opts = {
+					ensure_installed = { "clang", "lua-language-server", "tsserver", "codelldb" }
+				},
+
+			},
+			{
+				"williamboman/mason-lspconfig.nvim",
+				config = function()
+					require("configs.mason-lspconfig")
+				end,
+				lazy = false,
+				enabled = true
+
+			},
+
+
+
 		},
 
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("configs.mason-lspconfig")
-		end,
-		lazy = false,
-		enabled = true
+
 
 	},
+
 
 	{
 		"glepnir/lspsaga.nvim",
-		event = 'BufRead',
 		config = function()
 			require("configs.lsp_saga")
 		end,
+		dependencies = {
+			{
+				"SmiteshP/nvim-navbuddy",
+				event = 'BufRead',
+				dependencies = { "neovim/nvim-lspconfig", "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
+				config = function()
+					require("configs.navbuddy")
+				end
+
+			},
+		}
 	},
 	{
 		'hrsh7th/nvim-cmp',
 		event = "InsertEnter",
-		dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer" },
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-cmdline',
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
+			'hrsh7th/cmp-nvim-lua',
+
+		},
 		config = function()
 			require("configs.cmp")
 		end
 	},
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-path',
-	'hrsh7th/cmp-cmdline',
-	{
-		'hrsh7th/cmp-nvim-lsp',
-		event = 'InsertEnter'
+	{ 'saadparwaiz1/cmp_luasnip',
+		{
+			'L3MON4D3/LuaSnip',
+			dependencies = {
+				"rafamadriz/friendly-snippets"
+			},
+			config = function()
+				require("configs.lua_snip")
+			end,
+
+		},
 	},
-	'hrsh7th/cmp-nvim-lsp-signature-help',
-	'hrsh7th/cmp-nvim-lua',
-	{
-		'saadparwaiz1/cmp_luasnip',
-		event = 'InsertEnter'
-	},
-	{
-		'L3MON4D3/LuaSnip',
-		dependencies = { "rafamadriz/friendly-snippets" },
-		config = function()
-			require("configs.lua_snip")
-		end
-	}, -- snippetet
 	{
 		"rafamadriz/friendly-snippets",
-		lazy = false,
-		event = 'InsertEnter'
 	},
 	"lukas-reineke/lsp-format.nvim",
-	{
-		"SmiteshP/nvim-navbuddy",
-		event = 'BufRead',
-		dependencies = { "neovim/nvim-lspconfig", "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
-		config = function()
-			require("configs.navbuddy")
-		end
 
-	},
 	{
 		"SmiteshP/nvim-navic",
 		config = function()
@@ -362,7 +376,6 @@ require('lazy').setup({
 	},
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
-	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	{
 		'rmagatti/auto-session',
 		config = function()
