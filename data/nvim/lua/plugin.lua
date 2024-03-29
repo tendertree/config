@@ -264,7 +264,12 @@ require('lazy').setup({
 	},
 	'cocopon/iceberg.vim',
 	'savq/melange-nvim',
-	'nvim-lualine/lualine.nvim',
+	{
+		'nvim-lualine/lualine.nvim',
+		config = function()
+			require("configs.lualine")
+		end
+	},
 	'romgrk/barbar.nvim', -- tab line
 	{
 		"cuducos/yaml.nvim",
