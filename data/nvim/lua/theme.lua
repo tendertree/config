@@ -22,6 +22,7 @@ end
 vim.cmd.colorscheme 'melange'
 o.background = "light"
 vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })
+--vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
 vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
 vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = '#acbfb0' })
 require('lualine').setup {

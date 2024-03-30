@@ -91,20 +91,28 @@ require('lazy').setup({
 		end,
 		enabled = false
 	},
-	{ 'rcarriga/nvim-notify', event = 'BufEnter' },
+	{ 'rcarriga/nvim-notify',        event = 'BufEnter' },
 	'MunifTanjim/nui.nvim',
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
 		event = 'BufRead',
 		dependencies = {
-			"antoinemadec/FixCursorHold.nvim", 'rouge8/neotest-rust', "nvim-neotest/neotest-python",
-			"nvim-neotest/neotest-plenary", "nvim-neotest/neotest-go", "nvim-neotest/neotest-vim-test",
-			'vim-test/vim-test', 'marilari88/neotest-vitest' },
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-neotest/neotest-plenary",
+			"nvim-neotest/neotest-vim-test",
+			'vim-test/vim-test', 'marilari88/neotest-vitest',
+			"folke/neodev.nvim",
+		},
+
 		config = function()
 			--require("configs.neo_test")
 		end
 	},
+	{ 'nvim-neotest/neotest-jest',   ft = "typescript", },
+	{ 'rouge8/neotest-rust',         ft = "rust" },
+	{ "nvim-neotest/neotest-python", ft = "python" },
+	{ "nvim-neotest/neotest-go",     ft = "go" },
 
 	{
 		'lewis6991/gitsigns.nvim',
@@ -222,7 +230,7 @@ require('lazy').setup({
 		end
 	},
 
-	{ 'michaelb/sniprun',     build = 'bash ./install.sh' },
+	{ 'michaelb/sniprun',         build = 'bash ./install.sh' },
 	{
 		'junegunn/fzf',
 		event = 'BufRead',

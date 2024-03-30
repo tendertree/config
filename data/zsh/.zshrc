@@ -108,10 +108,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias j="joshuto"
 alias ls="eza -l --icons"
 alias r="sudo rm -r"
-alias c="cd"
+alias j="joshuto"
 alias dr="dir"
 alias nv="nvim"
 alias gp="git push"
@@ -139,7 +138,7 @@ esac
 
 export DENO_INSTALL="/home/tree/.deno"
   export PATH="$DENO_INSTALL/bin:$PATH"
-
+eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

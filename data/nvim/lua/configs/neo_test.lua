@@ -4,7 +4,14 @@ require("neotest").setup {
 			dap = { justMyCode = false },
 			runner = "unittest",
 		},
-		require "neotest-jest",
+		require('neotest-jest')({
+			jestCommand = "npm test --",
+			jestConfigFile = "custom.jest.config.ts",
+			env = { CI = true },
+			cwd = function(path)
+				return vim.fn.getcwd()
+			end,
+		}),
 		require "neotest-go",
 		require "neotest-rust",
 		require "neotest-plenary",
@@ -16,3 +23,11 @@ require("neotest").setup {
 	keys = {
 	},
 }
+
+
+--neodev setttings
+
+require("neodev").setup({
+	library = { plugins = { "neotest" }, types = true },
+	...
+})
