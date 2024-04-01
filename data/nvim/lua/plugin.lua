@@ -23,7 +23,7 @@ require('lazy').setup({
 		end,
 		keys = {
 			{
-				",h", ":Neotree<CR>", silent = true
+				",h", ":Neotree toggle<CR>", silent = true
 			}
 		}
 	},
