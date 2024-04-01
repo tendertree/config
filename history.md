@@ -57,4 +57,4 @@ my custom setting
 - 0915 - eza를 설치하고 ls를 대체 
 - 0917 - local/share/friendly snippet 에서 TimeHMS 삭제 
 # 2024
-- 0401 - 몇몇 가지 애드온 설치 
+- 0401 - 몇몇 가지 애드온 설치, tmux 추가 

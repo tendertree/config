@@ -32,20 +32,6 @@
 * termite, xmodemap, 
 > **Note**
 It works fine in WSL(Arch), but I haven't checked elsewhere. The neovim shorcut keyboard layout is set based on colemak-dh.
-## Download
-just copy and pasted 
-## Todo
-
-add some script 
-
-## Theme
-
-- small variation of [melange](https://github.com/savq/melange-nvim) - 
-
-
-## License
-
-MIT
 
 ---
 > email [tendertree@gmail.com](mailto:tendertree@gmail.com) &nbsp;&middot;&nbsp;
