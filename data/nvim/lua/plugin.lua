@@ -40,6 +40,7 @@ require('lazy').setup({
 		config = function()
 			require("configs.noice")
 		end,
+		enabled = true,
 	},
 	{
 		"folke/todo-comments.nvim",

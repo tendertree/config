@@ -101,3 +101,17 @@ if vim.fn.has('wsl') == 1 then
 		end,
 	})
 end
+
+-- use cache to load fast
+_G.__luacache_config = {
+	chunks = {
+		enable = true,
+		path = vim.fn.stdpath('cache') .. '/luacache_chunks',
+	},
+	modpaths = {
+		enable = true,
+		path = vim.fn.stdpath('cache') .. '/luacache_modpaths',
+	}
+}
+require('impatient')
+vim.loader.enable()
