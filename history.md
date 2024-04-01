@@ -56,3 +56,5 @@ my custom setting
 - 0913 - live grep, lsp saga finder 키 수정, lightbulb 해제 
 - 0915 - eza를 설치하고 ls를 대체 
 - 0917 - local/share/friendly snippet 에서 TimeHMS 삭제 
+# 2024
+- 0401 - 몇몇 가지 애드온 설치 
