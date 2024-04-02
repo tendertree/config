@@ -147,3 +147,8 @@ eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#xrsvc config 
+export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+#export DISPLAY="`sed -n 's/nameserver //p' /etc/resolv.conf`:0"
+#export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
