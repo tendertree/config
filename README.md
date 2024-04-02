@@ -9,17 +9,6 @@
 
 <h4 align="center">my personal config collection </h4>
 
-<p align="center">
-  <a href="#list">list</a> •
-  <a href="#download">Download</a> •
-  <a href="#Todo">Todo</a> •
-  <a href="#Theme">Theme</a> •
-  <a href="#license">License</a>
-</p>
-
-
-
-## list
 
 * neovim
   - lsp, cmp, treesitter, etc.. 
