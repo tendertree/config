@@ -225,14 +225,16 @@ require('lazy').setup({
 	{
 		'windwp/nvim-autopairs',
 		config = function()
-			require("configs.autopairs")
-		end
+			require("configs.autopair")
+		end,
+		event = 'InsertEnter'
 	},
 	{
 		'windwp/nvim-ts-autotag',
 		config = function()
 			require("configs.autotag")
-		end
+		end,
+		event = 'InsertEnter'
 
 	},
 	{
@@ -411,10 +413,11 @@ require('lazy').setup({
 	{
 		"SmiteshP/nvim-navbuddy",
 		event = 'BufRead',
-		dependencies = { "neovim/nvim-lspconfig", "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
+		dependencies = { "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
 		config = function()
 			require("configs.navbuddy")
-		end
+		end,
+		opts = { lsp = { auto_attach = true } }
 
 	},
 	{
