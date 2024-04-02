@@ -33,8 +33,7 @@
 			" const ${1:name} = anime({",
 			"targets: '.moving-box',",
 			"keyframes: [",
-			"{ translateY: -40 }",
-			"		],",
+			"{ translateY: -40 }],",
 			"delay: anime.stagger(100),",
 			"loop: true,",
 			"direction: 'alternate',",
@@ -42,5 +41,14 @@
 			"duration: 3000,"
 		],
 		"description": "animejs object "
+	},
+	"unitTest": {
+		"prefix": "te",
+		"body": [
+			"test('${1:name}', async () => {",
+			"       expect(${2:function}).toBe();",
+			"}"
+		],
+		"description": "unit test"
 	}
 }
