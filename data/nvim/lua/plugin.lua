@@ -73,14 +73,15 @@ require('lazy').setup({
 			"rcarriga/nvim-dap-ui",
 			"mxsdev/nvim-dap-vscode-js",
 			-- lazy spec to build "microsoft/vscode-js-debug" from source
-			{
-				"microsoft/vscode-js-debug",
-				version = "1.x",
-				build = "npm i && npm run compile vsDebugServerBundle && mv dist out"
-			}
+
 		},
 
 		lazy = true,
+	},
+	{
+		"microsoft/vscode-js-debug",
+		version = "1.x",
+		build = "npm i && npm run compile vsDebugServerBundle && mv dist out"
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
