@@ -75,7 +75,10 @@ require('lazy').setup({
 			-- lazy spec to build "microsoft/vscode-js-debug" from source
 
 		},
-
+		keys = {
+			{ 'fp', ":lua require'dap'.toggle_breakpoint() <cr>" },
+			{ 'fP', ":lua require'dap'.continue() <cr>" }
+		},
 		lazy = true,
 	},
 	{
@@ -83,35 +86,42 @@ require('lazy').setup({
 		version = "1.x",
 		build = "npm i && npm run compile vsDebugServerBundle && mv dist out"
 	},
+
 	{
-		"jay-babu/mason-nvim-dap.nvim",
-		opts = function(_, opts)
-			opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-				"codelldb",
-				"cpptools",
-			})
-		end,
-		enabled = false
+		'rcarriga/nvim-notify',
+		event = 'BufEnter'
 	},
-	{ 'rcarriga/nvim-notify',        event = 'BufEnter' },
 	'MunifTanjim/nui.nvim',
 	'prisma/vim-prisma',
 	{
 		'nvim-neotest/neotest',
-		event = 'BufRead',
 		dependencies = {
 			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-plenary",
-			"nvim-neotest/neotest-vim-test",
-			'vim-test/vim-test', 'marilari88/neotest-vitest',
-			"folke/neodev.nvim",
-		},
+			{
+				"folke/neodev.nvim",
+				confee = function()
+					require("neodev").setup({
+						library = { plugins = { "neotest" }, types = true },
+					})
+				end
+			},
 
+		},
 		config = function()
-			--require("configs.neo_test")
-		end
+			require("configs.neo_test")
+		end,
+		keys = {
+			{ "to", function() require("neotest").run.run(vim.fn.expand("%")) end,                      desc = "Run File" },
+			{ "ts", function() require("neotest").summary.toggle() end,                                 desc = "Toggle Summary" },
+			{ "tO", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
+
+		}
+
 	},
 	{ 'nvim-neotest/neotest-jest',   ft = "typescript", },
+	{ 'nvim-neotest/neotest-vitest', ft = "typescript", },
+	{ "thenbe/neotest-playwright",   ft = "typescript", },
 	{ 'rouge8/neotest-rust',         ft = "rust" },
 	{ "nvim-neotest/neotest-python", ft = "python" },
 	{ "nvim-neotest/neotest-go",     ft = "go" },
