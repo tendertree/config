@@ -133,13 +133,16 @@ require('lazy').setup({
 		end
 
 	},
-	'tpope/vim-fugitive', -- Git commands in nvim
 	{
 		'TimUntersberger/neogit',
-		dependencies = 'nvim-lua/plenary.nvim',
+		dependencies = { 'nvim-lua/plenary.nvim', "sindrets/diffview.nvim" },
 		config = function()
 			require('neogit').setup { integrations = { diffview = true } }
-		end
+		end,
+		keys = {
+			{ "<f7>", function() require("neogit").open() end, desc = "Neogit open" },
+
+		}
 	},
 	"nathom/filetype.nvim",
 	{
@@ -274,7 +277,7 @@ require('lazy').setup({
 			}
 		},
 		keys = {
-			{ 'T', ":Twilight<CR>", noremap = true, silent = true, }
+			{ 'T', ':lua require("twilight").toggle() <CR>', noremap = true, silent = true, }
 		}
 
 
@@ -369,7 +372,7 @@ require('lazy').setup({
 				},
 			},
 		},
-		enabled = false,
+		enabled = true,
 	},
 
 	{
@@ -431,7 +434,6 @@ require('lazy').setup({
 	--language setting
 	'prisma/vim-prisma',
 	{ 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
-	--{ 'Equilibris/nx.nvim',     dependencies = 'nvim-telescope/telescope.nvim' },
 	{
 		'rmagatti/auto-session',
 		config = function()

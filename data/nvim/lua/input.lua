@@ -51,7 +51,7 @@ s('n', '+', '<C-a>', { noremap = true, silent = true })
 s('n', '-', '<C-x>', { noremap = true, silent = true })
 s('n', 'dw', 'vb"_d', { noremap = true, silent = true })
 s('n', '<C-a>', 'gg<S-V>G', { noremap = true, silent = true })
-s('n', 'T', ':Twilight<CR>', { noremap = true, silent = true })
+-- s('n', 'T', ':Twilight<CR>', { noremap = true, silent = true })
 s('n', 'ss', '"_dd', { noremap = true, silent = true })
 vim.cmd [[omap     <silent> H :<C-U>lua require('tsht').nodes()<CR>]]
 vim.cmd [[vnoremap <silent> H :lua require('tsht').nodes()<CR>]]
