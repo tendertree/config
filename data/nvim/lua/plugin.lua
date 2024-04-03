@@ -148,7 +148,8 @@ require('lazy').setup({
 			require('impatient')
 		end,
 		event = 'BufRead',
-		lazy = false
+		lazy = false,
+		enabled = false,
 
 	},
 	'preservim/tagbar',
