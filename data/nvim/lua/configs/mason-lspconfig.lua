@@ -45,6 +45,15 @@ require('mason-lspconfig').setup({
 			})
 		end,
 		["rust_analyzer"] = function() end,
+		["eslint"] = function()
+			require("lspconfig").eslint.setup({})
+		end,
+		["emmet"] = function()
+			require("lspconfig").emmet_ls.setup({})
+		end,
+		["tailwindcss"] = function()
+			require("lspconfig").tailwindcss.setup({})
+		end,
 
 		["pylsp"] = function()
 			require("lspconfig").pylsp.setup({
