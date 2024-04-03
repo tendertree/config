@@ -336,7 +336,7 @@ require('lazy').setup({
 				config = function()
 					require("configs.mason-lspconfig")
 				end,
-				lazy = false,
+				lazy = true,
 				enabled = true,
 				dependencies = {
 					{

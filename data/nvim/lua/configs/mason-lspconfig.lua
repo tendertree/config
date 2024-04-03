@@ -48,7 +48,7 @@ require('mason-lspconfig').setup({
 		["eslint"] = function()
 			require("lspconfig").eslint.setup({})
 		end,
-		["emmet"] = function()
+		["emmet_ls"] = function()
 			require("lspconfig").emmet_ls.setup({})
 		end,
 		["tailwindcss"] = function()
