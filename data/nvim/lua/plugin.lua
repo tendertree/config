@@ -120,7 +120,7 @@ require('lazy').setup({
 
 	},
 	{ 'nvim-neotest/neotest-jest',   ft = "typescript", },
-	{ 'nvim-neotest/neotest-vitest', ft = "typescript", },
+	{ 'marilari88/neotest-vitest',   ft = "typescript", },
 	{ "thenbe/neotest-playwright",   ft = "typescript", },
 	{ 'rouge8/neotest-rust',         ft = "rust" },
 	{ "nvim-neotest/neotest-python", ft = "python" },
@@ -450,6 +450,3 @@ require('lazy').setup({
 		'lvimuser/lsp-inlayhints.nvim'
 	},
 }, { defaults = { lazy = true } })
-
-
--- some plugin setting
