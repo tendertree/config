@@ -30,10 +30,14 @@ navbuddy.setup {
 		Operator = ' ',
 		TypeParameter = ' ',
 	},
+	use_default_mappings = false,
 	mappings = {
-		["m"] = actions.parent(), -- Move to left panel
-		["i"] = actions.children(), -- Move to right panel
+		["i"] = actions.children(), -- Move to left panel
+		--	["h"] = actions.parent(), -- Move to right panel
 		["a"] = actions.insert_name(), -- Insert at start of name'
+		["m"] = actions.parent(),
+		["q"] = actions.close(),
+
 	},
 	source_buffer = {
 		follow_node = true, -- Keep the current node in focus on the source buffer

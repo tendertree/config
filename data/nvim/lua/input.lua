@@ -149,20 +149,3 @@ require 'nvim-treesitter.configs'.setup {
 		}
 	}
 }
-
-
-local navbuddy = require("nvim-navbuddy")
-local actions = require("nvim-navbuddy.actions")
-
-navbuddy.setup {
-	mappings = {
-		["o"] = actions.parent(),
-		["m"] = actions.children(),
-	},
-	source_buffer = {
-		follow_node = true, -- Keep the current node in focus on the source buffer
-		highlight = true, -- Highlight the currently focused node
-		reorient = "smart", -- "smart", "top", "mid" or "none"
-		scrolloff = nil -- scrolloff value when navbuddy is open
-	}
-}
