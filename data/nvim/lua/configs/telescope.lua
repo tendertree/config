@@ -17,6 +17,9 @@ require("telescope").setup {
 				["i"] = {
 					-- your custom insert mode mappings
 					['<C-w'] = function() vim.cmd('normal vdb') end,
+					["<C-j>"] = actions.move_selection_next,
+					["<C-k>"] = actions.move_selection_previous,
+
 				},
 				["n"] = {
 					-- your custom normal mode mappings
@@ -30,6 +33,7 @@ require("telescope").setup {
 		},
 	},
 }
+
 require("telescope").load_extension "file_browser"
 
 --local opts = { noremap = true, silent = true }

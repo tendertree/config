@@ -412,7 +412,8 @@ require('lazy').setup({
 	}, -- snippetet
 	{
 		"rafamadriz/friendly-snippets",
-		event = 'InsertEnter'
+		event = 'InsertEnter',
+		pin = "true"
 	},
 	"lukas-reineke/lsp-format.nvim",
 	{
@@ -447,7 +448,19 @@ require('lazy').setup({
 		'rust-lang/rust.vim',
 		config = function()
 			vim.g.rustfmt_autosave = 1
-		end
+		end,
+		ft = { 'rust' },
+	},
+	{
+		'wuelnerdotexe/vim-astro',
+		config = function()
+			vim.g.astro_stylus = 'enable'
+			vim.g.astro_typescript = 'enable'
+		end,
+		ft = { 'astro' },
+		dependencies = {
+			"wavded/vim-stylus"
+		}
 	},
 	{
 		'lvimuser/lsp-inlayhints.nvim'

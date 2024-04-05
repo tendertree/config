@@ -5,13 +5,13 @@
 --input
 require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
+local function run() require('neotest').run.run() end
 
 --set some functions
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-local function run() require('neotest').run.run() end
 -- mode change
 s('i', 'jl', '<ESC>', { noremap = true, silent = true })
 s('t', 'jl', '<C-\\><C-n>', { noremap = true, silent = true })
@@ -51,15 +51,12 @@ s('n', '+', '<C-a>', { noremap = true, silent = true })
 s('n', '-', '<C-x>', { noremap = true, silent = true })
 s('n', 'dw', 'vb"_d', { noremap = true, silent = true })
 s('n', '<C-a>', 'gg<S-V>G', { noremap = true, silent = true })
--- s('n', 'T', ':Twilight<CR>', { noremap = true, silent = true })
 s('n', 'ss', '"_dd', { noremap = true, silent = true })
 vim.cmd [[omap     <silent> H :<C-U>lua require('tsht').nodes()<CR>]]
 vim.cmd [[vnoremap <silent> H :lua require('tsht').nodes()<CR>]]
 
 
 --window
---s('n', 'wk', ':split <Return><C-w>w', { silent = true })
---s('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 s('t', '<C-w>k', '<C-\\><C-n><C-w>k', { noremap = true }) --termial to buffer
 s('n', '<leader>w', '<C-w>w', { noremap = true })
 --s('n', 'gv', ':vsplit<CR>gd', { noremap = true })
@@ -70,7 +67,7 @@ s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
 --commend lien commendrs
 --lsp saga
 s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
---s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
+s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
 s('n', '<leader>f', ':Lspsaga finder<CR>', { noremap = true, silent = true })
 s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
 --s('n', '<leader>zf', ':Lspsaga peek_definition<CR>', { noremap = true, silent = true })

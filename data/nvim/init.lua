@@ -12,6 +12,12 @@ _G.__luacache_config = {
 
 vim.loader.enable()
 
+-- astro support
+vim.filetype.add {
+	extension = {
+		astro = "astro",
+	},
+}
 
 require("basic")
 require("plugin")
