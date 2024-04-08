@@ -50,14 +50,5 @@
 			"}"
 		],
 		"description": "unit test"
-	},
-	"storbook": {
-		"prefix": "stb",
-		"body": [
-			"export const ${1:name} = Template.bind({});",
-			"${1:name}.args = {",
-			"};"
-		],
-		"description": "storybook template bind"
 	}
 }

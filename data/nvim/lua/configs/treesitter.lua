@@ -53,5 +53,3 @@ local autoCommands = {
 }
 
 M.nvim_create_augroups(autoCommands)
-
-vim.treesitter.language.register("markdown", "mdx") -- the mdx filetype will use the markdown parser and queries.

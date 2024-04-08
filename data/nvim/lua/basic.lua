@@ -88,14 +88,7 @@ vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
 --format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
--- filtype extend
-vim.filetype.add({
-	extension = {
-		astro = "astro",
-		mdx = "mdx",
 
-	}
-})
 
 --clipbiioard
 
