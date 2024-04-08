@@ -445,19 +445,6 @@ require('lazy').setup({
 		end
 	},
 	{
-		"cbochs/grapple.nvim",
-		opts = {
-			scope = "git", -- also try out "git_branch"
-		},
-		event = { "BufReadPost", "BufNewFile" },
-		cmd = "Grapple",
-		keys = {
-			{ "<leader>gg", "<cmd>Grapple toggle<cr>",          desc = "Grapple toggle tag" },
-			{ "<leader>go", "<cmd>Grapple toggle_tags<cr>",     desc = "Grapple open tags window" },
-			{ "<leader>gn", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
-		},
-	},
-	{
 		'rust-lang/rust.vim',
 		config = function()
 			vim.g.rustfmt_autosave = 1

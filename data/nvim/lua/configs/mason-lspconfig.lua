@@ -16,7 +16,8 @@ require('mason-lspconfig').setup({
 		'jsonls',
 		'pylsp',
 		'lua_ls',
-		'rust_analyzer'
+		'rust_analyzer',
+		'astro'
 
 	},
 
@@ -36,6 +37,13 @@ require('mason-lspconfig').setup({
 						},
 					},
 				},
+			})
+		end,
+		["astro"] = function()
+			require("lspconfig").astro.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+
 			})
 		end,
 		["clangd"] = function()
