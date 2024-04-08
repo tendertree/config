@@ -121,6 +121,7 @@ alias hg="HYGEN_TMPLS=~/.hygen/_templates hygen"
 alias prd="pnpm run dev"
 alias pd="cd /mnt/d/project"
 alias bx="bunx"
+alias up = " cd config && git pull && cd ~/study/myNote && git pull && cd ~/project/tenderMono && git pull"
 #tmux
 alias tmn="tmux new -s"
 alias tmg="tmux attach-session -t"
