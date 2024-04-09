@@ -1,4 +1,9 @@
 require("noice").setup({
+	views = {
+		split = {
+			enter = true,
+		},
+	},
 	lsp = {
 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 		override = {
@@ -18,7 +23,7 @@ require("noice").setup({
 
 	notify = {
 		enabled = true,
-		view = "notify",
+		view = "split",
 		max_width = 15,
 	},
 	popupmenu = {

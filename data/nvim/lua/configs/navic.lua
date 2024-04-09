@@ -33,3 +33,4 @@ navic.setup {
 		preference = nil,
 	},
 }
+vim.g.navic_silence = true

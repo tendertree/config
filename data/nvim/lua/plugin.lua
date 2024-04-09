@@ -40,7 +40,17 @@ require('lazy').setup({
 		config = function()
 			require("configs.noice")
 		end,
-		enabled = true,
+		enabled = false,
+	},
+	{
+		'VonHeikemen/fine-cmdline.nvim',
+		dependencies = {
+			'MunifTanjim/nui.nvim'
+		},
+		keys = {
+			{ '/', ":lua require'fine-cmdline'.open()<CR>", silent = true, noremap = true }
+		},
+		event = "InsertEnter"
 	},
 	{
 		"folke/todo-comments.nvim",
