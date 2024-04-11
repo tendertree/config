@@ -1,6 +1,16 @@
 {
-	"myre": {
-		"prefix": "ed",
+	"basic component export": {
+		"prefix": "ef",
+		"body": [
+			"export function ${1:name}(){",
+			"return(",
+			"<div>${2:data}</div>",
+			")}"
+		],
+		"description": "Require module in lua"
+	},
+	"basic component default export": {
+		"prefix": "edf",
 		"body": [
 			"export default function ${1:name}(){",
 			"return(",

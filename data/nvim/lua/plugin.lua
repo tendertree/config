@@ -368,7 +368,7 @@ require('lazy').setup({
 
 	{
 		'pmizio/typescript-tools.nvim',
-		ft = { 'typescript' },
+		ft = { 'typescript', 'typescriptreact' },
 		opts = {
 			settings = {
 				tsserver_file_preferences = {
