@@ -369,19 +369,9 @@ require('lazy').setup({
 	{
 		'pmizio/typescript-tools.nvim',
 		ft = { 'typescript', 'typescriptreact' },
-		opts = {
-			settings = {
-				tsserver_file_preferences = {
-					includeInlayParameterNameHints = 'all',
-					includeCompletionsForModuleExports = true,
-					quotePreference = 'auto',
-				},
-				tsserver_format_options = {
-					allowIncompleteCompletions = false,
-					allowRenameOfImportPath = false,
-				},
-			},
-		},
+		config = function()
+			require("configs.typescript-tool")
+		end,
 		enabled = true,
 	},
 
