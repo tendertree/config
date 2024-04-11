@@ -16,7 +16,8 @@ require('mason-lspconfig').setup({
 		'jsonls',
 		'pylsp',
 		'lua_ls',
-		'rust_analyzer'
+		'rust_analyzer',
+		'tailwindcss'
 
 	},
 
