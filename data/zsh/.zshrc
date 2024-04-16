@@ -153,3 +153,16 @@ export NVM_DIR="$HOME/.nvm"
 export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 #export DISPLAY="`sed -n 's/nameserver //p' /etc/resolv.conf`:0"
 #export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+#
+#
+#automate my process 
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+autoUpdate() {
+    cd config && git pull
+    cd ~/study/myNote && git pull
+    cd ~/project/tenderMono && git pull
+	cd ~
+}
+
+autoUpdate
