@@ -121,7 +121,7 @@ alias hg="HYGEN_TMPLS=~/.hygen/_templates hygen"
 alias prd="pnpm run dev"
 alias pd="cd /mnt/d/project"
 alias bx="bunx"
-alias up="cd config && git pull && cd ~/study/myNote && git pull && cd ~/project/tenderMono && git pull"
+alias up='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa && autoUpdate'
 #tmux
 alias tmn="tmux new -s"
 alias tmg="tmux attach-session -t"
@@ -156,8 +156,6 @@ export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 #
 #
 #automate my process 
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
 autoUpdate() {
     cd config && git pull
     cd ~/study/myNote && git pull
@@ -165,4 +163,4 @@ autoUpdate() {
 	cd ~
 }
 
-autoUpdate
+
