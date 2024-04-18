@@ -29,26 +29,12 @@ require('lazy').setup({
 	},
 	"nvim-neotest/nvim-nio",
 	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require("configs.noice")
-		end,
-		enabled = false,
-	},
-	{
 		'VonHeikemen/fine-cmdline.nvim',
 		dependencies = {
 			'MunifTanjim/nui.nvim'
 		},
 		keys = {
-			{ '/', ":lua require'fine-cmdline'.open()<CR>", silent = true, noremap = true }
+			{ ';', ":lua require'fine-cmdline'.open()<CR>", silent = true, noremap = true }
 		},
 		event = "InsertEnter"
 	},
@@ -61,7 +47,7 @@ require('lazy').setup({
 		event = 'BufRead',
 		keys = {
 			{
-				"<F6>", ":TodoTelescope<CR>", silent = true
+				"<f6>", ":TodoTelescope<CR>", silent = true
 			}
 		}
 	},
@@ -454,7 +440,8 @@ require('lazy').setup({
 		keys = {
 			{ "<leader>gg", "<cmd>Grapple toggle<cr>",          desc = "Grapple toggle tag" },
 			{ "<leader>go", "<cmd>Grapple toggle_tags<cr>",     desc = "Grapple open tags window" },
-			{ "<leader>gn", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+			{ "<leader>ge", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+			{ "<leader>gn", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle next tag" }
 		},
 	},
 	{
@@ -478,13 +465,5 @@ require('lazy').setup({
 	{
 		'lvimuser/lsp-inlayhints.nvim'
 	},
-	{
-		"imNel/monorepo.nvim",
-		config = function()
-			require("monorepo").setup({
-				-- Your config here!
-			})
-		end,
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	},
+
 }, { defaults = { lazy = true } })

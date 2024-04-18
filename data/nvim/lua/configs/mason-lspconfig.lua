@@ -52,7 +52,10 @@ require('mason-lspconfig').setup({
 			require("lspconfig").emmet_ls.setup({})
 		end,
 		["tailwindcss"] = function()
-			require("lspconfig").tailwindcss.setup({})
+			require("lspconfig").tailwindcss.setup({
+				capabilities = capabilities,
+
+			})
 		end,
 
 		["pylsp"] = function()
