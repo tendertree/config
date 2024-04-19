@@ -17,8 +17,7 @@ require('mason-lspconfig').setup({
 		'pylsp',
 		'lua_ls',
 		'rust_analyzer',
-		'tailwindcss',
-		'emmet_language_server'
+		'tailwindcss'
 
 	},
 
@@ -49,16 +48,11 @@ require('mason-lspconfig').setup({
 		["eslint"] = function()
 			require("lspconfig").eslint.setup({})
 		end,
-		["emmet_language_server"] = function()
-			require("lspconfig").emmet_language_server.setup({
-
-			})
+		["emmet_ls"] = function()
+			require("lspconfig").emmet_ls.setup({})
 		end,
 		["tailwindcss"] = function()
-			require("lspconfig").tailwindcss.setup({
-				capabilities = capabilities,
-
-			})
+			require("lspconfig").tailwindcss.setup({})
 		end,
 
 		["pylsp"] = function()
