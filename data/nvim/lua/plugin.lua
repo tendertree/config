@@ -181,10 +181,14 @@ require('lazy').setup({
 	},
 	{
 		'nvim-telescope/telescope-file-browser.nvim',
+		config = function()
+			require("configs.telescope_file")
+		end,
 		dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
 		keys = {
 			{
 				'<f6>',
+
 				function()
 					require("telescope").extensions.file_browser.file_browser()
 					print("telecope run")
