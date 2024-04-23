@@ -18,7 +18,7 @@ vim.filetype.add {
 		astro = "astro",
 	},
 }
-
+vim.lsp.set_log_level("debug")
 require("basic")
 require("plugin")
 require("input")

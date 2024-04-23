@@ -1,15 +1,19 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
+		"--branch=stable", -- latest stable release
 		lazypath,
 	})
 end
+vim.opt.rtp:prepend(lazypath)
+
+
+
+
 vim.opt.rtp:prepend(lazypath)
 
 
@@ -29,26 +33,12 @@ require('lazy').setup({
 	},
 	"nvim-neotest/nvim-nio",
 	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require("configs.noice")
-		end,
-		enabled = false,
-	},
-	{
 		'VonHeikemen/fine-cmdline.nvim',
 		dependencies = {
 			'MunifTanjim/nui.nvim'
 		},
 		keys = {
-			{ '/', ":lua require'fine-cmdline'.open()<CR>", silent = true, noremap = true }
+			{ ';', ":lua require'fine-cmdline'.open()<CR>", silent = true, noremap = true }
 		},
 		event = "InsertEnter"
 	},
@@ -61,7 +51,7 @@ require('lazy').setup({
 		event = 'BufRead',
 		keys = {
 			{
-				"<F6>", ":TodoTelescope<CR>", silent = true
+				"<f10>", ":TodoTelescope<CR>", silent = true
 			}
 		}
 	},
@@ -174,9 +164,14 @@ require('lazy').setup({
 		dependencies = 'nvim-lua/plenary.nvim',
 		config = function()
 			require("configs.telescope")
-		end
+		end,
+		keys = {
+			{ '<leader>tb', ':Telescope buffers<CR>',    noremap = true, silent = true },
+			{ '<leader>th', ':Telescope help_tags<CR>',  noremap = true, silent = true },
+			{ '<leader>tf', ':Telescope find_files<CR>', noremap = true, silent = true },
 
 
+		}
 	},
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
@@ -184,13 +179,29 @@ require('lazy').setup({
 		'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 
 	},
-	'nvim-telescope/telescope-file-browser.nvim',
+	{
+		'nvim-telescope/telescope-file-browser.nvim',
+		dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+		keys = {
+			{
+				'<f6>',
+				function()
+					require("telescope").extensions.file_browser.file_browser()
+					print("telecope run")
+				end,
+				noremap = true,
+				silent = true
+			}
+		}
+
+	},
 	{
 		"ahmedkhalf/project.nvim",
 		config = function()
 			require("project_nvim").setup {}
 		end
 	},
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
@@ -439,7 +450,7 @@ require('lazy').setup({
 		'rmagatti/auto-session',
 		config = function()
 			require("auto-session").setup {
-				log_level = "error",
+				logplevel = "error",
 				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 			}
 		end
@@ -454,7 +465,8 @@ require('lazy').setup({
 		keys = {
 			{ "<leader>gg", "<cmd>Grapple toggle<cr>",          desc = "Grapple toggle tag" },
 			{ "<leader>go", "<cmd>Grapple toggle_tags<cr>",     desc = "Grapple open tags window" },
-			{ "<leader>gn", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+			{ "<leader>ge", "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+			{ "<leader>gn", "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle next tag" }
 		},
 	},
 	{
@@ -478,4 +490,5 @@ require('lazy').setup({
 	{
 		'lvimuser/lsp-inlayhints.nvim'
 	},
+
 }, { defaults = { lazy = true } })

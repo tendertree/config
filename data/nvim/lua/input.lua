@@ -85,24 +85,6 @@ require("toggleterm").setup {
 	open_mapping = [[<F4>]],
 }
 local Terminal = require('toggleterm.terminal').Terminal
---telescope
-local actions = require "telescope.actions"
-require('telescope').setup {
-	defaults = {
-		-- Default configuration for telescope goes here:
-		-- config_key = value,
-		mappings = {
-			i = {
-				-- map actions.which_key to <C-h> (default: <C-/>)
-				-- actions.which_key shows the mappings for your picker,
-				-- e.g. git_{create, delete, ...}_branch for the git_branches picker
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-			}
-		}
-	}
-}
-
 -- lspsaga
 local lspconfig = require 'lspconfig'
 local on_attach = function(_, bufnr)
@@ -112,12 +94,9 @@ end
 
 -- nvim tree
 --telescope
-vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>tt', ':Telescope file_browser<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>q', ':RgFzf <CR>', { noremap = true, silent = true })
---vim.api.nvim_set_keymap('n', '<leader>q', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>b', ':Telescope buffers<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>th', ':Telescope help_tags<CR>', { noremap = true, silent = true })
+
+
 -- snippet
 
 -- treesitter settings
