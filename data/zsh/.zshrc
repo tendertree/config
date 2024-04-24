@@ -132,7 +132,7 @@ alias tmk="tmux kill-session -t"
  eval "$(starship init zsh)"
 
 # path 
-export PATH=$HOME/.local/share/cargo/bin/eza:/home/tree/project/git_date_Change/src/:$PATH
+export PATH=$HOME/.local/share/cargo/bin/eza:/home/tree/.local/share/bob/nvim-bin:/home/tree/project/git_date_Change/src/:$PATH
 # pnpm
 export PNPM_HOME="/home/tree/.local/share/pnpm"
 case ":$PATH:" in
