@@ -12,7 +12,7 @@
 	"basic component default export": {
 		"prefix": "edf",
 		"body": [
-			"export default function ${1:name}(){",
+			"export default function ${1:name}(): JSX.Element{",
 			"return(",
 			"<div>${2:data}</div>",
 			")}"
