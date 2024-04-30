@@ -387,6 +387,9 @@ require('lazy').setup({
 		config = function()
 			require("configs.typescript-tool")
 		end,
+		dependencies = {
+			"kyoh86/climbdir.nvim",
+		},
 		enabled = true,
 	},
 
