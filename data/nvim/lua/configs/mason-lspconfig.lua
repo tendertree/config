@@ -18,7 +18,8 @@ require('mason-lspconfig').setup({
 		'lua_ls',
 		'rust_analyzer',
 		'tailwindcss',
-		'emmet_language_server'
+		'emmet_language_server',
+		'deno'
 
 	},
 
@@ -55,6 +56,12 @@ require('mason-lspconfig').setup({
 		end,
 		["tailwindcss"] = function()
 			require("lspconfig").tailwindcss.setup({
+				capabilities = capabilities,
+
+			})
+		end,
+		["deno"] = function()
+			require("lspconfig").deno.setup({
 				capabilities = capabilities,
 
 			})
