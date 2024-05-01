@@ -89,8 +89,14 @@ vim.g.astro_stylus = 'enable'
 --format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
-
---plipbiioard
+--clear clipboard when dd
+vim.api.nvim_exec([[
+  augroup ClearClipboard
+    autocmd!
+    autocmd TextYankPost * silent! call system('echo -n "" | pbcopy')
+  augroup END
+]], false)
+--clipbiioard
 
 vim.opt.clipboard = "unnamedplus"
 if vim.fn.has('wsl') == 1 then
