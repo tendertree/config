@@ -493,6 +493,16 @@ require('lazy').setup({
 	},
 	{
 		'lvimuser/lsp-inlayhints.nvim'
+	},
+	{
+		'timtro/glslView-nvim',
+		ft = 'glsl',
+		config = function()
+			require('glslView').setup {
+				viewer_path = 'glslViewer',
+				args = { '-l' },
+			}
+		end
 	}
 
 }, { defaults = { lazy = true } })
