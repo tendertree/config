@@ -19,7 +19,7 @@ require('mason-lspconfig').setup({
 		'rust_analyzer',
 		'tailwindcss',
 		'emmet_language_server',
-		'denols'
+		-- 'denols'
 
 	},
 
@@ -60,12 +60,12 @@ require('mason-lspconfig').setup({
 
 			})
 		end,
-		["denols"] = function()
-			require("lspconfig").denols.setup({
-				capabilities = capabilities,
-				root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
-			})
-		end,
+		-- ["denols"] = function()
+		-- 	require("lspconfig").denols.setup({
+		-- 		capabilities = capabilities,
+		-- 		root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
+		-- 	})
+		-- end,
 
 		["pylsp"] = function()
 			require("lspconfig").pylsp.setup({

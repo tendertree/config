@@ -503,6 +503,18 @@ require('lazy').setup({
 				args = { '-l' },
 			}
 		end
+	},
+	{
+		'sigmasd/deno-nvim',
+		config = function()
+			require("lspconfig").denols.setup({
+				capabilities = require('cmp_nvim_lsp').default_capabilities(),
+				root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
+
+			})
+		end,
+		ft = "typescriptreact,typescript,javascript,javascriptreact"
+
 	}
 
 }, { defaults = { lazy = true } })
