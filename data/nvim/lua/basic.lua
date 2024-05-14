@@ -20,6 +20,7 @@ o.writebackup = false
 o.cmdheight = 1
 o.updatetime = 300
 o.fileencoding = "utf-8"
+o.termencoding = "utf-8"
 o.encoding = "utf-8"
 o.shortmess = o.shortmess .. "c"
 --for better searching
