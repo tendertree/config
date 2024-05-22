@@ -36,7 +36,6 @@ RUN git clone https://aur.archlinux.org/yay.git /tmp/yay && \
     cd / && \
     rm -rf /tmp/yay
 USER root
-# Set hardware clock
 
 # Install AUR packages
 USER tree
@@ -80,3 +79,6 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.
     echo 'ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"' >> ~/.zshrc
 
 RUN git clone https://github.com/tendertree/config ~
+
+RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN ollama run llama3

@@ -167,7 +167,7 @@ require('lazy').setup({
 		end,
 		keys = {
 			{ '<leader>tb', ':Telescope buffers<CR>',    noremap = true, silent = true },
-			{ '<leader>th', ':Telescope help_tags<CR>',  noremap = true, silent = true },
+			--{ '<leader>th', ':Telescope help_tags<CR>',  noremap = true, silent = true },
 			{ '<leader>tf', ':Telescope find_files<CR>', noremap = true, silent = true },
 
 

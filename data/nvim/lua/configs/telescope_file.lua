@@ -3,6 +3,10 @@ local fb_actions = require 'telescope'.extensions.file_browser.actions
 local actions = require('telescope.actions')
 
 require("telescope").setup {
+	defaults = {
+		prompt_prefix = " ",
+		selection_caret = "➤ ",
+	},
 	extensions = {
 		file_browser = {
 			mappings = {
