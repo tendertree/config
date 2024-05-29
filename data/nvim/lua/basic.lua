@@ -87,24 +87,20 @@ vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
 --format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
---clear clipboard when dd
-vim.api.nvim_exec([[
-  augroup ClearClipboard
-    autocmd!
-    autocmd TextYankPost * silent! call system('echo -n "" | pbcopy')
-  augroup END
-]], false)
 --clipbiioard
-
-vim.opt.clipboard = "unnamedplus"
-if vim.fn.has('wsl') == 1 then
-	vim.api.nvim_create_autocmd('TextYankPost', {
-		group = vim.api.nvim_create_augroup('Yank', { clear = true }),
-		callback = function()
-			vim.fn.system('clip.exe', vim.fn.getreg('"'))
-		end,
-	})
+if vim.fn.has("wsl") then
+	vim.g.clipboard = {
+		name = "clip.exe (Copy Only)",
+		copy = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe"
+		},
+		paste = {
+			["+"] = "clip.exe",
+			["*"] = "clip.exe"
+		},
+		cache_enabled = true
+	}
 end
 
 -- use cache to load fast
