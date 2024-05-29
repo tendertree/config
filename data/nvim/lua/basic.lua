@@ -90,14 +90,14 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 --clipbiioard
 if vim.fn.has("wsl") then
 	vim.g.clipboard = {
-		name = "clip.exe (Copy Only)",
+		name = "clip.exe",
 		copy = {
 			["+"] = "clip.exe",
 			["*"] = "clip.exe"
 		},
 		paste = {
-			["+"] = "clip.exe",
-			["*"] = "clip.exe"
+			["+"] = "powershell.exe Get-Clipboard",
+			["*"] = "powershell.exe Get-Clipboard"
 		},
 		cache_enabled = true
 	}

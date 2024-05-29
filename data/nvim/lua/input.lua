@@ -7,6 +7,7 @@ require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
 local function run() require('neotest').run.run() end
 
+
 --set some functions
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
@@ -16,7 +17,7 @@ vim.g.maplocalleader = ' '
 s('i', 'jl', '<ESC>', { noremap = true, silent = true })
 s('t', 'jl', '<C-\\><C-n>', { noremap = true, silent = true })
 --paste key problem
-s('n', ':', 'p', { noremap = true, silent = true })
+s('n', ':', '"+p', { noremap = true, silent = true })
 s('n', ';', ':', { noremap = true, silent = true })
 
 -- center seach result
