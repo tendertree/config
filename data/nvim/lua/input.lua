@@ -93,11 +93,9 @@ local on_attach = function(_, bufnr)
 end
 
 -- nvim tree
---telescope
 vim.api.nvim_set_keymap('n', '<leader>q', ':RgFzf <CR>', { noremap = true, silent = true })
 
 
--- snippet
 
 -- treesitter settings
 require 'nvim-treesitter.configs'.setup {

@@ -11,12 +11,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-
-
-vim.opt.rtp:prepend(lazypath)
-
-
 require('lazy').setup({
 	{
 		'nvim-neo-tree/neo-tree.nvim',
@@ -32,16 +26,6 @@ require('lazy').setup({
 		}
 	},
 	"nvim-neotest/nvim-nio",
-	{
-		'VonHeikemen/fine-cmdline.nvim',
-		dependencies = {
-			'MunifTanjim/nui.nvim'
-		},
-		keys = {
-			{ ';', ":lua require'fine-cmdline'.open()<CR>", silent = true, noremap = true }
-		},
-		event = "InsertEnter"
-	},
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -515,6 +499,24 @@ require('lazy').setup({
 		end,
 		ft = "typescriptreact,typescript,javascript,javascriptreact"
 
+	},
+	-- lazy.nvim
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		config = function()
+			require("configs.noice")
+		end,
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		}
 	}
-
 }, { defaults = { lazy = true } })

@@ -24,13 +24,22 @@ require("noice").setup({
 	notify = {
 		enabled = true,
 		view = "split",
-		max_width = 15,
 	},
 	popupmenu = {
 		enabled = true,
 		backend = "nui",
 		kind_icons = {},
-		max_width = 15, -- Set your desired max-width value
 	},
+
+}
+)
+
+local notify = require("notify")
+notify.setup({
+	max_width = 50,
+	render = "wrapped-compact",
+	stages = "fade",
+	timeout = 100,
+
 
 })
