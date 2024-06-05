@@ -103,6 +103,7 @@ if vim.fn.has("wsl") then
 		cache_enabled = true
 	}
 end
+-- yank text problem
 
 -- use cache to load fast
 _G.__luacache_config = {

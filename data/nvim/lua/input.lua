@@ -8,16 +8,25 @@ local s = vim.api.nvim_set_keymap
 local function run() require('neotest').run.run() end
 
 
+
 --set some functions
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- paste fix
+function TrimCarriageReturns()
+	local content = vim.fn.getreg('+') -- Use '+' for the system clipboard
+	content = string.gsub(content, '\r', '')
+	vim.fn.setreg('+', content)     -- Set the cleaned content back to the clipboard
+end
+
 -- mode change
 s('i', 'jl', '<ESC>', { noremap = true, silent = true })
 s('t', 'jl', '<C-\\><C-n>', { noremap = true, silent = true })
 --paste key problem
-s('n', ':', '"+p', { noremap = true, silent = true })
+--s('n', ':', '"+p', { noremap = true, silent = true })
+s('n', ':', [[:lua TrimCarriageReturns()<CR>"+p]], { noremap = true, silent = true })
 s('n', ';', ':', { noremap = true, silent = true })
 
 -- center seach result
