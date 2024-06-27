@@ -1,0 +1,109 @@
+set number
+set relativenumber
+set noswapfile
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set hidden
+set nobackup
+set nowritebackup
+set fileformat=unix
+set encoding=utf-8
+set fileencoding=utf-8
+
+" Search settings
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
+" Clipboard
+set clipboard=unnamedplus
+
+" Mouse support
+set mouse=a
+
+" Folding
+set foldmethod=indent
+set foldlevel=99
+
+" Use system clipboard
+set clipboard+=ideaput
+
+" Additional settings
+set showcmd
+set scrolloff=10
+set expandtab
+set smarttab
+set breakindent
+set shiftwidth=2
+set tabstop=2
+set ai " Auto indent
+set si " Smart indent
+set nowrap
+set backspace=start,eol,indent
+
+" IdeaVim specific settings
+set ideastrictmode
+set ideajoin
+
+
+nnoremap d c
+vnoremap d c
+nnoremap e k
+vnoremap e k
+
+nnoremap f e
+vnoremap f e
+
+nnoremap i l
+vnoremap i l
+
+nnoremap j y
+vnoremap j y
+
+nnoremap k n
+vnoremap k n
+nnoremap K N
+
+nnoremap l u
+vnoremap l u
+
+nnoremap n j
+vnoremap n j
+
+nnoremap o ;
+vnoremap o ;
+
+nnoremap p r
+vnoremap p r
+
+nnoremap r s
+vnoremap r s
+
+nnoremap s "_d
+vnoremap s "_d
+nnoremap ss "_dd
+
+nnoremap t f
+vnoremap t f
+
+nnoremap u i
+vnoremap u i
+
+nnoremap y o
+vnoremap y o
+
+nnoremap m h
+vnoremap m h
+
+nnoremap ; p
+vnoremap ; p
+
+" Binding for some "double key" actions
+nnoremap ss dd
+vnoremap ss dd
+nnoremap dd cc
+vnoremap dd cc
+nnoremap gt gf
