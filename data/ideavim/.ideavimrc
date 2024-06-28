@@ -1,3 +1,4 @@
+"basic Setting 
 set number
 set relativenumber
 set noswapfile
@@ -10,28 +11,17 @@ set nobackup
 set nowritebackup
 set fileformat=unix
 set encoding=utf-8
+set visualbell
+set noerrorbells
 set fileencoding=utf-8
-
-" Search settings
-set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-
-" Clipboard
-set clipboard=unnamedplus
-
-" Mouse support
 set mouse=a
-
-" Folding
 set foldmethod=indent
 set foldlevel=99
-
-" Use system clipboard
 set clipboard+=ideaput
-
-" Additional settings
+set belloff=all
 set showcmd
 set scrolloff=10
 set expandtab
@@ -43,12 +33,8 @@ set ai " Auto indent
 set si " Smart indent
 set nowrap
 set backspace=start,eol,indent
-
-" IdeaVim specific settings
 set ideastrictmode
-set ideajoin
-
-
+let mapleader=" "
 nnoremap d c
 vnoremap d c
 nnoremap e k
@@ -107,3 +93,10 @@ vnoremap ss dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
+" lsp action 
+
+if has('ide')
+  " mappings and options that exist only in IdeaVim
+  map gc <Action>(GotoFile)
+  map <leader>g <Action>(FindInPath)
+  map <leader>b <Action>(Switcher)
