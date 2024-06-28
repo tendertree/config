@@ -91,18 +91,17 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 --clipbiioard
 -- yank text problem
 local clip = '/mnt/c/Windows/System32/clip.exe'
-if vim.fn.executable(clip) == 1 then
-	vim.api.nvim_create_augroup('WSLYank', { clear = true })
-	vim.api.nvim_create_autocmd('TextYankPost', {
-		group = 'WSLYank',
-		pattern = '*',
-		callback = function()
-			if vim.v.event.operator == 'y' then
-				vim.fn.system(clip, vim.fn.getreg('0'))
-			end
-		end,
-	})
-end
+
+vim.api.nvim_create_augroup('WSLYank', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+	group = 'WSLYank',
+	pattern = '*',
+	callback = function()
+		if vim.v.event.operator == 'y' then
+			vim.fn.system(clip, vim.fn.getreg('0'))
+		end
+	end,
+})
 
 -- use cache to load fast
 _G.__luacache_config = {
