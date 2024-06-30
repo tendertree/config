@@ -1,4 +1,6 @@
+Plug 'preservim/nerdtree'
 
+set number
 set relativenumber
 set noswapfile
 set tabstop=4
@@ -43,7 +45,9 @@ set ai " Auto indent
 set si " Smart indent
 set nowrap
 set backspace=start,eol,indent
-
+" turn off the sound 
+set visualbell
+set noerrorbells
 " IdeaVim specific settings
 set ideastrictmode
 set ideajoin
@@ -89,8 +93,8 @@ nnoremap ss "_dd
 nnoremap t f
 vnoremap t f
 
-nnoremap u i
-vnoremap u i
+nnoremap u u
+vnoremap u u
 
 nnoremap y o
 vnoremap y o
@@ -101,9 +105,14 @@ vnoremap m h
 nnoremap ; p
 vnoremap ; p
 
-" Binding for some "double key" actions
-nnoremap ss dd
+
+
+
+map ,h :NERDTreeToggle<CR>
+ :NERDTreeToggle
 vnoremap ss dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
+
+
