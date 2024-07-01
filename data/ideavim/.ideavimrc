@@ -13,26 +13,14 @@ set nowritebackup
 set fileformat=unix
 set encoding=utf-8
 set fileencoding=utf-8
-
-" Search settings
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-
-" Clipboard
-set clipboard=unnamedplus
-
-" Mouse support
 set mouse=a
-
-" Folding
 set foldmethod=indent
 set foldlevel=99
-
-" Use system clipboard
 set clipboard+=ideaput
-
 " Additional settings
 set showcmd
 set scrolloff=10
@@ -51,8 +39,7 @@ set noerrorbells
 " IdeaVim specific settings
 set ideastrictmode
 set ideajoin
-
-
+let mapleader = " "
 nnoremap d c
 vnoremap d c
 nnoremap e k
@@ -102,17 +89,18 @@ vnoremap y o
 nnoremap m h
 vnoremap m h
 
-nnoremap ; p
-vnoremap ; p
+nnoremap ; :
+vnoremap ; :
 
 
+nnoremap : p
+vnoremap : p 
 
-
+map <leader>o <action>(ActivateStructureToolWindow)
+map <leader>q <action>(SearchEverywhere)
 map ,h :NERDTreeToggle<CR>
- :NERDTreeToggle
 vnoremap ss dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
-
 
