@@ -1,3 +1,4 @@
+
 Plug 'preservim/nerdtree'
 
 set number
@@ -95,12 +96,11 @@ vnoremap ; :
 
 nnoremap : p
 vnoremap : p 
-
 map <leader>o <action>(ActivateStructureToolWindow)
 map <leader>q <action>(SearchEverywhere)
-map ,h :NERDTreeToggle<CR>
+noremap ,h :NERDTreeToggle<CR>
+
 vnoremap ss dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
-
