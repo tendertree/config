@@ -1,4 +1,3 @@
-
 Plug 'preservim/nerdtree'
 
 set number
@@ -21,7 +20,8 @@ set hlsearch
 set mouse=a
 set foldmethod=indent
 set foldlevel=99
-set clipboard+=ideaput
+set clipboard+=unnamed
+"set clipboard+=ideaput
 " Additional settings
 set showcmd
 set scrolloff=10
@@ -96,11 +96,23 @@ vnoremap ; :
 
 nnoremap : p
 vnoremap : p 
+
 map <leader>o <action>(ActivateStructureToolWindow)
 map <leader>q <action>(SearchEverywhere)
-noremap ,h :NERDTreeToggle<CR>
-
+nnoremap ,h :NERDTreeToggle<CR>
 vnoremap ss dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
+
+
+
+let g:toggle_count = 0
+
+function! ToggleNerdTree()
+    if g:toggle_count % 2 == 0
+        NERDTreeToggle
+    else
+        <action>(HideActiveWindow)
+end 
+nnoremap ,h ToggleNerdTree()
