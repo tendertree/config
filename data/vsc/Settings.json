@@ -163,10 +163,281 @@
 		},
 		{
 			"before": [
-				";"
+				":"
 			],
 			"after": [
 				"p"
+			]
+		},
+		{
+			"before": [
+				";"
+			],
+			"after": [
+				":"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"t"
+			],
+			"after": [
+				"g",
+				"f"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"v"
+			],
+			"commands": [
+				"editor.action.revealDefinition"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"d"
+			],
+			"commands": [
+				"editor.action.showHover"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"f"
+			],
+			"commands": [
+				"workbench.action.gotoSymbol"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"s",
+				"h"
+			],
+			"commands": [
+				"editor.action.triggerParameterHints"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"o"
+			],
+			"commands": [
+				"outline.focus"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"c"
+			],
+			"commands": [
+				"editor.action.quickFix"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"r"
+			],
+			"commands": [
+				"editor.action.rename"
+			]
+		},
+		{
+			"before": [
+				"[",
+				";"
+			],
+			"commands": [
+				"editor.action.marker.next"
+			]
+		},
+		{
+			"before": [
+				"]",
+				";"
+			],
+			"commands": [
+				"editor.action.marker.prev"
+			]
+		}
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				".",
+				","
+			],
+			"commands": [
+				"workbench.action.toggleSidebarVisibility"
+			]
+		},
+		{
+			"before": [
+				"d"
+			],
+			"after": [
+				"c"
+			]
+		},
+		{
+			"before": [
+				"e"
+			],
+			"after": [
+				"k"
+			]
+		},
+		{
+			"before": [
+				"f"
+			],
+			"after": [
+				"e"
+			]
+		},
+		{
+			"before": [
+				"i"
+			],
+			"after": [
+				"l"
+			]
+		},
+		{
+			"before": [
+				"j"
+			],
+			"after": [
+				"y"
+			]
+		},
+		{
+			"before": [
+				"k"
+			],
+			"after": [
+				"n"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"after": [
+				"N"
+			]
+		},
+		{
+			"before": [
+				"l"
+			],
+			"after": [
+				"u"
+			]
+		},
+		{
+			"before": [
+				"n"
+			],
+			"after": [
+				"j"
+			]
+		},
+		{
+			"before": [
+				"o"
+			],
+			"after": [
+				";"
+			]
+		},
+		{
+			"before": [
+				"p"
+			],
+			"after": [
+				"r"
+			]
+		},
+		{
+			"before": [
+				"r"
+			],
+			"after": [
+				"s"
+			]
+		},
+		{
+			"before": [
+				"s"
+			],
+			"after": [
+				"\"",
+				"_",
+				"d"
+			]
+		},
+		{
+			"before": [
+				"s",
+				"s"
+			],
+			"after": [
+				"\"",
+				"_",
+				"d",
+				"d"
+			]
+		},
+		{
+			"before": [
+				"t"
+			],
+			"after": [
+				"f"
+			]
+		},
+		{
+			"before": [
+				"u"
+			],
+			"after": [
+				"i"
+			]
+		},
+		{
+			"before": [
+				"y"
+			],
+			"after": [
+				"o"
+			]
+		},
+		{
+			"before": [
+				"m"
+			],
+			"after": [
+				"h"
+			]
+		},
+		{
+			"before": [
+				";"
+			],
+			"after": [
+				":"
 			]
 		},
 		{
@@ -389,5 +660,8 @@
 	"vim.leader": "<space>",
 	"vim.handleKeys": {
 		"<space>": true
+	},
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1
 	}
 }
