@@ -12,9 +12,10 @@
 		"<space>": true
 	},
 	"extensions.experimental.affinity": {
-		"vscodevim.vim": 1
+		"vscodevim.vim": 1,
+		"asvetliakov.vscode-neovim": 1
 	},
-	"editor.fontFamily": "jetbrainsMono nerd font mono",
+	"editor.fontFamily": "JetBrainsMono NFM",
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
 			"before": [
@@ -598,7 +599,6 @@
 		"rules": {
 			"keyword.using": {
 				"foreground": "#ffff99",
-				"fontStyle": "underline"
 			}
 		}
 	},
@@ -715,5 +715,9 @@
 				}
 			]
 		}
-	}
+	},
+	"omnisharp.useModernNet": false,
+	"editor.unicodeHighlight.invisibleCharacters": false,
+	"csharp.semanticHighlighting.enabled": false,
+	"editor.semanticHighlighting.enabled": false
 }
