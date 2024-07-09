@@ -70,13 +70,13 @@ require('mason-lspconfig').setup({
 			require('lspconfig').omnisharp.setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				cmd = { "dotnet", vim.fn.stdpath "data" .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+				cmd = { "dotnet", vim.fn.stdpath "data" .. "/home/tree/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+				filetypes = { "cs", "vb" },
+				root_dir = require('lspconfig.util').root_pattern("Assets", "ProjectSettings", "Packages"),
+				enable_roslyn_analyzers = true,
+				analyze_open_documents_only = false,
 				enable_import_completion = true,
 				organize_imports_on_format = true,
-				enable_roslyn_analyzers = true,
-				root_dir = function()
-					return vim.loop.cwd() -- current working directory
-				end,
 			})
 		end,
 		["pylsp"] = function()
