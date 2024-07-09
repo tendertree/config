@@ -20,3 +20,5 @@ vim.filetype.add {
 vim.lsp.set_log_level("debug")
 require("basic")
 require("plugin")
+require("input")
+require("theme")

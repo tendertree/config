@@ -4,10 +4,10 @@ o.termguicolors = true
 
 --Diagnostic
 local signs = {
-	Warn = "??,
-	Hint = "??,
-	Error = "??,
-	Info = "??
+	Warn = "🚨",
+	Hint = "💡",
+	Error = "❌",
+	Info = "ℹ️ ",
 }
 
 for type, icon in pairs(signs) do
@@ -23,11 +23,7 @@ o.background = "light"
 vim.api.nvim_set_hl(0, 'Comment', { fg = '#a8a491' })
 vim.api.nvim_set_hl(0, 'String', { fg = '#465AA4' })
 vim.api.nvim_set_hl(0, 'DiagnosticHint', { fg = '#acbfb0' })
-require('lualine').setup {
-	options = {
-		theme = 'nord'
-	}
-}
+
 
 
 
@@ -37,7 +33,7 @@ vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#3135
 vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '#31353f' })
 
 vim.fn.sign_define('DapBreakpoint', {
-	text =  '?',
+	text = '?',
 	texthl = 'DapBreakpoint',
 	linehl = 'DapBreakpoint',
 	numhl =

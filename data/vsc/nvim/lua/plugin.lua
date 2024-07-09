@@ -14,14 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	{
 		"tendertree/nforcolemak-dh",
-		event = 'InsertEnter'
 	},
 	'savq/melange-nvim',
-	{
-		'nvim-lualine/lualine.nvim',
-		config = function()
-			require("configs.lualine")
-		end
-	},
+
 }
 )
