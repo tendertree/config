@@ -1,101 +1,35 @@
+set incsearch
+let mapleader = " "
+set clipboard+=unnamed 
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 
-set number
-set relativenumber
-set noswapfile
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set smartindent
-set hidden
-set nobackup
-set nowritebackup
-set fileformat=unix
-set encoding=utf-8
-set fileencoding=utf-8
-set incsearch
-set ignorecase
-set smartcase
-set hlsearch
-set mouse=a
-set foldmethod=indent
-set foldlevel=99
-set clipboard+=unnamed
-"set clipboard+=ideaput
-" Additional settings
-set showcmd
-set scrolloff=10
-set expandtab
-set smarttab
-set breakindent
-set shiftwidth=2
-set tabstop=2
-set ai " Auto indent
-set si " Smart indent
-set nowrap
-set backspace=start,eol,indent
-" turn off the sound 
-set visualbell
-set noerrorbells
-" IdeaVim specific settings
-set ideastrictmode
-set ideajoin
-let mapleader = " "
-nnoremap d c
-vnoremap d c
-nnoremap e k
-vnoremap e k
+noremap m h
+noremap n j
+noremap e k
+noremap i l
+""hjlk
 
-nnoremap f e
-vnoremap f e
+noremap d c
+noremap f e 
+noremap j y 
+noremap k n 
+noremap l u 
+noremap n j 
+noremap o ;
+noremap p r 
+noremap r s
+noremap s "_d
+noremap ss "_dd 
+noremap t f
+noremap u u 
+noremap y o
+noremap h m
+ 
+noremap ; :
+noremap : p 
 
-nnoremap i l
-vnoremap i l
-
-nnoremap j y
-vnoremap j y
-
-nnoremap k n
-vnoremap k n
-nnoremap K N
-
-nnoremap l u
-vnoremap l u
-
-nnoremap n j
-vnoremap n j
-
-nnoremap o ;
-vnoremap o ;
-
-nnoremap p r
-vnoremap p r
-
-nnoremap r s
-vnoremap r s
-
-nnoremap s "_d
-vnoremap s "_d
-nnoremap ss "_dd
-
-nnoremap t f
-vnoremap t f
-
-nnoremap u u
-vnoremap u u
-
-nnoremap y o
-vnoremap y o
-
-nnoremap m h
-vnoremap m h
-
-nnoremap ; :
-vnoremap ; :
-
-
-nnoremap : p
-vnoremap : p 
 
 map <leader>o <action>(ActivateStructureToolWindow)
 map <leader>q <action>(SearchEverywhere)
@@ -107,12 +41,4 @@ nnoremap gt gf
 
 
 
-let g:toggle_count = 0
 
-function! ToggleNerdTree()
-    if g:toggle_count % 2 == 0
-        NERDTreeToggle
-    else
-        <action>(HideActiveWindow)
-end 
-nnoremap ,h ToggleNerdTree()
