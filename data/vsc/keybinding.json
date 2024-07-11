@@ -47,12 +47,12 @@
 		"command": "-workbench.action.files.newUntitledFile"
 	},
 	{
-		"key": "space+w",
+		"key": "ctrl+d",
 		"command": "-filesExplorer.openFilePreserveFocus",
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
 	},
 	{
-		"key": "space w",
+		"key": "ctrl+d",
 		"command": "workbench.view.explorer",
 		"when": "viewContainer.workbench.view.explorer.enabled"
 	}
