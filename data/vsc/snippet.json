@@ -3,7 +3,6 @@
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
-	// Example:
 	// "Print to console": {
 	// 	"prefix": "log",
 	// 	"body": [
@@ -13,7 +12,7 @@
 	// "description": "Log output to console"
 	// }
 	"IComponentdata": {
-		"prefix": "cd",
+		"prefix": "cc",
 		"body": [
 			"using Unity.Entities;",
 			"public struct $1 : IComponentData",
@@ -23,6 +22,40 @@
 		],
 		"description": "add IComponentData"
 	},
+	"Authoring with prefab": {
+		"prefix": "cap",
+		"body": [
+			"using System.Collections;",
+			"using System.Collections.Generic;",
+			"using Unity.Entities;",
+			"using Unity.NetCode;",
+			"using UnityEngine;",
+			"public class $1 : MonoBehaviour",
+			"{",
+			"public GameObject prefabs = null;",
+			"}",
+			"public struct $1Data: IComponentData",
+			"{",
+			"public Entity prefab;",
+			"}",
+			"public class $1Baker: Baker <$1 >",
+			"{",
+			"public override void Bake($1 authoring)",
+			"{",
+			"if (authoring.prefabs != null)",
+			"{",
+			"var entity = GetEntity(TransformUsageFlags.Dynamic);",
+			"AddComponent(entity, new $1Data",
+			"{",
+			"prefab = GetEntity(authoring.prefabs, TransformUsageFlags.Dynamic)",
+			"});",
+			"}",
+			"}",
+			"}"
+		],
+		"description": "authoring prefab"
+	},
+	//state.EntityManager.Instantiate(prefab, 500, Allocator.Temp);
 	"EntityManger": {
 		"prefix": "emc",
 		"body": [
@@ -33,21 +66,35 @@
 		],
 		"description": "Created EntityManger"
 	},
-	"Authoring with prefab": {
-		"prefix": "ap",
+	"prefab initiate": {
+		"prefix": "emi",
 		"body": [
-			"public class $1Authoring : MonoBehavior",
-			"public GameObject $2Prefab;",
-			"public class $1Baker : Baker<$1Authoring",
-			"{",
-			"public override void Bake($1Authoring authoring)",
-			"{",
-			"Entity E = GetEntity(TransformUsageFlags.None)",
-			"AddComponent(E, new $1Component{",
-			"$2Prefab = GetEntity(authoring.$2Prefab,TransformUsageFlags.None)",
-			"});",
-			"}}"
+			"state.EntityManager.Instantiate(prefab, 1, Allocator.Temp);"
 		],
-		"description": "authoring prefab"
+		"description": "Instantiate prefab"
+	},
+	"unParenting": {
+		"prefix": "ecbup",
+		"body": [
+			"var rotatorEntity = SystemAPI.GetSingletonEntity<RotationSpeed>();",
+			"var ecb = new EntityCommandBuffer(Allocator.Temp);",
+			"DynamicBuffer<Child> children = SystemAPI.GetBuffer<Child>(rotatorEntity);",
+			"for (int i = 0; i < children.Length; i++)",
+			"{",
+			"ecb.RemoveComponent<Parent>(children[i].Value);",
+			"}"
+		],
+		"description": "unparenting for all child compoents"
+	},
+	"SystemAPIQueryToggle": {
+		"prefix": "sqt",
+		"body": [
+			"foreach (var Enabled in",
+			"SystemAPI.Query<EnabledRefRW<RotationSpeed>>()",
+			".WithOptions(EntityQueryOptions.IgnoreComponentEnabledState))",
+			"Enabled.ValueRW = !Enabled.ValueRO;",
+			"}"
+		],
+		"description": "Toggle for I enable components "
 	}
 }
