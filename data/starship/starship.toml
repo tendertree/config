@@ -27,7 +27,7 @@ symbol = " "
 
 [directory]
 
-format = "[  $path ]($style)"
+format = "[ 📜 $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
