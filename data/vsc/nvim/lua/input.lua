@@ -4,22 +4,14 @@ local s = vim.api.nvim_set_keymap
 
 require("nforcolemak-dh")
 
--- Function to delete a line without using the clipboard
-function DeleteWithoutClipboard()
-	vim.cmd('normal! "_dd')
-end
-
--- Mapping dd to the DeleteWithoutClipboard function
-
 
 
 s('n', ':', '0p', { noremap = true })
 s('v', ':', '0p', { noremap = true })
 s('n', ';', ':', { noremap = true })
 s('v', ';', ':', { noremap = true })
-s('n', 'd', ':lua DeleteWithoutClipboard()<CR>', { noremap = true })
 
-
+s('n', 'ss', '"_dd', { noremap = true, silent = true })
 s('n', '<F5>', ':undo<CR>', { noremap = true })
 s('n', '<leader>hv', '<Cmd>call VSCodeNotify("editor.action.revealDefinition")<CR>', { noremap = true, silent = true })
 s('n', '<leader>go', '<Cmd>call VSCodeNotify("bookmarks.listFromAllFiles")<CR>', { noremap = true, silent = true })
