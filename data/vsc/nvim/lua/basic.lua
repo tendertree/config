@@ -28,7 +28,8 @@ o.incsearch = true
 o.ignorecase = true
 o.smartcase = true
 o.hlsearch = true
-o.clipboard = unnamedplus
+o.clipboard = "unnamedplus"
+--o.clipboard = unnamedplus
 o.grepprg = 'rg \\ --vimgrep\\ --smart-case\\ --follow'
 o.termguicolors = true
 -- auto complete
