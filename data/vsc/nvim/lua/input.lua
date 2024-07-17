@@ -6,8 +6,8 @@ require("nforcolemak-dh")
 
 
 
-s('n', ':', '0p', { noremap = true })
-s('v', ':', '0p', { noremap = true })
+s('n', ':', 'p', { noremap = true })
+s('v', ':', 'p', { noremap = true })
 s('n', ';', ':', { noremap = true })
 s('v', ';', ':', { noremap = true })
 
