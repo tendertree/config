@@ -11,6 +11,26 @@
 	// 	],
 	// "description": "Log output to console"
 	// }
+	//Sycn spawned prefabs
+	"ISystem": {
+		"prefix": "cs",
+		"body": [
+			"using System.Collections;",
+			"using System.Collections.Generic;",
+			"using Unity.Entities;",
+			"using UnityEngine;",
+			"public partial struct $1 : ISystem",
+			"{",
+			"public void OnCreate(ref SystemState state)",
+			"{",
+			"}",
+			"public void OnUpdate(ref SystemState state)",
+			"{",
+			" }",
+			"}",
+		],
+		"description": "create ISystem",
+	},
 	"IComponentdata": {
 		"prefix": "cc",
 		"body": [
@@ -55,7 +75,15 @@
 		],
 		"description": "authoring prefab"
 	},
-	//state.EntityManager.Instantiate(prefab, 500, Allocator.Temp);
+	"EntityQueryBuilder": {
+		"prefix": "ceqb",
+		"body": [
+			"var builder = new EntityQueryBuilder(Allocator.Temp);",
+			"builder.WithAny<$1>();",
+			"RequireForUpdate(state.GetEntityQuery(builder));",
+		],
+		"description": "Created EntityQueryBuilder"
+	},
 	"EntityManger": {
 		"prefix": "emc",
 		"body": [
@@ -96,5 +124,20 @@
 			"}"
 		],
 		"description": "Toggle for I enable components "
+	},
+	"localTransform": {
+		"prefix": "it",
+		"body": [
+			"commandBuffer.SetComponent($1, new LocalTransform()",
+			"{",
+			"Position = new Unity.Mathematics.float3(",
+			"UnityEngine.Random.Range(-10f, 10f),",
+			"0,",
+			"UnityEngine.Random.Range(-10f, 10f)),",
+			"Rotation = quaternion.identity,",
+			"Scale = 1f",
+			"});"
+		],
+		"description": "initialize baisc local transform"
 	}
 }
