@@ -6,14 +6,15 @@ require("nforcolemak-dh")
 
 
 
-s('n', ':', 'p', { noremap = true })
-s('v', ':', 'p', { noremap = true })
+s('n', ':', '0p', { noremap = true })
+s('v', ':', '0p', { noremap = true })
 s('n', ';', ':', { noremap = true })
 s('v', ';', ':', { noremap = true })
+s('v', 'dd', '"_dd', { noremap = true })
+
+
 
 s('n', 'ss', '"_dd', { noremap = true, silent = true })
-s('n', 'dd', '"_dd', { noremap = true, silent = true })
-
 s('n', '<F5>', ':undo<CR>', { noremap = true })
 s('n', '<leader>hv', '<Cmd>call VSCodeNotify("editor.action.revealDefinition")<CR>', { noremap = true, silent = true })
 s('n', '<leader>go', '<Cmd>call VSCodeNotify("bookmarks.listFromAllFiles")<CR>', { noremap = true, silent = true })
