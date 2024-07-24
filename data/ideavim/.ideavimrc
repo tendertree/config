@@ -5,6 +5,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 
+
+
 noremap m h
 noremap n j
 noremap e k
@@ -39,6 +41,9 @@ nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
 
+
+nnoremap <F5> u
+vnoremap <F5> u
 
 
 
