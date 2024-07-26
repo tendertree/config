@@ -47,3 +47,6 @@ vnoremap <F5> u
 
 
 
+set visualbell
+set noerrorbells
+
