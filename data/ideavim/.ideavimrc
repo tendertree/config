@@ -6,6 +6,8 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 
 
+set visualbell
+set noerrorbells
 
 noremap m h
 noremap n j
@@ -36,17 +38,14 @@ noremap : p
 map <leader>o <action>(ActivateStructureToolWindow)
 map <leader>q <action>(SearchEverywhere)
 nnoremap ,h :NERDTreeToggle<CR>
-vnoremap ss dd
+noremap ss "_dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
 
 
+
 nnoremap <F5> u
 vnoremap <F5> u
 
-
-
-set visualbell
-set noerrorbells
 
