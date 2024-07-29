@@ -38,12 +38,14 @@ noremap : p
 map <leader>o <action>(ActivateStructureToolWindow)
 map <leader>q <action>(SearchEverywhere)
 nnoremap ,h :NERDTreeToggle<CR>
-noremap ss "_dd
+nnoremap ss "_dd
+vnoremap ss "_dd
 nnoremap dd cc
 vnoremap dd cc
 nnoremap gt gf
 
-
+nnoremap gr <action>(Replace)
+vnoremap gr <action>(Replace)
 
 nnoremap <F5> u
 vnoremap <F5> u
