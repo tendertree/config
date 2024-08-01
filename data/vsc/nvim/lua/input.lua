@@ -47,5 +47,4 @@ s('n', '<leader>gg', '<Cmd>call VSCodeNotify("bookmarks.toggle")<CR>', { noremap
 s('n', 'gc', '<Cmd>call VSCodeNotify("editor.action.codeAction")<CR>', { noremap = true, silent = true })
 s('n', 'gr', '<Cmd>call VSCodeNotify("editor.action.rename")<CR>', { noremap = true, silent = true })
 s('n', '<leader>q', '<Cmd>call VSCodeNotify("workbench.view.search")<CR>', { noremap = true, silent = true })
---s('n', ',h', '<Cmd>call VSCodeNotify("workbench.action.toggleSidebarVisibility")<CR>', { noremap = true, silent = true })
-s('n', ',h', '<Cmd>call VSCodeNotify("workbench.view.explorer")<CR>', { noremap = true, silent = true })
+s('n', ',h', '<Cmd>call VSCodeNotify("workbench.action.toggleSidebarVisibility")<CR>', { noremap = true, silent = true })
