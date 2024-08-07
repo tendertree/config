@@ -52,6 +52,17 @@
 		],
 		"description": "animejs object "
 	},
+	"viTest template": {
+		"prefix": "vt",
+		"body": [
+			"import { expect, test } from 'vitest'",
+			"import { ${1:name} } from ' ${1:name}'",
+			"test('adds 1 + 2 to equal 3', () => {",
+			"expect( ${1:name}(1, 2)).toBe(3)",
+			")}"
+		],
+		"description": "vitest template"
+	},
 	"unitTest": {
 		"prefix": "te",
 		"body": [

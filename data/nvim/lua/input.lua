@@ -51,7 +51,7 @@ s('n', '<F5>', ':undo<CR>', { noremap = true })
 --debugger options
 --s('n', 'tb', ":lua require'dap'.toggle_breakpoint() <cr>", { noremap = true })
 s('n', '<F9>', ":lua require'dap'.step_over() <cr>", { noremap = true })
--- s('n', '<F8>', 'function() require("neotest").run.run(vim.fn.expand("%")) <cr>', { noremap = true })
+s('n', '<F8>', 'function() require("neotest").run.run(vim.fn.expand("%")) <cr>', { noremap = true })
 --screen
 s('n', 'sh', ':split<Return>', { noremap = true })
 s('n', 'sv', ':vsplit<Return><C-w>w', { noremap = true })

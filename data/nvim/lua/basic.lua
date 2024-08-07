@@ -115,4 +115,12 @@ _G.__luacache_config = {
 	}
 }
 
+--turn off auto complete when nerdtree on
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "nerdtree",
+	callback = function()
+		vim.opt_local.completeopt = {}
+	end
+})
+
 vim.loader.enable()
