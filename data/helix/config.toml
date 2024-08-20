@@ -1,0 +1,32 @@
+theme="term16_light"
+[editor]
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+
+
+[keys.normal]
+m="move_char_left"
+n="move_visual_line_down"
+e="move_visual_line_up"
+i ="move_char_right"
+"^" ="goto_line_start"
+"$" ="goto_line_end"
+s="delete_selection"
+G="goto_last_line"
+a="insert_mode"
+[keys.select]
+m="move_char_left"
+n="move_visual_line_down"
+e="move_visual_line_up"
+i ="move_char_right"
+
+
