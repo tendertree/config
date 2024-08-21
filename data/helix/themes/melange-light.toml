@@ -65,7 +65,9 @@
 "module" = { fg = "b_red" }
 "module.builtin" = { fg = "b_blue" }
 "label" = { fg = "b_cyan" }
-"variable" = { fg = "b_green_dark" }
+
+"variable" = { fg = "d_blue" }
+
 "variable.parameter" = { fg = "b_red" }
 "variable.builtin" = { fg = "b_red", modifiers = ["italic"] }
 "type" = { fg = "b_blue" }
