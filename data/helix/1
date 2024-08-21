@@ -13,8 +13,6 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-
-
 [keys.normal]
 m="move_char_left"
 n="move_visual_line_down"
