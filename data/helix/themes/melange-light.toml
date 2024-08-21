@@ -33,7 +33,6 @@
 "ui.popup" = { bg = "bg_red" }
 "ui.popup.info" = { bg = "a_bg_float" }
 "ui.virtual.inlay-hint" = { fg = "a_fg" }
-
 "warning" = { fg = "b_yellow" }
 "error" = { fg = "b_red" }
 "info" = { fg = "b_blue" }
@@ -43,9 +42,10 @@
 "diagnostic.warning" = { fg = "b_yellow", underline = { style = "curl", color = "b_yellow" } }
 "diagnostic.info" = { fg = "b_blue", underline = { style = "curl", color = "b_blue" } }
 "diagnostic.hint" = { fg = "b_green", underline = { style = "curl", color = "b_green" } }
+"attribute"={ fg="b_green_dark"}
 "tag" = { fg = "text_brown" }
 "number" = { fg = "c_magenta" }
-"constructor" = { fg = "b_green" }
+"constructor" = { fg = "b_magenta" }
 "operator" = { fg = "b_red" }
 "string" = { fg = "text_black" }
 "string.documentation" = { fg = "b_blue" }
@@ -61,7 +61,7 @@
 "keyword.import" = { fg = "b_yellow" }
 "constant" = { fg = "b_blue" }
 "constant.builtin" = { fg = "c_magenta" }
-"constant.macro" = { fg = "c_magenta" }
+"constant.macro" = { fg = "d_green" }
 "module" = { fg = "b_red" }
 "module.builtin" = { fg = "b_blue" }
 "label" = { fg = "b_cyan" }
@@ -71,7 +71,7 @@
 "type" = { fg = "b_blue" }
 "type.qualifier" = { fg = "c_yellow" }
 "function.macro" = { fg = "b_yellow" }
-"function.call" = { fg = "b_yellow" }
+"function.call" = { fg = "d_yellow" }
 "punctuation.delimiter" = { fg = "c_red" }
 "punctuation" = { fg = "d_yellow" }
 "comment" = { fg = "a_com", modifiers = ["italic"] }
@@ -133,7 +133,7 @@ c_yellow = "#E49B5D"
 c_green = "#78997A"
 c_cyan = "#7B9695"
 c_blue = "#7F91B2"
-c_magenta = "#B380B0"
+c_magenta = "#826480"
 
 # backround colors
 d_red = "#7D2A2F"
@@ -141,7 +141,7 @@ d_yellow = "#8B7449"
 d_green = "#233524"
 d_cyan = "#253333"
 d_blue = "#273142"
-d_magenta = "#422741"
+d_magenta = "#735e71"
 
 # ui color
 line_fg = "#88C0D0"
