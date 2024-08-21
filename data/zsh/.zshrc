@@ -126,6 +126,7 @@ alias up='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa && autoUpdate'
 alias tmn="tmux new -s"
 alias tmg="tmux attach-session -t"
 alias tmk="tmux kill-session -t"
+alias hx="helix"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
