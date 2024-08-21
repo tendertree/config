@@ -27,7 +27,7 @@
 "ui.statusline.insert" = { bg = "b_green", fg = "a_bg", modifiers = ["bold"] }
 "ui.statusline.select" = { bg = "b_magenta", fg = "a_bg", modifiers = ["bold"] }
 "ui.help" = { bg = "a_bg" }
-"ui.menu" = { bg = "a_bg" }
+"ui.menu" = { bg = "a_bg_float" }
 "ui.menu.selected" = { bg = "a_ui", fg="b_yellow"}
 "ui.menu.scroll" = { fg = "a_bg_float" }
 "ui.popup" = { bg = "bg_red" }
