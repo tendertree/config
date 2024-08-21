@@ -1,4 +1,3 @@
-#theme="term16_light"
 theme = "melange-light"
 [editor]
 line-number = "relative"
@@ -19,16 +18,34 @@ hidden = false
 m="move_char_left"
 n="move_visual_line_down"
 e="move_visual_line_up"
-i ="move_char_right"
+i="move_char_right"
 "^" ="goto_line_start"
 "$" ="goto_line_end"
-s="delete_selection"
 G="goto_last_line"
 a="append_mode"
+s="delete_selection_noyank"
+h="no_op"
+j="yank"
+k="no_op"
+l="no_op"
+";"="paste_after"
+
+
+# d_c
+# h_m
+# j_y
+# k_n
+# l_i
+
 [keys.select]
 m="move_char_left"
 n="move_visual_line_down"
 e="move_visual_line_up"
-i ="move_char_right"
-
-
+i="move_char_right"
+s="delete_selection_noyank"
+h="no_op"
+j="yank"
+k="no_op"
+l="no_op"
+a="append_mode"
+";"="paste_after"

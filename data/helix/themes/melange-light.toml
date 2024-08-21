@@ -7,12 +7,19 @@
 "ui.window" = { fg = "a_fg" }
 "ui.text" = { fg = "text_black" }
 "ui.text.focus" = { fg = "c_yellow" }
-"ui.cursor" = { bg = "a_ui", modifiers = ["reverse"] }
-"ui.selection" = { bg = "a_red" }
-"ui.selection.primary" = { bg = "a_red" }
-"ui.cursorline.primary" = { bg = "a_red" }
+
+"ui.cursor" = { bg = "b_blue", modifiers = ["reverse"] }
+"ui.cursor.primary" ={ bg = "b_blue"}
+"ui.cursor.select"={bg="b_magenta"}
+"ui.virtual.jump-label"={bg="b_green_dark"}
+
+
+
+"ui.selection" = { bg= "b_red" }
+"ui.selection.primary" = { bg = "b_yellow"}
+"ui.cursorline.primary" = { bg = "b_blue" }
 "ui.linenr" = { fg = "a_fg" }
-"ui.linenr.selected" = { fg = "c_yellow", modifiers = ["bold"] }
+"ui.linenr.selected" = { fg = "b_red", modifiers = ["bold"] }
 "ui.virtual.whitespace" = { fg = "a_com" }
 "ui.virtual.indent-guide" = { fg = "b_blue" }
 "ui.statusline" = { fg = "line_fg", bg = "line_bg" }
@@ -22,8 +29,8 @@
 "ui.help" = { bg = "a_bg" }
 "ui.menu" = { bg = "a_bg" }
 "ui.menu.selected" = { bg = "a_ui", fg="b_yellow"}
-"ui.menu.scroll" = { fg = "a_ui" }
-"ui.popup" = { bg = "a_bg_float" }
+"ui.menu.scroll" = { fg = "a_bg_float" }
+"ui.popup" = { bg = "bg_red" }
 "ui.popup.info" = { bg = "a_bg_float" }
 "ui.virtual.inlay-hint" = { fg = "a_fg" }
 
@@ -73,6 +80,8 @@
 "comment.error" = { fg = "a_com", modifiers = ["bold"] }
 "comment.warning" = { fg = "a_com", modifiers = ["bold"] }
 "comment.note" = { fg = "a_com", modifiers = ["bold"] }
+
+"markup" ={ bg="b_magenta"}
 "markup.heading" = { fg = "c_yellow" }
 "markup.heading.2" = { fg = "b_yellow" }
 "markup.heading.3" = { fg = "b_green" }
@@ -99,6 +108,7 @@ text_black="#54433A"
 text_brown="#A98A78"
 # basic
 a_fg = "#C4B1A5"
+a_fg_dark="#d9d7d7"
 a_bg = "#F1F1F1"
 a_bg_float = "#faf7f5"
 a_float = "#34302C"
