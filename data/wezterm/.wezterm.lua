@@ -15,6 +15,13 @@ config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
 
 config.default_prog = { 'wsl.exe', '-d', 'Arch', '--cd', '~' }
 config.audible_bell = "Disabled"
-config.hide_tab_bar_if_only_one_tab = true
 -- and finally, return the configuration to wezterm
+--
+--
+config.window_padding = {
+	left = 7,
+	right = 5,
+	top = 5,
+	bottom = 5,
+}
 return config
