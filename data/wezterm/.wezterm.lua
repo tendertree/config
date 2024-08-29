@@ -19,7 +19,7 @@ config.audible_bell = "Disabled"
 --
 --
 config.window_padding = {
-	left = 7,
+	left = 10,
 	right = 5,
 	top = 5,
 	bottom = 5,
