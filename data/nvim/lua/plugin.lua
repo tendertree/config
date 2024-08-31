@@ -77,34 +77,44 @@ require('lazy').setup({
 	},
 	'MunifTanjim/nui.nvim',
 	'prisma/vim-prisma',
+
 	{
 		'nvim-neotest/neotest',
 		dependencies = {
 			"antoinemadec/FixCursorHold.nvim",
+			"marilari88/neotest-vitest",
 			"nvim-neotest/neotest-plenary",
 			{
 				"folke/neodev.nvim",
-				confee = function()
+				config = function()
 					require("neodev").setup({
 						library = { plugins = { "neotest" }, types = true },
 					})
 				end
 			},
-
 		},
 		config = function()
-			require("configs.neo_test")
+			require("neotest").setup({
+				root = vim.loop.cwd(),
+				adapters = {
+					require("neotest-vitest") {
+						filter_dir = function(name, rel_path, root)
+							return name ~= "node_modules"
+						end,
+					},
+				}
+			})
 		end,
 		keys = {
 			{ "to", function() require("neotest").run.run(vim.fn.expand("%")) end,                      desc = "Run File" },
 			{ "ts", function() require("neotest").summary.toggle() end,                                 desc = "Toggle Summary" },
 			{ "tO", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
-
 		}
 
-	},
+	}
+
+	,
 	{ 'nvim-neotest/neotest-jest',   ft = "typescript", },
-	{ 'marilari88/neotest-vitest',   ft = "typescript", },
 	{ "thenbe/neotest-playwright",   ft = "typescript", },
 	{ 'rouge8/neotest-rust',         ft = "rust" },
 	{ "nvim-neotest/neotest-python", ft = "python" },
