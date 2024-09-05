@@ -8,8 +8,12 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 
-config.color_scheme = 'Catppuccin Latte'
+config.color_scheme = 'Mar (Gogh)'
 
+config.colors = {
+	-- The default background color
+	background = '#f1f1f1'
+}
 
 config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
 
