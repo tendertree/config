@@ -76,7 +76,13 @@ require('lazy').setup({
 		event = 'BufEnter'
 	},
 	'MunifTanjim/nui.nvim',
-	'prisma/vim-prisma',
+	{
+		'prisma/vim-prisma',
+		ft = "prisma", -- prisma 파일 타입에 대해서만 로드
+		config = function()
+			-- 플러그인 설정
+		end,
+	},
 
 	{
 		'nvim-neotest/neotest',

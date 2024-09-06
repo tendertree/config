@@ -123,4 +123,9 @@ vim.api.nvim_create_autocmd("FileType", {
 	end
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.prisma",
+	command = "set filetype=prisma",
+})
+
 vim.loader.enable()
