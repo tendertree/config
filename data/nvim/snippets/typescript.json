@@ -1,4 +1,21 @@
 {
+	"Motion div": {
+		"prefix": "md",
+		"body": [
+			"<motion.div",
+			"initial={{ opacity: 0 }}",
+			"animate={{",
+			"opacity: 1,",
+			"transition:",
+			"{",
+			"delay: 2.4,",
+			"duration: 0.4,",
+			"ease: 'easeIn'},}}",
+			"className='dv'>",
+			"</motion.div>"
+		],
+		"description": "Require module in lua"
+	},
 	"basic component export": {
 		"prefix": "ef",
 		"body": [
