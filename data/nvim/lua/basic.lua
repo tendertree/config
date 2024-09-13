@@ -86,8 +86,6 @@ opt.background = 'dark'
 --astro
 vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
---format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 --clipbiioard
 -- yank text problem
 local clip = '/mnt/c/Windows/System32/clip.exe'
