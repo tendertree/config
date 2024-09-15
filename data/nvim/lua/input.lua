@@ -46,7 +46,7 @@ s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('n', '<F3>', ':lua vim.lsp.buf.format()<CR>', { noremap = true })
 --f4 is binding to terminal open
-s('n', '<F5>', ':undo<CR>', { noremap = true })
+s('n', '<F5>', ':Neogen<CR>', { noremap = true })
 
 --debugger options
 --s('n', 'tb', ":lua require'dap'.toggle_breakpoint() <cr>", { noremap = true })
