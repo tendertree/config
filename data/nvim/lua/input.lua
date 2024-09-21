@@ -137,10 +137,24 @@ require 'nvim-treesitter.configs'.setup {
 }
 
 --- add custom action 
--- s('n', '<leader>aa', 
---     ":lua local name = vim.fn.input('Component Name: ') vim.cmd('terminal pnpm add:comp --name ' .. name .. ' -p ' .. vim.fn.getcwd())<CR>", 
+
+-- vim.api.nvim_set_keymap('n', '<leader>aa', 
+--     ":lua local name = vim.fn.input('Component Name: ') " ..
+--     "local current_path = vim.fn.expand('%:p:h') " ..
+--     "local folder_name = vim.fn.fnamemodify(current_path, ':t') " ..
+--     "local path = current_path .. '/' .. name .. '.tsx' " ..
+--     "os.execute('pnpm add:comp --name ' .. name .. ' -p ' .. current_path .. ' -f ' .. folder_name) " ..
+--     "vim.cmd('edit ' .. path)<CR>", 
 --     { noremap = true, silent = true })
+--
 vim.api.nvim_set_keymap('n', '<leader>aa', 
-    ":lua local name = vim.fn.input('Component Name: ') os.execute('pnpm add:comp --name ' .. name .. ' -p ' .. vim.fn.getcwd())<CR>", 
+    ":lua local name = vim.fn.input('Component Name: ') " ..
+    "local current_path = vim.fn.expand('%:p:h') " ..
+    "local folder_name = vim.fn.fnamemodify(current_path, ':t') " ..
+    "local path = current_path .. '/' .. name .. '.tsx' " ..
+    "local story_path = current_path .. '../../stories/' .. folder_name .. '/' .. name .. '.story.tsx' " ..
+    "os.execute('pnpm add:comp --name ' .. name .. ' -p ' .. current_path .. ' -f ' .. folder_name) " ..
+    "vim.cmd('vsplit ' .. path) " ..
+    "vim.cmd('edit ' .. story_path)<CR>", 
     { noremap = true, silent = true })
 
