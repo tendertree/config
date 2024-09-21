@@ -135,3 +135,12 @@ require 'nvim-treesitter.configs'.setup {
 		}
 	}
 }
+
+--- add custom action 
+-- s('n', '<leader>aa', 
+--     ":lua local name = vim.fn.input('Component Name: ') vim.cmd('terminal pnpm add:comp --name ' .. name .. ' -p ' .. vim.fn.getcwd())<CR>", 
+--     { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>aa', 
+    ":lua local name = vim.fn.input('Component Name: ') os.execute('pnpm add:comp --name ' .. name .. ' -p ' .. vim.fn.getcwd())<CR>", 
+    { noremap = true, silent = true })
+

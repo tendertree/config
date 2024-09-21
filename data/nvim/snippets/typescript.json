@@ -1,4 +1,31 @@
 {
+	"storybookMeta": {
+		"prefix": "mt",
+		"body": [
+			"import type { Meta, StoryObj } from '@storybook/react';",
+			"import ${1:name} from './${1:name}'",
+			"",
+			"const meta = {",
+			" title: 'Example/${1:name}',",
+			" component: ${1:name},",
+			" parameters: {",
+			" layout: 'centered',},",
+			" tags: ['autodocs'],",
+			" argTypes: {",
+			" backgroundColor: { control: 'color'},},",
+			" args: {},} satisfies Meta<typeof ${1:name}>;",
+			"",
+			"export default meta;",
+			"type Story = StoryObj<typeof meta>;",
+			"",
+			"export const Primary: Story = {",
+			"  args: {",
+			"    primary: true,",
+			"  },",
+			"};"
+		],
+		"description": "simple meta data for storybook"
+	},
 	"Motion div": {
 		"prefix": "md",
 		"body": [
