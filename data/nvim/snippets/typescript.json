@@ -1,30 +1,14 @@
 {
-	"storybookMeta": {
-		"prefix": "mt",
+	"crud next router export": {
+		"prefix": "ncrud",
 		"body": [
-			"import type { Meta, StoryObj } from '@storybook/react';",
-			"import ${1:name} from './${1:name}'",
-			"",
-			"const meta = {",
-			" title: 'Example/${1:name}',",
-			" component: ${1:name},",
-			" parameters: {",
-			" layout: 'centered',},",
-			" tags: ['autodocs'],",
-			" argTypes: {",
-			" backgroundColor: { control: 'color'},},",
-			" args: {},} satisfies Meta<typeof ${1:name}>;",
-			"",
-			"export default meta;",
-			"type Story = StoryObj<typeof meta>;",
-			"",
-			"export const Primary: Story = {",
-			"  args: {",
-			"    primary: true,",
-			"  },",
-			"};"
-		],
-		"description": "simple meta data for storybook"
+			"//const DATA_FILE_PATH = path.join(process.cwd(), '/src/data/posts.json');",
+			"const ${1:name}CRUD = new ${1:name}CRUDImplFileSystem(DATA_FILE_PATH);",
+			"export const GET = (req: NextApiRequest, res: NextApiResponse) => PostHandler(${1:name}CRUD)(req, res);",
+			"export const POST = (req: NextApiRequest, res: NextApiResponse) => PostHandler(${1:name}CRUD)(req, res);",
+			"export const PUT = (req: NextApiRequest, res: NextApiResponse) => PostHandler(${1:name}CRUD)(req, res);",
+			"export const DELETE = (req: NextApiRequest, res: NextApiResponse) => PostHandler(${1:name}CRUD)(req, res);"
+		]
 	},
 	"Motion div": {
 		"prefix": "md",

@@ -136,25 +136,21 @@ require 'nvim-treesitter.configs'.setup {
 	}
 }
 
---- add custom action 
+--personal funcitons 
+-- 현재 파일과 동일한 파일명을 가진 파일을 찾아서 열기
+local function open_entity_file()
+    local current_file = vim.fn.expand('%:t') -- 현재 파일명
+    local search_path = 'root/package/entity/' .. current_file
 
--- vim.api.nvim_set_keymap('n', '<leader>aa', 
---     ":lua local name = vim.fn.input('Component Name: ') " ..
---     "local current_path = vim.fn.expand('%:p:h') " ..
---     "local folder_name = vim.fn.fnamemodify(current_path, ':t') " ..
---     "local path = current_path .. '/' .. name .. '.tsx' " ..
---     "os.execute('pnpm add:comp --name ' .. name .. ' -p ' .. current_path .. ' -f ' .. folder_name) " ..
---     "vim.cmd('edit ' .. path)<CR>", 
---     { noremap = true, silent = true })
---
-vim.api.nvim_set_keymap('n', '<leader>aa', 
-    ":lua local name = vim.fn.input('Component Name: ') " ..
-    "local current_path = vim.fn.expand('%:p:h') " ..
-    "local folder_name = vim.fn.fnamemodify(current_path, ':t') " ..
-    "local path = current_path .. '/' .. name .. '.tsx' " ..
-    "local story_path = current_path .. '../../stories/' .. folder_name .. '/' .. name .. '.story.tsx' " ..
-    "os.execute('pnpm add:comp --name ' .. name .. ' -p ' .. current_path .. ' -f ' .. folder_name) " ..
-    "vim.cmd('vsplit ' .. path) " ..
-    "vim.cmd('edit ' .. story_path)<CR>", 
-    { noremap = true, silent = true })
+    -- 파일이 존재하는지 확인
+    if vim.fn.filereadable(search_path) == 1 then
+        -- 세로로 분할하고 파일 열기
+        vim.cmd('vsplit ' .. search_path)
+    else
+        print('파일을 찾을 수 없습니다: ' .. search_path)
+    end
+end
+
+-- 키 매핑 (예: <leader>e로 설정)
+vim.api.nvim_set_keymap('n', '<leader>e', ':lua open_entity_file()<CR>', { noremap = true, silent = true })
 
