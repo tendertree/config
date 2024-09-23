@@ -96,7 +96,20 @@
      }
     },
     {
+     "scope": ["entity.other.attribute-name"],
+     "settings": {
+      "foreground": "#b58e84"
+     }
+    },
+    {
      "scope": ["variable.language.this"],
+     "settings": {
+      "fontStyle": "italic",
+      "foreground": "#191313"
+     }
+    },
+    {
+     "scope": ["entity.name.function"],
      "settings": {
       "fontStyle": "italic",
       "foreground": "#191313"
@@ -196,6 +209,11 @@
  },
  "[jsonc]": {
   "editor.defaultFormatter": "esbenp.prettier-vscode"
- }
+ },
+ "[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+ },
+ "editor.defaultFormatter": "esbenp.prettier-vscode",
+ "notebook.defaultFormatter": "esbenp.prettier-vscode"
 }
 
