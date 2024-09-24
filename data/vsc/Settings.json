@@ -1,5 +1,4 @@
 {
- "security.allowedUNCHosts": ["wsl.localhost"],
  "editor.fontSize": 14,
  "editor.formatOnSave": true,
  "vim.statusBarColorControl": false,
@@ -172,6 +171,15 @@
       "foreground": "#a74e61"
      }
     },
+
+    {
+     "name": "function Name",
+     "scope": ["entity.name.function"],
+     "settings": {
+      "foreground": "#a4679a",
+      "fontStyle": "bold"
+     }
+    },
     {
      "name": "keyword.other",
      "scope": ["variable.language.base.cs"],
@@ -214,6 +222,35 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode"
  },
  "editor.defaultFormatter": "esbenp.prettier-vscode",
- "notebook.defaultFormatter": "esbenp.prettier-vscode"
+ "notebook.defaultFormatter": "esbenp.prettier-vscode",
+ "workbench.iconTheme": "gruvbox-material-icon-theme",
+ "fileheader.author": "tendertree",
+ "fileheader.dateformat": "YYYY-MM-DD",
+ "autoHeader": {
+  "format": {
+   "startWith": "/**",
+   "middleWith": "*",
+   "endWith": "*/",
+   "headerPrefix": "@"
+  },
+  "header": {
+   "Author": "tendertree",
+   "Create Time": {
+    "type": "createTime",
+    "format": "YY-MM-DD"
+   },
+   "Modified by": {
+    "type": "modifier",
+    "value": "tendertree"
+   },
+   "Modified time": {
+    "type": "modifyTime",
+    "format": "YY-MM-DD"
+   },
+   "Description": ""
+  }
+ },
+ "remote.autoForwardPortsSource": "hybrid",
+ "terminal.integrated.fontFamily": "monospace"
 }
 
