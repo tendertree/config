@@ -87,19 +87,31 @@ opt.background = 'dark'
 vim.g.astro_typescript = 'enable'
 vim.g.astro_stylus = 'enable'
 --clipbiioard
--- yank text problem
-local clip = '/mnt/c/Windows/System32/clip.exe'
+-- -- yank text problem
+-- local clip = '/mnt/c/Windows/System32/clip.exe'
+--
+-- vim.api.nvim_create_augroup('WSLYank', { clear = true })
+-- vim.api.nvim_create_autocmd('TextYankPost', {
+-- 	group = 'WSLYank',
+-- 	pattern = '*',
+-- 	callback = function()
+-- 		if vim.v.event.operator == 'y' then
+-- 			vim.fn.system(clip, vim.fn.getreg('0'))
+-- 		end
+-- 	end,
+-- })
+--
 
-vim.api.nvim_create_augroup('WSLYank', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-	group = 'WSLYank',
-	pattern = '*',
-	callback = function()
-		if vim.v.event.operator == 'y' then
-			vim.fn.system(clip, vim.fn.getreg('0'))
-		end
-	end,
-})
+vim.g.clipboard = {
+    name = 'win32yank-wsl',
+    copy = { ['+'] = { 'win32yank.exe', '-i', '--crlf' }, ['*'] = { 'win32yank.exe', '-i', '--crlf' } },
+    paste = { ['+'] = { 'win32yank.exe', '-o', '--lf' }, ['*'] = { 'win32yank.exe', '-o', '--lf' } },
+    cache_enabled = false,
+}
+
+
+
+
 
 -- use cache to load fast
 _G.__luacache_config = {
