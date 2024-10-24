@@ -10,6 +10,14 @@
 			"export const DELETE = (req: NextApiRequest, res: NextApiResponse) => PostHandler(${1:name}CRUD)(req, res);"
 		]
 	},
+	"glsv": {
+		"prefix": "glsv",
+		"body": [
+			"void main() {",
+			"vUv = uv;",
+			"gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0)}"
+		]
+	},
 	"Motion div": {
 		"prefix": "md",
 		"body": [
