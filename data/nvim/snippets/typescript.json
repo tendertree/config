@@ -1,4 +1,17 @@
 {
+	"basic layout": {
+		"prefix": "ba",
+		"body": [
+			"import{redirect} from 'next/navigation'",
+			"interface LayoutProp{",
+			" children:React.ReactNode;}",
+			"const $1 = async ({childern}:LayoupProp)=>{",
+			" const {userId} = true;",
+			" if(!userId){",
+			"redirect('/sign-in');}",
+			"retrun (<div> {children}</div>);}"
+		]
+	},
 	"crud next router export": {
 		"prefix": "ncrud",
 		"body": [
