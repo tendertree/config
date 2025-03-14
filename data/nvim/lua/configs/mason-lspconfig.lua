@@ -56,6 +56,7 @@ require('mason-lspconfig').setup({
 		end,
 		["tailwindcss"] = function()
 			require("lspconfig").tailwindcss.setup({
+				    root_dir = require('lspconfig.util').root_pattern('tailwind.config.ts', 'package.json'),
 				capabilities = capabilities,
 
 			})

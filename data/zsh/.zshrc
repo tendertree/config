@@ -128,6 +128,7 @@ alias tmn="tmux new -s"
 alias tmg="tmux attach-session -t"
 alias tmk="tmux kill-session -t"
 alias hx="helix"
+alias tgo="/home/tree/study/typescript-go/built/local/tsgo tsc"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -171,3 +172,5 @@ export LC_ALL=ko_KR.UTF-8
 export ANDROID_HOME=$HOME/.sdk/android-sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+source ~/.profile
+source ~/venvs/clientai_env/bin/activate

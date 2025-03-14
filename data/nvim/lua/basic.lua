@@ -4,7 +4,7 @@ local b = vim.bo
 local cmd = vim.cmd
 local fn = vim.fn
 local opt = vim.opt
---basic settings 좋다
+--basic settings
 w.number = true
 w.relativenumber = false
 o.ma = true
