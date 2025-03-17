@@ -618,7 +618,7 @@ require('lazy').setup({
       vendors = {
         deepseek = {
           __inherited_from = "openai",
-          api_key_name = "",
+          api_key_name = os.getenv("DEEPSEEK"),
           endpoint = "https://api.deepseek.com",
           model = "deepseek-chat",
         },
