@@ -120,5 +120,44 @@
 			"}"
 		],
 		"description": "unit test"
+	},
+	"unitTest Describe": {
+		"prefix": "de",
+		"body": [
+			"describe(${1:name}, () => {",
+			"  it('should add a student correctly', () => {",
+			"    expect(students).toContainEqual(student);",
+			" });",
+			"});"
+		],
+		"description": "unit test"
+	},
+	"storybookBasic": {
+		"prefix": "st",
+		"body": [
+			"import type { Meta, StoryObj } from '@storybook/react';",
+			"import { fn } from '@storybook/test';",
+			"import { $(1:name) } from './Button';",
+			"const meta = {",
+			"title: $(1:name),",
+			"component: Button,",
+			"parameters: {",
+			"layout: 'centered'",
+			"},",
+			"tags: ['autodocs'],",
+			"argTypes: {",
+			"backgroundColor: { control: 'color'",
+			"},",
+			"},",
+			" args: { onClick: fn()},",
+			"} satisfies Meta<typeof Button>;",
+			"export default meta;",
+			"type Story = StoryObj<typeof meta>;",
+			"export const Primary: Story = {",
+			"args: {",
+			"$(2:props)",
+			"},",
+			"};"
+		]
 	}
 }
