@@ -105,16 +105,20 @@ require('lazy').setup({
 				adapters = {
 					require("neotest-vitest") {
 						filter_dir = function(name, rel_path, root)
-							return name ~= "node_modules"
+							return rel_path:match("^tests") -- 또는 rel_path == "tests"
 						end,
 					},
-				}
+				},
+				diagnostic = {
+					enabled = true,
+					severity = 1
+				},
 			})
 		end,
 		keys = {
-			{ "tf", function() require("neotest").run.run(vim.fn.expand("%")) end,                      desc = "Run File" },
+			{ "tr", function() require("neotest").run.run(vim.fn.expand("%")) end,                      desc = "Run File" },
 			{ "ts", function() require("neotest").summary.toggle() end,                                 desc = "Toggle Summary" },
-			{ "tO", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
+			{ "to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
 		}
 
 	}
