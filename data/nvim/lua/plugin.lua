@@ -24,6 +24,18 @@ require('lazy').setup({
 				",h", ":Neotree toggle<CR>", silent = true
 			}
 		}
+	},{
+	  "neovim/nvim-lspconfig",
+    dependencies = {
+        {
+            "SmiteshP/nvim-navbuddy",
+            dependencies = {
+                "SmiteshP/nvim-navic",
+                "MunifTanjim/nui.nvim"
+            },
+            opts = { lsp = { auto_attach = true } }
+        }
+    }
 	},
 	"nvim-neotest/nvim-nio",
 	{
@@ -436,16 +448,7 @@ require('lazy').setup({
 		pin = "true"
 	},
 	"lukas-reineke/lsp-format.nvim",
-	{
-		"SmiteshP/nvim-navbuddy",
-		event = 'BufRead',
-		dependencies = { "SmiteshP/nvim-navic", "MunifTanjim/nui.nvim" },
-		config = function()
-			require("configs.navbuddy")
-		end,
-		opts = { lsp = { auto_attach = true } }
 
-	},
 	{
 		"SmiteshP/nvim-navic",
 		config = function()

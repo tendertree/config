@@ -1,6 +1,14 @@
 local navbuddy = require("nvim-navbuddy")
 local actions = require("nvim-navbuddy.actions")
 
+require("lspconfig").clangd.setup {
+    on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
+}
+
+
+
 navbuddy.setup {
 	icons = {
 		File = ' ',
