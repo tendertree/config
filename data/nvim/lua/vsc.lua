@@ -90,7 +90,7 @@ s('n', '<C-w>i', ':call VSCodeNotify ("workbench.action.focusNextGroup")<CR>', {
 s("n", "gc", ":call VSCodeNotify('editor.action.quickFix')<CR>", { noremap = true, silent = true })
 s("n", "gr", ":call VSCodeNotify('editor.action.rename')<CR>", { noremap = true, silent = true })
 
-s("n", "<leader>fe", ":call VSCodeNotify('workbench.action.quickOpen')<CR>", { noremap = true, silent = true })
+s("n", "<leader>tf", ":call VSCodeNotify('workbench.action.quickOpen')<CR>", { noremap = true, silent = true })
 s("n", "<leader>o", ":call VSCodeNotify('workbench.action.showCommands')<CR>", { noremap = true, silent = true })
 s('n', '<leader>hv', ":call VSCodeNotify('editor.action.revealDefinitionAside')<CR>", { noremap = true, silent = true })
 --s('n', ',h', toggle_sidebar, { noremap = true, silent = true })
