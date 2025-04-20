@@ -74,6 +74,8 @@ s("n", "<Left>", ":vertical resize +1<CR>", { noremap = true })
 s("n", "<Right>", ":vertical resize -1<CR>", { noremap = true })
 --s("n", "<Up>", ":resize -1<CR>", { noremap = true })
 --s("n", "<Down>", ":resize +1<CR>", { noremap = true })
+s('n', '<C-w>m', '<C-w>h', { noremap = true, silent = true })
+s('n', '<C-w>i', '<C-w>l', { noremap = true, silent = true })
 --commend lien commendrs
 --lsp saga
 s('n', '<leader>hv', ':Lspsaga goto_definition<CR>', { noremap = true, silent = true })
@@ -87,8 +89,10 @@ s('n', 'gc', ':Lspsaga code_action<CR>', { noremap = true, silent = true })
 s('n', 'gr', ':Lspsaga rename<CR> ', { noremap = true, silent = true })
 s("n", "[;", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
 s("n", "];", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-
-
+--- jump
+s('n', '<leader>j', ':Jumps<CR>', { noremap = true, silent = true })
+s('n', '<A-o>', '<C-o>', { noremap = true, silent = true })
+s('n', '<A-i>', '<C-i>', { noremap = true, silent = true })
 --terminal
 require("toggleterm").setup {
 	open_mapping = [[<F4>]],
