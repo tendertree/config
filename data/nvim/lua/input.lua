@@ -104,6 +104,11 @@ local on_attach = function(_, bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
+--harpoon mapping 
+s('n', '<leader>hb', ':lua require("harpoon.ui").add_file()<CR>', { desc = "Add File to Harpoon", noremap = true, silent = true })
+s('n', '<leader>ho', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { desc = "Toggle Harpoon Menu", noremap = true, silent = true })
+s('n', '<leader>he', ':lua require("harpoon.ui").nav_next()<CR>', { desc = "Go to Next Harpoon File", noremap = true, silent = true })
+s('n', '<leader>hn', ':lua require("harpoon.ui").nav_prev()<CR>', { desc = "Go to Previous Harpoon File", noremap = true, silent = true })
 
 -- nvim tree
 vim.api.nvim_set_keymap('n', '<leader>q', ':RgFzf <CR>', { noremap = true, silent = true })

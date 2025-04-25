@@ -96,8 +96,8 @@ s('n', '<leader>hv', ":call VSCodeNotify('editor.action.revealDefinitionAside')<
 --s('n', ',h', toggle_sidebar, { noremap = true, silent = true })
 vim.keymap.set('n', ',h', toggle_sidebar, { noremap = true, silent = true })
 
-s('n', '<leader>hd', ':Lspsaga hover_doc ++keep<CR>', { noremap = true, silent = true })
-s('n', '<leader>f', ':Lspsaga finder<CR>', { noremap = true, silent = true })
-s('n', '<leader>sh', ':Lspsaga signature_help<CR>', { noremap = true, silent = true })
-
+s('n', '<leader>hb', ":call VSCodeNotify('vscode-harpoon.addEditor')<CR>", { noremap = true, silent = true })
+s('n', '<leader>ho', ":call VSCodeNotify('vscode-harpoon.editorQuickPick')<CR>", { noremap = true, silent = true })
+s('n', '<leader>he', ":call VSCodeNotify('vscode-harpoon.gotoPreviousGlobalHarpoonEdito')<CR>", { noremap = true, silent = true })
+s('n', '<leader>hn', ":call VSCodeNotify('vscode-harpoon.editorQuickPick')<CR>", { noremap = true, silent = true })
 --call vsc command 

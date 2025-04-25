@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+	{'ThePrimeagen/harpoon',
+	keys = {
+					{ "<leader>hb", function() require("harpoon.mark").add_file() end,     desc = "Toggle Harpoon Menu" },
+					{ "<leader>ho", function() require("harpoon.ui").toggle_quick_menu() end,     desc = "Toggle Harpoon Menu" },
+			
+					{ "<leader>he", function() require("harpoon.ui").nav_next() end,     desc = "Toggle Harpoon Menu" }
+			,
+					{ "<leader>hn", function() require("harpoon.ui").nav_prev() end,     desc = "Toggle Harpoon Menu" }
+		}},
+
+
 	{
 		'nvim-neo-tree/neo-tree.nvim',
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
