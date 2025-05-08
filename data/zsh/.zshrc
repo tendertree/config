@@ -153,9 +153,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #xrsvc config 
-export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+#export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
 #export DISPLAY="`sed -n 's/nameserver //p' /etc/resolv.conf`:0"
-#export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
 #
 #
 #automate my process 
@@ -171,6 +171,30 @@ export LC_ALL=ko_KR.UTF-8
 
 export ANDROID_HOME=$HOME/.sdk/android-sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-source ~/.profile
-source ~/venvs/clientai_env/bin/activate
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+#source ~/.profile
+# source ~/venvs/clientai_env/bin/activate  # commented out by conda initialize
+
+export ANDROID_HOME=$HOME/Android
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/cmdline-tools/latest:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+#/home/tree/tool/wsl/WSLHostPatcher.exe
+
+. "$HOME/.local/bin/env"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tree/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tree/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tree/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tree/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+if ! pgrep -f "ollama serve" > /dev/null; then
+  nohup ollama serve > ~/.ollama.log 2>&1 &
+fi
