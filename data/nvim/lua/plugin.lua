@@ -12,15 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	{'ThePrimeagen/harpoon',
-	keys = {
-					{ "<leader>hb", function() require("harpoon.mark").add_file() end,     desc = "Toggle Harpoon Menu" },
-					{ "<leader>ho", function() require("harpoon.ui").toggle_quick_menu() end,     desc = "Toggle Harpoon Menu" },
-			
-					{ "<leader>he", function() require("harpoon.ui").nav_next() end,     desc = "Toggle Harpoon Menu" }
+	{
+		'ThePrimeagen/harpoon',
+		keys = {
+			{ "<leader>hb", function() require("harpoon.mark").add_file() end,        desc = "Toggle Harpoon Menu" },
+			{ "<leader>ho", function() require("harpoon.ui").toggle_quick_menu() end, desc = "Toggle Harpoon Menu" },
+
+			{ "<leader>he", function() require("harpoon.ui").nav_next() end, desc = "Toggle Harpoon Menu" }
 			,
-					{ "<leader>hn", function() require("harpoon.ui").nav_prev() end,     desc = "Toggle Harpoon Menu" }
-		}},
+			{ "<leader>hn", function() require("harpoon.ui").nav_prev() end, desc = "Toggle Harpoon Menu" }
+		}
+	},
 
 
 	{
@@ -35,19 +37,19 @@ require('lazy').setup({
 				",h", ":Neotree toggle<CR>", silent = true
 			}
 		}
-	},{
-	  "neovim/nvim-lspconfig",
-    dependencies = {
-        {
-            "SmiteshP/nvim-navbuddy",
-            dependencies = {
-                "SmiteshP/nvim-navic",
-                "MunifTanjim/nui.nvim"
-            },
-            opts = { lsp = { auto_attach = true } }
-        }
-    }
-	},
+	}, {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		{
+			"SmiteshP/nvim-navbuddy",
+			dependencies = {
+				"SmiteshP/nvim-navic",
+				"MunifTanjim/nui.nvim"
+			},
+			opts = { lsp = { auto_attach = true } }
+		}
+	}
+},
 	"nvim-neotest/nvim-nio",
 	{
 		"folke/todo-comments.nvim",
@@ -633,15 +635,10 @@ require('lazy').setup({
 			event = "VeryLazy",
 			version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
 			opts = {
-				provider = "deepseek",
-				vendors = {
-					deepseek = {
-						__inherited_from = "openai",
-						api_key_name = os.getenv("DEEPSEEK"),
-						endpoint = "https://api.deepseek.com",
-						model = "deepseek-chat",
-					},
-				},
+				provider = "ollama",
+				ollama = {
+					model = "qwen2.5-coder",
+				}
 			},
 
 			-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
