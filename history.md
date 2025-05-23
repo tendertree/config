@@ -58,3 +58,6 @@ my custom setting
 - 0917 - local/share/friendly snippet 에서 TimeHMS 삭제 
 # 2024
 - 0401 - 몇몇 가지 애드온 설치, tmux 추가,neotest
+# 2025
+  0502 - zed 관련 설정을 하는 중
+main and feat/my-change are identical.
