@@ -100,4 +100,8 @@ s('n', '<leader>hb', ":call VSCodeNotify('vscode-harpoon.addEditor')<CR>", { nor
 s('n', '<leader>ho', ":call VSCodeNotify('vscode-harpoon.editorQuickPick')<CR>", { noremap = true, silent = true })
 s('n', '<leader>he', ":call VSCodeNotify('vscode-harpoon.gotoPreviousGlobalHarpoonEdito')<CR>", { noremap = true, silent = true })
 s('n', '<leader>hn', ":call VSCodeNotify('vscode-harpoon.editorQuickPick')<CR>", { noremap = true, silent = true })
+s('v', 'm', 'h', { noremap = true })
+s('v', 'n', 'j', { noremap = true })
+s('v', 'e', 'k', { noremap = true })
+s('v', 'i', 'l', { noremap = true })
 --call vsc command 
