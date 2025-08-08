@@ -133,7 +133,10 @@ alias tgo="/home/tree/study/typescript-go/built/local/tsgo tsc"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
  eval "$(starship init zsh)"
-
+# zoxide
+eval "$(zoxide init zsh)"
+#autin 
+echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
 # path 
 export PATH=$HOME/.local/share/cargo/bin/eza:/home/tree/.local/share/bob/nvim-bin:/home/tree/project/git_date_Change/src/:$PATH
 # pnpm
@@ -179,7 +182,6 @@ export ANDROID_HOME=$HOME/Android
 export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/cmdline-tools/latest:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 #/home/tree/tool/wsl/WSLHostPatcher.exe
 
-. "$HOME/.local/bin/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
