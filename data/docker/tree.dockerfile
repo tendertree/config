@@ -20,8 +20,8 @@ RUN pacman -Syuu --noconfirm
 RUN pacman -S --noconfirm reflector &&	reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Install essential packages
-RUN pacman -S --noconfirm git base-devel yarn zsh typescript nodejs python3 python npm rustup go neovim gitui unzip python-pip gitui openssh ctags wget fzf cmake eza lldb zoxide tmux
-
+RUN pacman -S --noconfirm  git yarn zsh typescript nodejs  python3 python npm rustup go  neovim gitui unzip python-pip gitui openssh ctags wget fzf cmake eza lldb zoxide tmux postgresql llvm
+nvidia nvidia-utils btop vulkan-devel mesa vulkan-dzn
 # Install global npm packages
 RUN npm install -g typescript typescript-language-server prettier spaceship bun
 
@@ -39,22 +39,13 @@ USER root
 
 # Install AUR packages
 USER tree
-RUN yay -S  --noconfirm enchant1.6 icu66 libwebp gtk3 nss alsa-lib dbus-glib ripgrep pnpm luarocks ts-node
-
+RUN yay -S  --noconfirm ripgrep pnpm luarocks  ts-node noto-fonts-cjk fzf ripgrep python-huggingface-hub ollama atuin win32yank-bin
 # Set Rust stable as default
 USER tree
 RUN rustup default stable
 
 # Install Rust packages
-RUN cargo install --git https://github.com/kamiyaa/joshuto.git --force && \
-    cargo install zoxide --locked && \
-    cargo install eza
-
-# Install joshuto
-RUN cargo install joshuto
-
-# Install X11 packages
-RUN yay -S --noconfirm xorg-apps xorg-server xorg xorg-server-xvfb win32yank-bin noto-fonts-cjk
+RUN cargo install zoxide eza joshuto
 
 # Configure .zshrc
 RUN echo 'export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"' >> ~/.zshrc
