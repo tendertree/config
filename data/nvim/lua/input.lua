@@ -9,7 +9,7 @@ local function run() require('neotest').run.run() end
 
 
 
-   --set some functions
+--set some functions
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
@@ -41,7 +41,7 @@ s('n', '<C-1>', ':tabprevious<CR>', { noremap = true, silent = true })
 s('n', '<C-2>', ':tabnext<CR>', { noremap = true, silent = true })
 s('n', '<C-k>', ':m-2<CR>', { noremap = true, silent = true })
 s('n', '<C-j>', ':m+1<CR>', { noremap = true, silent = true })
-           --function
+--function
 s('n', '<F1>', ':bprevious!<CR>', { noremap = true })
 s('n', '<F2>', ':bnext!<CR>', { noremap = true })
 s('n', '<F3>', ':lua vim.lsp.buf.format()<CR>', { noremap = true })
@@ -93,6 +93,11 @@ s("n", "];", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 s('n', '<leader>j', ':Jumps<CR>', { noremap = true, silent = true })
 s('n', '<A-o>', '<C-o>', { noremap = true, silent = true })
 s('n', '<A-i>', '<C-i>', { noremap = true, silent = true })
+
+s('n', 'hh', '<cmd>BookmarksMark<cr>', { noremap = true, silent = true })
+s('n', 'hl', '<cmd>BookmarksTree<cr>', { noremap = true, silent = true })
+s('n', 'hc', '<cmd>BookmarksCommands<cr>', { noremap = true, silent = true })
+-- s('n', '<A-i>', '<C-i>', { noremap = true, silent = true
 --terminal
 require("toggleterm").setup {
 	open_mapping = [[<F4>]],
@@ -104,11 +109,15 @@ local on_attach = function(_, bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
---harpoon mapping 
-s('n', '<leader>hb', ':lua require("harpoon.ui").add_file()<CR>', { desc = "Add File to Harpoon", noremap = true, silent = true })
-s('n', '<leader>ho', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { desc = "Toggle Harpoon Menu", noremap = true, silent = true })
-s('n', '<leader>he', ':lua require("harpoon.ui").nav_next()<CR>', { desc = "Go to Next Harpoon File", noremap = true, silent = true })
-s('n', '<leader>hn', ':lua require("harpoon.ui").nav_prev()<CR>', { desc = "Go to Previous Harpoon File", noremap = true, silent = true })
+--harpoon mapping
+s('n', '<leader>hb', ':lua require("harpoon.ui").add_file()<CR>',
+	{ desc = "Add File to Harpoon", noremap = true, silent = true })
+s('n', '<leader>ho', ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
+	{ desc = "Toggle Harpoon Menu", noremap = true, silent = true })
+s('n', '<leader>he', ':lua require("harpoon.ui").nav_next()<CR>',
+	{ desc = "Go to Next Harpoon File", noremap = true, silent = true })
+s('n', '<leader>hn', ':lua require("harpoon.ui").nav_prev()<CR>',
+	{ desc = "Go to Previous Harpoon File", noremap = true, silent = true })
 
 -- nvim tree
 vim.api.nvim_set_keymap('n', '<leader>q', ':RgFzf <CR>', { noremap = true, silent = true })
@@ -144,22 +153,20 @@ require 'nvim-treesitter.configs'.setup {
 		}
 	}
 }
-
---personal funcitons 
+--personal funcitons
 -- 현재 파일과 동일한 파일명을 가진 파일을 찾아서 열기
 local function open_entity_file()
-    local current_file = vim.fn.expand('%:t') -- 현재 파일명
-    local search_path = 'root/package/entity/' .. current_file
+	local current_file = vim.fn.expand('%:t') -- 현재 파일명
+	local search_path = 'root/package/entity/' .. current_file
 
-    -- 파일이 존재하는지 확인
-    if vim.fn.filereadable(search_path) == 1 then
-        -- 세로로 분할하고 파일 열기
-        vim.cmd('vsplit ' .. search_path)
-    else
-        print('파일을 찾을 수 없습니다: ' .. search_path)
-    end
+	-- 파일이 존재하는지 확인
+	if vim.fn.filereadable(search_path) == 1 then
+		-- 세로로 분할하고 파일 열기
+		vim.cmd('vsplit ' .. search_path)
+	else
+		print('파일을 찾을 수 없습니다: ' .. search_path)
+	end
 end
 
 -- 키 매핑 (예: <leader>e로 설정)
 vim.api.nvim_set_keymap('n', '<leader>e', ':lua open_entity_file()<CR>', { noremap = true, silent = true })
-

@@ -1,4 +1,4 @@
-print("Hello World from Neovim! VSC")
+print("Hello World<>")
 local vscode = require('vscode')
 -- basic setup
 vim.opt.clipboard:append("unnamedplus")
@@ -56,15 +56,19 @@ require('lazy').setup({
 
 })
 
+function TrimCarriageReturns()
+  -- 시스템 클립보드 내용 가져오기
+  local text = vim.fn.getreg('+')
+  -- CR 제거
+  local cleaned = text:gsub('\r', '')
+  -- 다시 시스템 클립보드에 저장
+  vim.fn.setreg('+', cleaned)
+end
+
+
 --input Setting
 require("nforcolemak-dh")
 local s = vim.api.nvim_set_keymap
----input function settings 
--- local function toggle_sidebar()
--- 	print("run toggle side")
---      vscode.call('workbench.action.toggleSidebarVisibility')
---       vscode.call('workbench.action.focusSideBar')
---     end
 local function toggle_sidebar()
   if sidebar_open then
     print("Closing sidebar")
@@ -86,7 +90,6 @@ s('n', 'sv', ':call VSCodeNotify ("workbench.action.splitEditorRight")<CR>', { n
 s('n', '<C-w>m', ':call VSCodeNotify ("workbench.action.focusPreviousGroup")<CR>', { noremap = true, silent = true })
 s('n', '<C-w>i', ':call VSCodeNotify ("workbench.action.focusNextGroup")<CR>', { noremap = true, silent = true })
 
-
 s("n", "gc", ":call VSCodeNotify('editor.action.quickFix')<CR>", { noremap = true, silent = true })
 s("n", "gr", ":call VSCodeNotify('editor.action.rename')<CR>", { noremap = true, silent = true })
 
@@ -94,6 +97,9 @@ s("n", "<leader>tf", ":call VSCodeNotify('workbench.action.quickOpen')<CR>", { n
 s("n", "<leader>o", ":call VSCodeNotify('workbench.action.showCommands')<CR>", { noremap = true, silent = true })
 s('n', '<leader>hv', ":call VSCodeNotify('editor.action.revealDefinitionAside')<CR>", { noremap = true, silent = true })
 --s('n', ',h', toggle_sidebar, { noremap = true, silent = true })
+
+s('n', ':', [[:lua TrimCarriageReturns()<CR>"+p]], { noremap = true, silent = true })
+s('n', ';', ':', { noremap = true, silent = true })	
 vim.keymap.set('n', ',h', toggle_sidebar, { noremap = true, silent = true })
 
 s('n', '<leader>hb', ":call VSCodeNotify('vscode-harpoon.addEditor')<CR>", { noremap = true, silent = true })
