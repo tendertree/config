@@ -200,3 +200,7 @@ unset __conda_setup
 if ! pgrep -f "ollama serve" > /dev/null; then
   nohup ollama serve > ~/.ollama.log 2>&1 &
 fi
+export ZED_ALLOW_EMULATED_GPU=1
+alias zed="WAYLAND_DISPLAY= zed"
+
+eval "$(atuin init zsh)"
