@@ -127,6 +127,7 @@ alias up='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa && autoUpdate'
 alias tmn="tmux new -s"
 alias tmg="tmux attach-session -t"
 alias tmk="tmux kill-session -t"
+alias tmc="tmux switch-client -t"
 alias hx="helix"
 alias tgo="/home/tree/study/typescript-go/built/local/tsgo tsc"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -136,7 +137,7 @@ alias tgo="/home/tree/study/typescript-go/built/local/tsgo tsc"
 # zoxide
 eval "$(zoxide init zsh)"
 #autin 
-echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
+eval "$(atuin init zsh)"
 # path 
 export PATH=$HOME/.local/share/cargo/bin/eza:/home/tree/.local/share/bob/nvim-bin:/home/tree/project/git_date_Change/src/:$PATH
 # pnpm
@@ -203,4 +204,80 @@ fi
 export ZED_ALLOW_EMULATED_GPU=1
 alias zed="WAYLAND_DISPLAY= zed"
 
-eval "$(atuin init zsh)"
+
+_zsh_autosuggest_strategy_atuin() {
+    # silence errors, since we don't want to spam the terminal prompt while typing.
+    suggestion=$(ATUIN_QUERY="$1" atuin search --cmd-only --limit 1 --search-mode prefix 2>/dev/null)
+}
+
+if [ -n "${ZSH_AUTOSUGGEST_STRATEGY:-}" ]; then
+    ZSH_AUTOSUGGEST_STRATEGY=("atuin" "${ZSH_AUTOSUGGEST_STRATEGY[@]}")
+else
+    ZSH_AUTOSUGGEST_STRATEGY=("atuin")
+fi
+
+export ATUIN_SESSION=$(atuin uuid)
+ATUIN_HISTORY_ID=""
+
+_atuin_preexec() {
+    local id
+    id=$(atuin history start -- "$1")
+    export ATUIN_HISTORY_ID="$id"
+    __atuin_preexec_time=${EPOCHREALTIME-}
+}
+
+_atuin_precmd() {
+    local EXIT="$?" __atuin_precmd_time=${EPOCHREALTIME-}
+
+    [[ -z "${ATUIN_HISTORY_ID:-}" ]] && return
+
+    local duration=""
+    if [[ -n $__atuin_preexec_time && -n $__atuin_precmd_time ]]; then
+        printf -v duration %.0f $(((__atuin_precmd_time - __atuin_preexec_time) * 1000000000))
+    fi
+
+    (ATUIN_LOG=error atuin history end --exit $EXIT ${duration:+--duration=$duration} -- $ATUIN_HISTORY_ID &) >/dev/null 2>&1
+    export ATUIN_HISTORY_ID=""
+}
+
+function tmcc() {
+  if tmux has-session -t claude 2>/dev/null; then
+    tmux attach -t claude
+  else
+    tmux new -s claude
+  fi
+}
+
+_atuin_search() {
+    emulate -L zsh
+    zle -I
+
+    # swap stderr and stdout, so that the tui stuff works
+    # TODO: not this
+    local output
+    # shellcheck disable=SC2048
+    output=$(ATUIN_SHELL_ZSH=t ATUIN_LOG=error ATUIN_QUERY=$BUFFER atuin search $* -i 3>&1 1>&2 2>&3)
+
+    zle reset-prompt
+    # re-enable bracketed paste
+    # shellcheck disable=SC2154
+    echo -n ${zle_bracketed_paste[1]} >/dev/tty
+
+    if [[ -n $output ]]; then
+        local original_buffer=$BUFFER
+        RBUFFER=""
+        LBUFFER=$output
+
+        if [[ $LBUFFER == __atuin_accept__:* ]]
+        then
+            LBUFFER=${LBUFFER#__atuin_accept__:}
+            zle accept-line
+        elif [[ $LBUFFER == __atuin_chain_command__:* ]]
+        then
+            local new_command=${LBUFFER#__atuin_chain_command__:}
+            LBUFFER="$original_buffer $new_command"
+        fi
+    fi
+}
+
+
