@@ -13,6 +13,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	{
+		"m4xshen/hardtime.nvim",
+		lazy = false,
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+	},
+	{
 		'ThePrimeagen/harpoon',
 		keys = {
 			{ "<leader>hb", function() require("harpoon.mark").add_file() end,        desc = "Toggle Harpoon Menu" },
@@ -266,6 +272,23 @@ require('lazy').setup({
 			require('numb').setup()
 		end
 	},
+
+	{
+		'OXY2DEV/markview.nvim',
+		lazy = false,
+		priority = 49, -- assuming nvim-treesitter has priority = 50, the default
+		ops = {
+		},
+		config = function()
+			local presets = require("markview.presets");
+require("markview").setup(presets.no_nerd_fonts);
+			
+					end
+	},
+
+
+
+
 	'rhysd/git-messenger.vim',
 	-- UI
 	'Shatur/neovim-session-manager',
@@ -279,15 +302,16 @@ require('lazy').setup({
 	"tendertree/nforcolemak-dh",
 	{
 		'nvim-treesitter/nvim-treesitter',
+		lazy = false,
 		config = function()
 			require("configs.treesitter")
 		end,
+		dependencies = { "OXY2DEV/markview.nvim" },
 		build = { ':TSUpdate', ':TSInstall markdown markdown_inline' }
 	},
 	'nvim-treesitter/nvim-treesitter-textobjects', --additional text object
 	'nvim-treesitter/nvim-treesitter-context',
 	'vim-pandoc/vim-pandoc-syntax',
-	'preservim/vim-markdown',
 	'RRethy/nvim-treesitter-textsubjects',
 	{
 		'mfussenegger/nvim-treehopper',
@@ -296,6 +320,7 @@ require('lazy').setup({
 		end
 
 	},
+
 	{
 		'windwp/nvim-autopairs',
 		config = function()
@@ -689,17 +714,11 @@ require('lazy').setup({
 						},
 					},
 				},
-				{
-					-- Make sure to set this up properly if you have lazy=true
-					'MeanderingProgrammer/render-markdown.nvim',
-					opts = {
-						file_types = { "markdown", "Avante" },
-					},
-					ft = { "markdown", "Avante" },
-				},
-			},
-		}
 
-	},
+			}
+		},
+		{ "nvim-tree/nvim-web-devicons", opts = {} },
+
+	}
 
 }, { defaults = { lazy = true } })
