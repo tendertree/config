@@ -130,6 +130,7 @@ alias tmk="tmux kill-session -t"
 alias tmc="tmux switch-client -t"
 alias hx="helix"
 alias tgo="/home/tree/study/typescript-go/built/local/tsgo tsc"
+alias sup="$HOME/.config/script/update.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -280,4 +281,5 @@ _atuin_search() {
     fi
 }
 
-
+export GRIST_API_KEY="d3bcf33bddc51f08787848385053e13d83beaf47"
+export GRIST_DOC_ID="2jGAqqKxzTt9"
