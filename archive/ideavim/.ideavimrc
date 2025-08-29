@@ -50,4 +50,10 @@ vnoremap gr <action>(Replace)
 nnoremap <F5> u
 vnoremap <F5> u
 
+" Normal 모드에서 줄 이동
+nnoremap <C-k> :m .-2<CR>
+nnoremap <C-j> :m .+1<CR>
 
+" Visual 모드에서 선택 영역 이동
+vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap <C-j> :m '>+1<CR>gv=gv
